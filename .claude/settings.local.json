@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(cp:*)",
-      "Bash(npm run deploy:*)"
+      "Bash(npm run deploy:*)",
+      "Bash(npm create:*)",
+      "Bash(cat:*)",
+      "Bash(git -C /Users/haton14/beauty-salon-success log --oneline -5)",
+      "Bash(tree:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:beauty-salon-success.haton14.workers.dev)",
+      "Bash(npm run build:client:*)"
     ],
     "deny": [],
     "ask": []

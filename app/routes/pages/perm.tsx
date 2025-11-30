@@ -1,0 +1,226 @@
+import { createRoute } from 'honox/factory'
+import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
+import MobileMenu from '../../islands/MobileMenu'
+
+export default createRoute((c) => {
+  return c.render(
+    <>
+      <style>{`
+        @media (min-width: 1024px) {
+          .desktop-nav { display: flex !important; }
+        }
+      `}</style>
+      <MobileMenu />
+      <Header currentPage="perm" />
+
+      {/* メインコンテンツ */}
+      <section class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">パーマ</h1>
+            <p class="text-lg text-gray-600">理想のカールやウェーブを実現する多彩なパーマ</p>
+            <div class="w-24 h-1 bg-blue-800 mx-auto mt-4"></div>
+          </div>
+
+          {/* メニューカード */}
+          <div class="grid gap-8 max-w-6xl mx-auto">
+            {/* パーマ */}
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div class="bg-gradient-to-r from-teal-600 to-teal-700 p-6 text-white">
+                <h2 class="text-2xl font-bold">パーマ</h2>
+                <p class="mt-2 opacity-90">理想のカールやウェーブを実現</p>
+              </div>
+              <div class="p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-teal-900">こんな方におすすめ</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        ボリュームが欲しい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        スタイリングを楽にしたい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        動きのあるスタイルにしたい方
+                      </li>
+                    </ul>
+                    <div class="bg-teal-50 rounded-xl p-4">
+                      <p class="text-sm text-teal-800 font-semibold mb-2">施術時間：約2〜2.5時間</p>
+                      <p class="text-sm text-gray-600">持続期間：2〜3ヶ月</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-teal-900">料金</h3>
+                    <div class="space-y-3 mb-6">
+                      <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-gray-700 font-medium">パーマ</span>
+                        <span class="font-bold text-xl text-teal-900">¥8,800〜</span>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 酸性デジタルパーマ */}
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div class="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-white">
+                <h2 class="text-2xl font-bold flex items-center">
+                  <span class="bg-white/20 rounded-lg px-3 py-1 mr-3">おすすめ</span>
+                  酸性デジタルパーマ
+                </h2>
+                <p class="mt-2 opacity-90">髪に優しく、弾力のあるカールを実現</p>
+              </div>
+              <div class="p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-purple-900">こんな方におすすめ</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        髪のダメージを最小限に抑えたい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        大きく弾力のあるカールが欲しい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        乾かすだけでカールが再現できる髪にしたい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        長持ちするパーマをかけたい方
+                      </li>
+                    </ul>
+                    <div class="bg-purple-50 rounded-xl p-4">
+                      <p class="text-sm text-purple-800 font-semibold mb-2">施術時間：約3〜3.5時間</p>
+                      <p class="text-sm text-gray-600">持続期間：4〜6ヶ月</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-purple-900">料金</h3>
+                    <div class="space-y-3 mb-6">
+                      <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-gray-700 font-medium">酸性デジタルパーマ</span>
+                        <span class="font-bold text-xl text-purple-900">¥17,600</span>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* エアーパーマ */}
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
+                <h2 class="text-2xl font-bold">エアーパーマ</h2>
+                <p class="mt-2 opacity-90">ふんわり軽やかな質感のカール</p>
+              </div>
+              <div class="p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-blue-900">こんな方におすすめ</h3>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        ナチュラルで柔らかいカールが欲しい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        根元からふんわりボリュームが欲しい方
+                      </li>
+                      <li class="flex items-start">
+                        <span class="text-green-500 mr-2">✓</span>
+                        軽い質感のスタイルが好みの方
+                      </li>
+                    </ul>
+                    <div class="bg-blue-50 rounded-xl p-4">
+                      <p class="text-sm text-blue-800 font-semibold mb-2">施術時間：約2.5〜3時間</p>
+                      <p class="text-sm text-gray-600">持続期間：3〜5ヶ月</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-4 text-blue-900">料金</h3>
+                    <div class="space-y-3 mb-6">
+                      <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                        <span class="text-gray-700 font-medium">エアーパーマ</span>
+                        <span class="font-bold text-xl text-blue-900">¥13,200</span>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* スタイリングアドバイス */}
+          <div class="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-3 text-blue-900">自宅でのケア</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-blue-500 mr-2">•</span>
+                    洗髪後は優しくタオルドライ
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-500 mr-2">•</span>
+                    保湿力の高いトリートメントを使用
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-500 mr-2">•</span>
+                    ドライヤーは低温で乾かす
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-white rounded-xl p-6">
+                <h4 class="font-bold text-lg mb-3 text-purple-900">スタイリング方法</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-purple-500 mr-2">•</span>
+                    スタイリング剤は髪が濡れた状態で
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-500 mr-2">•</span>
+                    指でくるくると巻きながら乾かす
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-purple-500 mr-2">•</span>
+                    仕上げにオイルで艶をプラス
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div class="mt-16 text-center">
+            <div class="bg-white rounded-3xl p-8 max-w-2xl mx-auto shadow-lg">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">理想のパーマスタイルを見つけよう</h3>
+              <p class="text-gray-600 mb-6">お客様の髪質やライフスタイルに合わせて、最適なパーマをご提案いたします。</p>
+              <a
+                href="/#contact"
+                class="inline-block bg-gradient-to-b from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-blue-800"
+              >
+                ご予約・ご相談はこちら
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>,
+    { title: 'パーマ | 美容室success' }
+  )
+})
