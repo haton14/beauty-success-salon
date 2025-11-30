@@ -1,19 +1,10 @@
 import { createRoute } from 'honox/factory'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
+import { Layout } from '../../components/Layout'
 import { CTA } from '../../components/CTA'
-import MobileMenu from '../../islands/MobileMenu'
 
 export default createRoute((c) => {
   return c.render(
-    <>
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav { display: flex !important; }
-        }
-      `}</style>
-      <MobileMenu />
-      <Header currentPage="staff" />
+    <Layout currentPage="staff" showFullFooter>
 
       {/* メインビジュアル */}
       <section class="pt-20 pb-12 bg-gradient-to-b from-blue-50 to-white">
@@ -129,9 +120,7 @@ export default createRoute((c) => {
 
       {/* CTA */}
       <CTA subtitle="スタッフ指名も承っております" />
-
-      <Footer showFullInfo />
-    </>,
+    </Layout>,
     { title: 'スタッフ紹介 | 美容室success' }
   )
 })

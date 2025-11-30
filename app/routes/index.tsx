@@ -1,18 +1,9 @@
 import { createRoute } from 'honox/factory'
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
-import MobileMenu from '../islands/MobileMenu'
+import { Layout } from '../components/Layout'
 
 export default createRoute((c) => {
   return c.render(
-    <>
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav { display: flex !important; }
-        }
-      `}</style>
-      <MobileMenu />
-      <Header />
+    <Layout>
 
       {/* ヒーローセクション */}
       <section class="relative min-h-screen flex items-center bg-gray-50">
@@ -551,8 +542,7 @@ export default createRoute((c) => {
         </div>
       </section>
 
-      <Footer />
-    </>,
+    </Layout>,
     { title: '美容室success | 茨城県鹿嶋市の美容室' }
   )
 })

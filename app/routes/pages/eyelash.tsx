@@ -1,19 +1,10 @@
 import { createRoute } from 'honox/factory'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
+import { Layout } from '../../components/Layout'
 import { CTA } from '../../components/CTA'
-import MobileMenu from '../../islands/MobileMenu'
 
 export default createRoute((c) => {
   return c.render(
-    <>
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav { display: flex !important; }
-        }
-      `}</style>
-      <MobileMenu />
-      <Header currentPage="eyelash" />
+    <Layout currentPage="eyelash" showFullFooter>
 
       {/* メインビジュアル */}
       <section class="pt-20 pb-12 bg-gradient-to-b from-pink-50 to-white">
@@ -207,9 +198,7 @@ export default createRoute((c) => {
 
       {/* CTA */}
       <CTA bgColor="bg-pink-50" />
-
-      <Footer showFullInfo />
-    </>,
+    </Layout>,
     { title: 'まつ毛パーマ | 美容室success' }
   )
 })

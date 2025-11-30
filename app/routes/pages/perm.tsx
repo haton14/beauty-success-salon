@@ -1,18 +1,9 @@
 import { createRoute } from 'honox/factory'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
-import MobileMenu from '../../islands/MobileMenu'
+import { Layout } from '../../components/Layout'
 
 export default createRoute((c) => {
   return c.render(
-    <>
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav { display: flex !important; }
-        }
-      `}</style>
-      <MobileMenu />
-      <Header currentPage="perm" />
+    <Layout currentPage="perm">
 
       {/* メインコンテンツ */}
       <section class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
@@ -218,9 +209,7 @@ export default createRoute((c) => {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </>,
+    </Layout>,
     { title: 'パーマ | 美容室success' }
   )
 })

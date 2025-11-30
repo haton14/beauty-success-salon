@@ -25,7 +25,7 @@ export const Header: FC<Props> = ({ currentPage }) => {
             ) : (
               <>
                 <a href="#concept" class="text-gray-700 hover:text-blue-800 transition text-sm lg:text-base">私たちについて</a>
-                <a href="#menu" class="text-gray-700 hover:text-blue-800 transition text-sm lg:text-base">料金</a>
+                <a href="#menu" class="text-gray-700 hover:text-blue-800 transition text-sm lg:text-base">メニュー</a>
               </>
             )}
             <span class="text-gray-400 hidden lg:inline">|</span>
@@ -72,7 +72,7 @@ export const Header: FC<Props> = ({ currentPage }) => {
             ) : (
               <>
                 <a href="#concept" class="block text-gray-700 hover:text-blue-800">私たちについて</a>
-                <a href="#menu" class="block text-gray-700 hover:text-blue-800 mt-2">料金</a>
+                <a href="#menu" class="block text-gray-700 hover:text-blue-800 mt-2">メニュー</a>
               </>
             )}
           </div>

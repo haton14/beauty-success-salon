@@ -1,19 +1,10 @@
 import { createRoute } from 'honox/factory'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
+import { Layout } from '../../components/Layout'
 import { CTA } from '../../components/CTA'
-import MobileMenu from '../../islands/MobileMenu'
 
 export default createRoute((c) => {
   return c.render(
-    <>
-      <style>{`
-        @media (min-width: 1024px) {
-          .desktop-nav { display: flex !important; }
-        }
-      `}</style>
-      <MobileMenu />
-      <Header currentPage="kimono" />
+    <Layout currentPage="kimono" showFullFooter>
 
       {/* メインビジュアル */}
       <section class="pt-20 pb-12 bg-gradient-to-b from-purple-50 to-white">
@@ -276,9 +267,7 @@ export default createRoute((c) => {
 
       {/* CTA */}
       <CTA subtitle="まずはお気軽にご相談ください" bgColor="bg-purple-50" />
-
-      <Footer showFullInfo />
-    </>,
+    </Layout>,
     { title: '着付け・成人式 | 美容室success' }
   )
 })
