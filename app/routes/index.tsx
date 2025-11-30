@@ -504,7 +504,7 @@ export default createRoute((c) => {
             <h3 class="text-2xl font-bold text-gray-800 mb-8">Follow Us</h3>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://ameblo.jp/biyousitu-success-mayumi/"
+                href="https://ameblo.jp/success7700/"
                 target="_blank"
                 class="flex items-center gap-3 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 border border-gray-300"
               >
