@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --mode client",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
     "deploy:preview": "npm run build && wrangler deploy --env preview",

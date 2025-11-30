@@ -15,14 +15,20 @@ export default defineConfig(({ mode }) => {
             assetFileNames: 'static/assets/[name]-[hash].[ext]'
           }
         },
-        emptyOutDir: false
+        emptyOutDir: false,
+        manifest: true,
+        manifestFileName: '.vite/client-manifest.json'
       }
     }
   }
 
   return {
     plugins: [
-      honox(),
+      honox({
+        client: {
+          input: ['./app/client.ts']
+        }
+      }),
       build({
         entry: 'app/server.ts',
         output: '_worker.js'
