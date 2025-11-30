@@ -1,10 +1,13 @@
 name = "beauty-salon-success"
 main = "dist/_worker.js"
 compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 
 [assets]
 directory = "dist"
+binding = "ASSETS"
+not_found_handling = "none"
 
 [build]
 command = "npm run build"
