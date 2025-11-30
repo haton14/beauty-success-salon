@@ -37,7 +37,7 @@ export default createRoute((c) => {
       </section>
 
       {/* コンセプト */}
-      <section id="concept" class="py-20 bg-white">
+      <section id="concept" class="py-20 bg-white fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">私たちについて</h3>
@@ -62,7 +62,7 @@ export default createRoute((c) => {
       </section>
 
       {/* メニュー */}
-      <section id="menu" class="py-20 bg-gray-50">
+      <section id="menu" class="py-20 bg-gray-50 fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">Menu & Price</h3>
@@ -278,7 +278,7 @@ export default createRoute((c) => {
       </section>
 
       {/* sins 酸性ストレート */}
-      <section id="sins" class="py-16 bg-gray-50">
+      <section id="sins" class="py-16 bg-gray-50 fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center mb-12">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
@@ -329,7 +329,7 @@ export default createRoute((c) => {
       </section>
 
       {/* FAQ */}
-      <section class="py-20 bg-gray-50">
+      <section class="py-20 bg-gray-50 fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">よくあるご質問</h3>
@@ -398,7 +398,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 予約セクション */}
-      <section id="contact" class="py-16 bg-gray-100">
+      <section id="contact" class="py-16 bg-gray-100 fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">ご予約・お問い合わせ</h3>
@@ -435,7 +435,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 営業時間・アクセス */}
-      <section id="access" class="py-20 bg-white">
+      <section id="access" class="py-20 bg-white fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">営業時間・アクセス</h3>
@@ -498,7 +498,7 @@ export default createRoute((c) => {
       </section>
 
       {/* SNS */}
-      <section class="py-12 bg-white">
+      <section class="py-12 bg-white fade-in-section">
         <div class="container mx-auto px-4">
           <div class="text-center">
             <h3 class="text-2xl font-bold text-gray-800 mb-8">Follow Us</h3>
