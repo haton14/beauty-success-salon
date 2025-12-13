@@ -1,6 +1,10 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
 import { ServiceCard } from '../../components/common/ServiceCard'
+import { CheckListItem } from '../../components/common/CheckListItem'
+import { ServiceInfoBox } from '../../components/common/ServiceInfoBox'
+import { PriceRow } from '../../components/common/PriceRow'
+import { TipCard } from '../../components/common/TipCard'
 
 export default createRoute((c) => {
   return c.render(
@@ -23,31 +27,21 @@ export default createRoute((c) => {
                 <div>
                   <h3 class="font-bold text-lg mb-4 text-teal-900">こんな方におすすめ</h3>
                   <ul class="space-y-2 text-gray-700 mb-6">
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      ボリュームが欲しい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      スタイリングを楽にしたい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      動きのあるスタイルにしたい方
-                    </li>
+                    <CheckListItem>ボリュームが欲しい方</CheckListItem>
+                    <CheckListItem>スタイリングを楽にしたい方</CheckListItem>
+                    <CheckListItem>動きのあるスタイルにしたい方</CheckListItem>
                   </ul>
-                  <div class="bg-teal-50 rounded-xl p-4">
-                    <p class="text-sm text-teal-800 font-semibold mb-2">施術時間：約2〜2.5時間</p>
-                    <p class="text-sm text-gray-600">持続期間：2〜3ヶ月</p>
-                  </div>
+                  <ServiceInfoBox
+                    duration="約2〜2.5時間"
+                    retention="2〜3ヶ月"
+                    bgColor="bg-teal-50"
+                    textColor="text-teal-800"
+                  />
                 </div>
                 <div>
                   <h3 class="font-bold text-lg mb-4 text-teal-900">料金</h3>
                   <div class="space-y-3 mb-6">
-                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span class="text-gray-700 font-medium">パーマ</span>
-                      <span class="font-bold text-xl text-teal-900">¥8,800〜</span>
-                    </div>
+                    <PriceRow label="パーマ" price="¥8,800〜" priceColor="text-teal-900" />
                   </div>
                   <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
                 </div>
@@ -60,35 +54,22 @@ export default createRoute((c) => {
                 <div>
                   <h3 class="font-bold text-lg mb-4 text-purple-900">こんな方におすすめ</h3>
                   <ul class="space-y-2 text-gray-700 mb-6">
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      髪のダメージを最小限に抑えたい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      大きく弾力のあるカールが欲しい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      乾かすだけでカールが再現できる髪にしたい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      長持ちするパーマをかけたい方
-                    </li>
+                    <CheckListItem>髪のダメージを最小限に抑えたい方</CheckListItem>
+                    <CheckListItem>大きく弾力のあるカールが欲しい方</CheckListItem>
+                    <CheckListItem>乾かすだけでカールが再現できる髪にしたい方</CheckListItem>
+                    <CheckListItem>長持ちするパーマをかけたい方</CheckListItem>
                   </ul>
-                  <div class="bg-purple-50 rounded-xl p-4">
-                    <p class="text-sm text-purple-800 font-semibold mb-2">施術時間：約3〜3.5時間</p>
-                    <p class="text-sm text-gray-600">持続期間：4〜6ヶ月</p>
-                  </div>
+                  <ServiceInfoBox
+                    duration="約3〜3.5時間"
+                    retention="4〜6ヶ月"
+                    bgColor="bg-purple-50"
+                    textColor="text-purple-800"
+                  />
                 </div>
                 <div>
                   <h3 class="font-bold text-lg mb-4 text-purple-900">料金</h3>
                   <div class="space-y-3 mb-6">
-                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span class="text-gray-700 font-medium">酸性デジタルパーマ</span>
-                      <span class="font-bold text-xl text-purple-900">¥17,600</span>
-                    </div>
+                    <PriceRow label="酸性デジタルパーマ" price="¥17,600" priceColor="text-purple-900" />
                   </div>
                   <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
                 </div>
@@ -101,31 +82,19 @@ export default createRoute((c) => {
                 <div>
                   <h3 class="font-bold text-lg mb-4 text-blue-900">こんな方におすすめ</h3>
                   <ul class="space-y-2 text-gray-700 mb-6">
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      ナチュラルで柔らかいカールが欲しい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      根元からふんわりボリュームが欲しい方
-                    </li>
-                    <li class="flex items-start">
-                      <span class="text-green-500 mr-2">✓</span>
-                      軽い質感のスタイルが好みの方
-                    </li>
+                    <CheckListItem>ナチュラルで柔らかいカールが欲しい方</CheckListItem>
+                    <CheckListItem>根元からふんわりボリュームが欲しい方</CheckListItem>
+                    <CheckListItem>軽い質感のスタイルが好みの方</CheckListItem>
                   </ul>
-                  <div class="bg-blue-50 rounded-xl p-4">
-                    <p class="text-sm text-blue-800 font-semibold mb-2">施術時間：約2.5〜3時間</p>
-                    <p class="text-sm text-gray-600">持続期間：3〜5ヶ月</p>
-                  </div>
+                  <ServiceInfoBox
+                    duration="約2.5〜3時間"
+                    retention="3〜5ヶ月"
+                  />
                 </div>
                 <div>
                   <h3 class="font-bold text-lg mb-4 text-blue-900">料金</h3>
                   <div class="space-y-3 mb-6">
-                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span class="text-gray-700 font-medium">エアーパーマ</span>
-                      <span class="font-bold text-xl text-blue-900">¥13,200</span>
-                    </div>
+                    <PriceRow label="エアーパーマ" price="¥13,200" />
                   </div>
                   <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
                 </div>
@@ -137,40 +106,24 @@ export default createRoute((c) => {
           <div class="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 max-w-4xl mx-auto">
             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
             <div class="grid md:grid-cols-2 gap-6">
-              <div class="bg-white rounded-xl p-6">
-                <h4 class="font-bold text-lg mb-3 text-blue-900">自宅でのケア</h4>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start">
-                    <span class="text-blue-500 mr-2">•</span>
-                    洗髪後は優しくタオルドライ
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-blue-500 mr-2">•</span>
-                    保湿力の高いトリートメントを使用
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-blue-500 mr-2">•</span>
-                    ドライヤーは低温で乾かす
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white rounded-xl p-6">
-                <h4 class="font-bold text-lg mb-3 text-purple-900">スタイリング方法</h4>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start">
-                    <span class="text-purple-500 mr-2">•</span>
-                    スタイリング剤は髪が濡れた状態で
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-purple-500 mr-2">•</span>
-                    指でくるくると巻きながら乾かす
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-purple-500 mr-2">•</span>
-                    仕上げにオイルで艶をプラス
-                  </li>
-                </ul>
-              </div>
+              <TipCard
+                title="自宅でのケア"
+                items={[
+                  '洗髪後は優しくタオルドライ',
+                  '保湿力の高いトリートメントを使用',
+                  'ドライヤーは低温で乾かす'
+                ]}
+              />
+              <TipCard
+                title="スタイリング方法"
+                items={[
+                  'スタイリング剤は髪が濡れた状態で',
+                  '指でくるくると巻きながら乾かす',
+                  '仕上げにオイルで艶をプラス'
+                ]}
+                iconColor="text-purple-500"
+                titleColor="text-purple-900"
+              />
             </div>
           </div>
 
