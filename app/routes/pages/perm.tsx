@@ -8,7 +8,7 @@ import { TipCard } from '../../components/common/TipCard'
 
 export default createRoute((c) => {
   return c.render(
-    <Layout currentPage="perm">
+    <Layout currentPage="perm" showFullFooter>
 
       {/* メインコンテンツ */}
       <section class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
