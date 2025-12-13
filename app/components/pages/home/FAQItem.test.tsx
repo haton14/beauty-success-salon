@@ -32,7 +32,7 @@ describe('FAQ項目', () => {
       }))
 
       expect(html).toContain('>Q<')
-      expect(html).toContain('bg-blue-600')
+      expect(html).toContain('bg-primary-600')
     })
 
     it('回答にAマークが表示される', () => {
@@ -42,7 +42,7 @@ describe('FAQ項目', () => {
       }))
 
       expect(html).toContain('>A<')
-      expect(html).toContain('bg-green-500')
+      expect(html).toContain('bg-secondary-500')
     })
   })
 

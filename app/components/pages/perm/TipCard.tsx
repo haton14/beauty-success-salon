@@ -1,4 +1,5 @@
 import type { FC } from 'hono/jsx'
+import { Card } from '../../common/Card'
 
 type Props = {
   title: string
@@ -10,12 +11,12 @@ type Props = {
 export const TipCard: FC<Props> = ({
   title,
   items,
-  iconColor = 'text-blue-500',
-  titleColor = 'text-blue-900'
+  iconColor = 'text-primary-500',
+  titleColor = 'text-primary-900'
 }) => {
   return (
-    <div class="bg-white rounded-xl p-6">
-      <h4 class={`font-bold text-lg mb-3 ${titleColor}`}>{title}</h4>
+    <Card>
+      <h4 class={`text-heading-4 mb-3 ${titleColor}`}>{title}</h4>
       <ul class="space-y-2 text-gray-700">
         {items.map((item) => (
           <li class="flex items-start">
@@ -24,6 +25,6 @@ export const TipCard: FC<Props> = ({
           </li>
         ))}
       </ul>
-    </div>
+    </Card>
   )
 }

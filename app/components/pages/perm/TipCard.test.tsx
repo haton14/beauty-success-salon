@@ -53,7 +53,7 @@ describe('ヒントカード', () => {
         items: ['項目1']
       }))
 
-      expect(html).toContain('text-blue-500')
+      expect(html).toContain('text-primary-500')
     })
   })
 
@@ -74,7 +74,7 @@ describe('ヒントカード', () => {
         items: ['項目1']
       }))
 
-      expect(html).toContain('text-blue-900')
+      expect(html).toContain('text-primary-900')
     })
   })
 
@@ -94,7 +94,7 @@ describe('ヒントカード', () => {
         items: ['項目1']
       }))
 
-      expect(html).toContain('rounded-xl')
+      expect(html).toContain('rounded-2xl')
     })
 
     it('適切なパディングが設定される', () => {

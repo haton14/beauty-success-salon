@@ -51,14 +51,14 @@ describe('予約誘導セクション', () => {
     it('指定がなければ薄い青色で表示される', () => {
       const html = render(CTA({}))
 
-      expect(html).toContain('bg-blue-50')
+      expect(html).toContain('bg-primary-50')
     })
 
     it('ページのデザインに合わせた背景色を設定できる', () => {
       const html = render(CTA({ bgColor: 'bg-pink-50' }))
 
       expect(html).toContain('bg-pink-50')
-      expect(html).not.toContain('bg-blue-50')
+      expect(html).not.toContain('bg-primary-50')
     })
   })
 })

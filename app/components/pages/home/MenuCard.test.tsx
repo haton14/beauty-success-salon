@@ -21,9 +21,8 @@ describe('メニューカード', () => {
         children: '<div>内容</div>'
       }))
 
-      expect(html).toContain('text-2xl')
-      expect(html).toContain('font-bold')
-      expect(html).toContain('text-blue-900')
+      expect(html).toContain('text-heading-3')
+      expect(html).toContain('text-primary-900')
     })
   })
 

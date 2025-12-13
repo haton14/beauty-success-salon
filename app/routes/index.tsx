@@ -5,6 +5,7 @@ import { MenuCard } from '../components/pages/home/MenuCard'
 import { PriceItem } from '../components/pages/home/PriceItem'
 import { FAQItem } from '../components/pages/home/FAQItem'
 import { HeroButtons } from '../components/pages/home/HeroButtons'
+import { Button, PhoneButton } from '../components/common/Button'
 
 export default createRoute((c) => {
   return c.render(
@@ -54,9 +55,9 @@ export default createRoute((c) => {
               特に髪に優しい酸性ストレートや、リラックスできるヘッドスパもご好評いただいています。
             </p>
             <div>
-              <a href="/pages/staff" class="inline-block bg-blue-800 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition">
+              <Button href="/pages/staff">
                 スタッフ紹介を見る
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -175,12 +176,12 @@ export default createRoute((c) => {
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-4 items-center justify-center">
-              <a href="/pages/sins" class="inline-block w-44 text-center bg-gradient-to-b from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 border border-blue-800">
+              <Button href="/pages/sins" className="w-44">
                 詳しく見る →
-              </a>
-              <a href="#contact" class="inline-block w-44 text-center bg-white text-blue-800 px-6 py-3 rounded-full font-bold border-2 border-blue-800 hover:bg-blue-50 transition-all duration-200 shadow hover:shadow-md transform hover:-translate-y-0.5">
+              </Button>
+              <Button href="#contact" variant="secondary" className="w-44">
                 ご予約はこちら
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -223,25 +224,18 @@ export default createRoute((c) => {
             <div class="grid md:grid-cols-2 gap-8">
               {/* 電話予約 */}
               <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <h4 class="text-2xl font-semibold mb-4">電話予約</h4>
-                <a
-                  href="tel:0299697700"
-                  class="inline-block text-2xl font-bold text-white bg-gradient-to-b from-blue-600 to-blue-700 px-8 py-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-blue-800"
-                >
+                <h4 class="text-heading-3 font-semibold mb-4">電話予約</h4>
+                <PhoneButton href="tel:0299697700" className="text-2xl">
                   0299-69-7700
-                </a>
+                </PhoneButton>
               </div>
 
               {/* LINE予約 */}
               <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <h4 class="text-2xl font-semibold mb-4">LINE公式アカウント</h4>
-                <a
-                  href="https://lin.ee/uZbY0uQ"
-                  target="_blank"
-                  class="inline-block bg-gradient-to-b from-green-500 to-green-600 rounded-xl py-4 px-8 hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-green-700"
-                >
-                  <span class="text-white font-bold text-xl">LINEから予約する</span>
-                </a>
+                <h4 class="text-heading-3 font-semibold mb-4">LINE公式アカウント</h4>
+                <PhoneButton href="https://lin.ee/uZbY0uQ" variant="line" target="_blank" className="text-xl">
+                  LINEから予約する
+                </PhoneButton>
               </div>
             </div>
           </div>

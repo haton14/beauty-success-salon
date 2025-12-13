@@ -1,24 +1,25 @@
 import type { FC, Child } from 'hono/jsx'
+import { Card } from '../../common/Card'
 
 type Props = {
   title: string
   subtitle: string
-  color: 'teal' | 'purple' | 'blue'
+  color: 'accent' | 'highlight' | 'primary'
   recommended?: boolean
   children: Child
 }
 
 const colorMap = {
-  teal: 'from-teal-600 to-teal-700',
-  purple: 'from-purple-600 to-purple-700',
-  blue: 'from-blue-600 to-blue-700'
+  accent: 'from-accent-600 to-accent-700',
+  highlight: 'from-highlight-600 to-highlight-700',
+  primary: 'from-primary-600 to-primary-700'
 }
 
 export const ServiceCard: FC<Props> = ({ title, subtitle, color, recommended = false, children }) => {
   return (
-    <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+    <Card variant="featured" padding="lg" className="p-0 overflow-hidden">
       <div class={`bg-gradient-to-r ${colorMap[color]} p-6 text-white`}>
-        <h2 class="text-2xl font-bold flex items-center">
+        <h2 class="text-heading-3 flex items-center">
           {recommended && <span class="bg-white/20 rounded-lg px-3 py-1 mr-3">おすすめ</span>}
           {title}
         </h2>
@@ -27,6 +28,6 @@ export const ServiceCard: FC<Props> = ({ title, subtitle, color, recommended = f
       <div class="p-8">
         {children}
       </div>
-    </div>
+    </Card>
   )
 }

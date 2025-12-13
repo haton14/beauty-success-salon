@@ -1,4 +1,5 @@
 import type { FC } from 'hono/jsx'
+import { Card } from './Card'
 
 type Props = {
   title: string
@@ -20,12 +21,12 @@ export const GalleryCard: FC<Props> = ({
       : 'aspect-square'
 
   return (
-    <div class="bg-white rounded-2xl shadow-lg p-6">
+    <Card>
       <div class={`bg-gray-100 rounded-xl ${aspectClass} mb-4 flex items-center justify-center`}>
         {placeholder && <p class="text-gray-500">{placeholder}</p>}
       </div>
-      <h3 class="text-xl font-bold mb-2">{title}</h3>
+      <h3 class="text-heading-4 mb-2">{title}</h3>
       <p class="text-gray-600">{description}</p>
-    </div>
+    </Card>
   )
 }
