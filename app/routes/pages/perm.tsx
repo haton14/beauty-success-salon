@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
+import { ServiceCard } from '../../components/common/ServiceCard'
 
 export default createRoute((c) => {
   return c.render(
@@ -17,140 +18,119 @@ export default createRoute((c) => {
           {/* メニューカード */}
           <div class="grid gap-8 max-w-6xl mx-auto">
             {/* パーマ */}
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div class="bg-gradient-to-r from-teal-600 to-teal-700 p-6 text-white">
-                <h2 class="text-2xl font-bold">パーマ</h2>
-                <p class="mt-2 opacity-90">理想のカールやウェーブを実現</p>
-              </div>
-              <div class="p-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 class="font-bold text-lg mb-4 text-teal-900">こんな方におすすめ</h3>
-                    <ul class="space-y-2 text-gray-700 mb-6">
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        ボリュームが欲しい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        スタイリングを楽にしたい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        動きのあるスタイルにしたい方
-                      </li>
-                    </ul>
-                    <div class="bg-teal-50 rounded-xl p-4">
-                      <p class="text-sm text-teal-800 font-semibold mb-2">施術時間：約2〜2.5時間</p>
-                      <p class="text-sm text-gray-600">持続期間：2〜3ヶ月</p>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-4 text-teal-900">料金</h3>
-                    <div class="space-y-3 mb-6">
-                      <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span class="text-gray-700 font-medium">パーマ</span>
-                        <span class="font-bold text-xl text-teal-900">¥8,800〜</span>
-                      </div>
-                    </div>
-                    <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+            <ServiceCard title="パーマ" subtitle="理想のカールやウェーブを実現" color="teal">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-teal-900">こんな方におすすめ</h3>
+                  <ul class="space-y-2 text-gray-700 mb-6">
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      ボリュームが欲しい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      スタイリングを楽にしたい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      動きのあるスタイルにしたい方
+                    </li>
+                  </ul>
+                  <div class="bg-teal-50 rounded-xl p-4">
+                    <p class="text-sm text-teal-800 font-semibold mb-2">施術時間：約2〜2.5時間</p>
+                    <p class="text-sm text-gray-600">持続期間：2〜3ヶ月</p>
                   </div>
                 </div>
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-teal-900">料金</h3>
+                  <div class="space-y-3 mb-6">
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span class="text-gray-700 font-medium">パーマ</span>
+                      <span class="font-bold text-xl text-teal-900">¥8,800〜</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+                </div>
               </div>
-            </div>
+            </ServiceCard>
 
             {/* 酸性デジタルパーマ */}
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div class="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-white">
-                <h2 class="text-2xl font-bold flex items-center">
-                  <span class="bg-white/20 rounded-lg px-3 py-1 mr-3">おすすめ</span>
-                  酸性デジタルパーマ
-                </h2>
-                <p class="mt-2 opacity-90">髪に優しく、弾力のあるカールを実現</p>
-              </div>
-              <div class="p-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 class="font-bold text-lg mb-4 text-purple-900">こんな方におすすめ</h3>
-                    <ul class="space-y-2 text-gray-700 mb-6">
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        髪のダメージを最小限に抑えたい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        大きく弾力のあるカールが欲しい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        乾かすだけでカールが再現できる髪にしたい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        長持ちするパーマをかけたい方
-                      </li>
-                    </ul>
-                    <div class="bg-purple-50 rounded-xl p-4">
-                      <p class="text-sm text-purple-800 font-semibold mb-2">施術時間：約3〜3.5時間</p>
-                      <p class="text-sm text-gray-600">持続期間：4〜6ヶ月</p>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-4 text-purple-900">料金</h3>
-                    <div class="space-y-3 mb-6">
-                      <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span class="text-gray-700 font-medium">酸性デジタルパーマ</span>
-                        <span class="font-bold text-xl text-purple-900">¥17,600</span>
-                      </div>
-                    </div>
-                    <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+            <ServiceCard title="酸性デジタルパーマ" subtitle="髪に優しく、弾力のあるカールを実現" color="purple" recommended>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-purple-900">こんな方におすすめ</h3>
+                  <ul class="space-y-2 text-gray-700 mb-6">
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      髪のダメージを最小限に抑えたい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      大きく弾力のあるカールが欲しい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      乾かすだけでカールが再現できる髪にしたい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      長持ちするパーマをかけたい方
+                    </li>
+                  </ul>
+                  <div class="bg-purple-50 rounded-xl p-4">
+                    <p class="text-sm text-purple-800 font-semibold mb-2">施術時間：約3〜3.5時間</p>
+                    <p class="text-sm text-gray-600">持続期間：4〜6ヶ月</p>
                   </div>
                 </div>
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-purple-900">料金</h3>
+                  <div class="space-y-3 mb-6">
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span class="text-gray-700 font-medium">酸性デジタルパーマ</span>
+                      <span class="font-bold text-xl text-purple-900">¥17,600</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+                </div>
               </div>
-            </div>
+            </ServiceCard>
 
             {/* エアーパーマ */}
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-              <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
-                <h2 class="text-2xl font-bold">エアーパーマ</h2>
-                <p class="mt-2 opacity-90">ふんわり軽やかな質感のカール</p>
-              </div>
-              <div class="p-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 class="font-bold text-lg mb-4 text-blue-900">こんな方におすすめ</h3>
-                    <ul class="space-y-2 text-gray-700 mb-6">
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        ナチュラルで柔らかいカールが欲しい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        根元からふんわりボリュームが欲しい方
-                      </li>
-                      <li class="flex items-start">
-                        <span class="text-green-500 mr-2">✓</span>
-                        軽い質感のスタイルが好みの方
-                      </li>
-                    </ul>
-                    <div class="bg-blue-50 rounded-xl p-4">
-                      <p class="text-sm text-blue-800 font-semibold mb-2">施術時間：約2.5〜3時間</p>
-                      <p class="text-sm text-gray-600">持続期間：3〜5ヶ月</p>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-4 text-blue-900">料金</h3>
-                    <div class="space-y-3 mb-6">
-                      <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span class="text-gray-700 font-medium">エアーパーマ</span>
-                        <span class="font-bold text-xl text-blue-900">¥13,200</span>
-                      </div>
-                    </div>
-                    <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+            <ServiceCard title="エアーパーマ" subtitle="ふんわり軽やかな質感のカール" color="blue">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-blue-900">こんな方におすすめ</h3>
+                  <ul class="space-y-2 text-gray-700 mb-6">
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      ナチュラルで柔らかいカールが欲しい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      根元からふんわりボリュームが欲しい方
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-500 mr-2">✓</span>
+                      軽い質感のスタイルが好みの方
+                    </li>
+                  </ul>
+                  <div class="bg-blue-50 rounded-xl p-4">
+                    <p class="text-sm text-blue-800 font-semibold mb-2">施術時間：約2.5〜3時間</p>
+                    <p class="text-sm text-gray-600">持続期間：3〜5ヶ月</p>
                   </div>
                 </div>
+                <div>
+                  <h3 class="font-bold text-lg mb-4 text-blue-900">料金</h3>
+                  <div class="space-y-3 mb-6">
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span class="text-gray-700 font-medium">エアーパーマ</span>
+                      <span class="font-bold text-xl text-blue-900">¥13,200</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
+                </div>
               </div>
-            </div>
+            </ServiceCard>
           </div>
 
           {/* スタイリングアドバイス */}
