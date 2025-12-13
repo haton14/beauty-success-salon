@@ -1,6 +1,8 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
 import { CTA } from '../../components/common/CTA'
+import { CheckListItem } from '../../components/common/CheckListItem'
+import { PriceRow } from '../../components/common/PriceRow'
 
 export default createRoute((c) => {
   return c.render(
@@ -24,22 +26,10 @@ export default createRoute((c) => {
 
             <div class="bg-blue-50 rounded-xl p-8 mb-12">
               <ul class="space-y-4 text-lg">
-                <li class="flex items-start">
-                  <span class="text-blue-800 mr-3 mt-1">◆</span>
-                  <span>何度も縮毛矯正を施術して傷めた方</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-800 mr-3 mt-1">◆</span>
-                  <span>針金のように真っ直ぐになりたくない方</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-800 mr-3 mt-1">◆</span>
-                  <span>自然な仕上がりを求める方</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-800 mr-3 mt-1">◆</span>
-                  <span>ハリがあり、艶々な髪質になりたい方</span>
-                </li>
+                <CheckListItem icon="◆" iconColor="text-blue-800">何度も縮毛矯正を施術して傷めた方</CheckListItem>
+                <CheckListItem icon="◆" iconColor="text-blue-800">針金のように真っ直ぐになりたくない方</CheckListItem>
+                <CheckListItem icon="◆" iconColor="text-blue-800">自然な仕上がりを求める方</CheckListItem>
+                <CheckListItem icon="◆" iconColor="text-blue-800">ハリがあり、艶々な髪質になりたい方</CheckListItem>
               </ul>
             </div>
 
@@ -130,18 +120,9 @@ export default createRoute((c) => {
 
             <div class="bg-white rounded-2xl p-8 shadow-lg">
               <div class="space-y-4">
-                <div class="flex justify-between pb-3 border-b">
-                  <span class="text-lg">ショート</span>
-                  <span class="text-xl font-bold text-blue-900">¥19,800</span>
-                </div>
-                <div class="flex justify-between pb-3 border-b">
-                  <span class="text-lg">ミディアム</span>
-                  <span class="text-xl font-bold text-blue-900">¥22,000</span>
-                </div>
-                <div class="flex justify-between pb-3">
-                  <span class="text-lg">ロング</span>
-                  <span class="text-xl font-bold text-blue-900">¥24,200</span>
-                </div>
+                <PriceRow label="ショート" price="¥19,800" variant="border" />
+                <PriceRow label="ミディアム" price="¥22,000" variant="border" />
+                <PriceRow label="ロング" price="¥24,200" variant="border" />
               </div>
               <p class="text-sm text-gray-500 mt-6">※シャンプー・ブロー・カット込み</p>
             </div>
