@@ -34,7 +34,7 @@ describe('フッター', () => {
       const html = render(Footer({ showFullInfo: true }))
 
       expect(html).toContain('<h2')
-      expect(html).toContain('美容室SUCCESS')
+      expect(html).toContain('美容室success')
     })
 
     it('訪問者が店舗の場所を確認できる', () => {

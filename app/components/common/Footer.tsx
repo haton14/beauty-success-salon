@@ -11,7 +11,7 @@ export const Footer: FC<Props> = ({ showFullInfo = false }) => {
         <div class="text-center">
           {showFullInfo && (
             <>
-              <h2 class="text-2xl font-bold mb-4 text-gray-800">美容室SUCCESS</h2>
+              <h2 class="text-2xl font-bold mb-4 text-gray-800">美容室success</h2>
               <p class="text-gray-600 mb-1">〒314-0042 茨城県鹿嶋市小山1072-88</p>
               <p class="text-gray-600 mb-8">TEL: 0299-69-7700</p>
 
