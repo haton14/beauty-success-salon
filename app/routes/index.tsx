@@ -1,6 +1,7 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../components/common/Layout'
 import { SectionHeader } from '../components/common/SectionHeader'
+import { MenuCard } from '../components/common/MenuCard'
 import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 export default createRoute((c) => {
@@ -67,207 +68,175 @@ export default createRoute((c) => {
           {/* メニューカテゴリ */}
           <div class="max-w-5xl mx-auto space-y-12">
             {/* カット */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">カット</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">カット<span class="text-xs text-gray-500">（シャンプー・ブロー込）</span></span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥4,400</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">幼児カット</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,500</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">小中高校生<span class="text-xs text-gray-500">（シャンプー・ブロー込）</span></span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥3,310</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">前髪カット</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥1,100</span>
-                </div>
+            <MenuCard title="カット">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">カット<span class="text-xs text-gray-500">（シャンプー・ブロー込）</span></span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥4,400</span>
               </div>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">幼児カット</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,500</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">小中高校生<span class="text-xs text-gray-500">（シャンプー・ブロー込）</span></span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥3,310</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">前髪カット</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥1,100</span>
+              </div>
+            </MenuCard>
 
             {/* カラー */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">カラー</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">カラー＋カット</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥8,800〜</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">カラーのみ</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥6,600〜</span>
-                </div>
+            <MenuCard title="カラー" note="※上記料金はシャンプー・ブロー込み">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">カラー＋カット</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥8,800〜</span>
               </div>
-              <p class="text-sm text-gray-500 mt-3">※上記料金はシャンプー・ブロー込み</p>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">カラーのみ</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥6,600〜</span>
+              </div>
+            </MenuCard>
 
             {/* ストレート */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">ストレート</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">sins 酸性ストレート（ショート）</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥19,800</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">縮毛矯正</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥16,500〜</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">sins 酸性ストレート（ミディアム）</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥22,000</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">縮毛矯正(メンズ)</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥7,700〜</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">sins 酸性ストレート（ロング）</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥24,200</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">ストレートパーマ</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥9,900〜</span>
-                </div>
+            <MenuCard title="ストレート" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/sins" linkText="sins酸性ストレートを詳しく見る">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">sins 酸性ストレート（ショート）</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥19,800</span>
               </div>
-              <p class="text-sm text-gray-500 mt-3">※上記料金はカット・シャンプー・ブロー込み</p>
-              <a href="/pages/sins" class="mt-4 inline-block bg-blue-800 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
-                sins酸性ストレートを詳しく見る
-              </a>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">縮毛矯正</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥16,500〜</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">sins 酸性ストレート（ミディアム）</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥22,000</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">縮毛矯正(メンズ)</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥7,700〜</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">sins 酸性ストレート（ロング）</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥24,200</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">ストレートパーマ</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥9,900〜</span>
+              </div>
+            </MenuCard>
 
             {/* パーマ */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">パーマ</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">パーマ</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥8,800〜</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">エアーパーマ</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥13,200</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">酸性デジタルパーマ</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥17,600</span>
-                </div>
+            <MenuCard title="パーマ" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/perm" linkText="パーマを詳しく見る">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">パーマ</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥8,800〜</span>
               </div>
-              <p class="text-sm text-gray-500 mt-3">※上記料金はカット・シャンプー・ブロー込み</p>
-              <a href="/pages/perm" class="mt-4 inline-block bg-blue-800 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">
-                パーマを詳しく見る
-              </a>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">エアーパーマ</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥13,200</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">酸性デジタルパーマ</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥17,600</span>
+              </div>
+            </MenuCard>
 
             {/* ヘッドスパ・トリートメント */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">ヘッドスパ・トリートメント</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">水のヘッドスパ (15分)</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,750〜</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">トリートメント</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥1,320〜</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">ドライヘッドスパ (30分)</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥3,000</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">シャンプー</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥1,100</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">ドライヘッドスパ (60分)</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥6,000</span>
-                </div>
+            <MenuCard title="ヘッドスパ・トリートメント" note="※ドライヘッドスパは女性限定・完全個室">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">水のヘッドスパ (15分)</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,750〜</span>
               </div>
-              <p class="text-sm text-gray-500 mt-3">※ドライヘッドスパは女性限定・完全個室</p>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">トリートメント</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥1,320〜</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">ドライヘッドスパ (30分)</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥3,000</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">シャンプー</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥1,100</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">ドライヘッドスパ (60分)</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥6,000</span>
+              </div>
+            </MenuCard>
 
             {/* ヘアセット・着付け */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">ヘアセット・着付け</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">ヘアセット</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥4,400</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">着付け（訪問着）</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥11,000</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">メイク</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,200</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">着付け（振袖）</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥8,800</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">成人式(着付け・ヘアセット・メイク)</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥22,000</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">夏の浴衣着付け</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="text-blue-900 whitespace-nowrap">
-                    <span class="text-sm">ヘアセット(¥4,400)時</span>
-                    <span class="font-semibold"> 無料</span>
-                  </span>
-                </div>
+            <MenuCard title="ヘアセット・着付け">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">ヘアセット</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥4,400</span>
               </div>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">着付け（訪問着）</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥11,000</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">メイク</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,200</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">着付け（振袖）</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥8,800</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">成人式(着付け・ヘアセット・メイク)</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥22,000</span>
+              </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">夏の浴衣着付け</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="text-blue-900 whitespace-nowrap">
+                  <span class="text-sm">ヘアセット(¥4,400)時</span>
+                  <span class="font-semibold"> 無料</span>
+                </span>
+              </div>
+            </MenuCard>
 
             {/* その他メニュー */}
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h4 class="text-2xl font-bold mb-6 text-blue-900 border-b-2 border-blue-200 pb-3">その他メニュー</h4>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">まつ毛パーマ</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,200</span>
-                </div>
-                <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                  <span class="text-gray-700">眉カット</span>
-                  <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                  <span class="font-semibold text-blue-900 whitespace-nowrap">¥550</span>
-                </div>
+            <MenuCard title="その他メニュー" note="※学生は眉カット無料">
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">まつ毛パーマ</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥2,200</span>
               </div>
-              <p class="text-sm text-gray-500 mt-3">※学生は眉カット無料</p>
-            </div>
+              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
+                <span class="text-gray-700">眉カット</span>
+                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
+                <span class="font-semibold text-blue-900 whitespace-nowrap">¥550</span>
+              </div>
+            </MenuCard>
           </div>
         </div>
       </section>
