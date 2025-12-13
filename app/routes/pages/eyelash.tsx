@@ -3,6 +3,9 @@ import { Layout } from '../../components/common/Layout'
 import { CTA } from '../../components/common/CTA'
 import { FeatureCard } from '../../components/common/FeatureCard'
 import { StepItem } from '../../components/common/StepItem'
+import { GalleryCard } from '../../components/common/GalleryCard'
+import { CheckListItem } from '../../components/common/CheckListItem'
+import { ServiceInfoBox } from '../../components/common/ServiceInfoBox'
 
 export default createRoute((c) => {
   return c.render(
@@ -65,37 +68,26 @@ export default createRoute((c) => {
             <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">仕上がりイメージ</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="bg-gray-100 rounded-xl aspect-video mb-4 flex items-center justify-center">
-                  <p class="text-gray-500">ナチュラルカール</p>
-                </div>
-                <h3 class="text-xl font-bold mb-2">ナチュラルカール</h3>
-                <p class="text-gray-600">自然な上向きカール。普段使いに最適で、すっぴんでも映える仕上がり。</p>
-              </div>
-
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="bg-gray-100 rounded-xl aspect-video mb-4 flex items-center justify-center">
-                  <p class="text-gray-500">しっかりカール</p>
-                </div>
-                <h3 class="text-xl font-bold mb-2">しっかりカール</h3>
-                <p class="text-gray-600">根元からしっかり立ち上げるカール。華やかな印象で特別な日にも。</p>
-              </div>
-
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="bg-gray-100 rounded-xl aspect-video mb-4 flex items-center justify-center">
-                  <p class="text-gray-500">セクシーカール</p>
-                </div>
-                <h3 class="text-xl font-bold mb-2">セクシーカール</h3>
-                <p class="text-gray-600">毛先を中心にカールをつけた大人っぽい仕上がり。</p>
-              </div>
-
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="bg-gray-100 rounded-xl aspect-video mb-4 flex items-center justify-center">
-                  <p class="text-gray-500">キュートカール</p>
-                </div>
-                <h3 class="text-xl font-bold mb-2">キュートカール</h3>
-                <p class="text-gray-600">丸みのある可愛らしいカール。若々しい印象に。</p>
-              </div>
+              <GalleryCard
+                title="ナチュラルカール"
+                description="自然な上向きカール。普段使いに最適で、すっぴんでも映える仕上がり。"
+                placeholder="ナチュラルカール"
+              />
+              <GalleryCard
+                title="しっかりカール"
+                description="根元からしっかり立ち上げるカール。華やかな印象で特別な日にも。"
+                placeholder="しっかりカール"
+              />
+              <GalleryCard
+                title="セクシーカール"
+                description="毛先を中心にカールをつけた大人っぽい仕上がり。"
+                placeholder="セクシーカール"
+              />
+              <GalleryCard
+                title="キュートカール"
+                description="丸みのある可愛らしいカール。若々しい印象に。"
+                placeholder="キュートカール"
+              />
             </div>
           </div>
         </div>
@@ -115,8 +107,8 @@ export default createRoute((c) => {
               <StepItem step={5} title="仕上げ" description="トリートメントで栄養を与え、美しい仕上がりに。" />
             </div>
 
-            <div class="mt-8 bg-pink-50 rounded-xl p-6">
-              <p class="text-pink-900 font-semibold">施術時間：約60〜90分</p>
+            <div class="mt-8">
+              <ServiceInfoBox duration="約60〜90分" bgColor="bg-pink-50" textColor="text-pink-900" />
             </div>
           </div>
         </div>
@@ -131,16 +123,16 @@ export default createRoute((c) => {
             <div class="bg-white rounded-2xl shadow-lg p-8">
               <h3 class="text-xl font-bold mb-4">施術前</h3>
               <ul class="space-y-2 text-gray-700 mb-6">
-                <li>• マスカラは落としてご来店ください</li>
-                <li>• まつ毛エクステは事前に外してください</li>
-                <li>• コンタクトレンズは外していただく場合があります</li>
+                <CheckListItem icon="•" iconColor="text-gray-700">マスカラは落としてご来店ください</CheckListItem>
+                <CheckListItem icon="•" iconColor="text-gray-700">まつ毛エクステは事前に外してください</CheckListItem>
+                <CheckListItem icon="•" iconColor="text-gray-700">コンタクトレンズは外していただく場合があります</CheckListItem>
               </ul>
 
               <h3 class="text-xl font-bold mb-4">施術後</h3>
               <ul class="space-y-2 text-gray-700">
-                <li>• 施術後24時間は水に濡らさないでください</li>
-                <li>• 目をこすらないよう注意してください</li>
-                <li>• マスカラは翌日から使用可能です</li>
+                <CheckListItem icon="•" iconColor="text-gray-700">施術後24時間は水に濡らさないでください</CheckListItem>
+                <CheckListItem icon="•" iconColor="text-gray-700">目をこすらないよう注意してください</CheckListItem>
+                <CheckListItem icon="•" iconColor="text-gray-700">マスカラは翌日から使用可能です</CheckListItem>
               </ul>
             </div>
           </div>
