@@ -8,7 +8,7 @@ import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 export default createRoute((c) => {
   return c.render(
-    <Layout>
+    <Layout showFullFooter>
 
       {/* ヒーローセクション */}
       <section class="relative min-h-screen flex items-center bg-gray-50">
@@ -303,39 +303,6 @@ export default createRoute((c) => {
                 >
                 </iframe>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SNS */}
-      <section class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center">
-            <h3 class="text-2xl font-bold text-gray-800 mb-8">Follow Us</h3>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="https://ameblo.jp/success7700/"
-                target="_blank"
-                class="flex items-center gap-3 bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 border border-gray-300"
-              >
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
-                </svg>
-                <span class="font-semibold">店舗ブログ</span>
-              </a>
-              <a
-                href="https://www.instagram.com/7700success/"
-                target="_blank"
-                class="flex items-center gap-3 bg-gradient-to-b from-purple-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 hover:from-purple-600 hover:to-purple-700 border border-purple-700"
-              >
-                <img
-                  src="https://images.success-salon.haton14.com/Instagram_Glyph_Gradient.svg"
-                  alt="Instagram"
-                  class="w-6 h-6 brightness-0 invert"
-                />
-                <span class="font-semibold">@7700success</span>
-              </a>
             </div>
           </div>
         </div>
