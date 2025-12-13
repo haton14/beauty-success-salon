@@ -5,6 +5,7 @@ import { CheckListItem } from '../../components/common/CheckListItem'
 import { ServiceInfoBox } from '../../components/common/ServiceInfoBox'
 import { PriceRow } from '../../components/common/PriceRow'
 import { TipCard } from '../../components/common/TipCard'
+import { CTA } from '../../components/common/CTA'
 
 export default createRoute((c) => {
   return c.render(
@@ -127,21 +128,11 @@ export default createRoute((c) => {
             </div>
           </div>
 
-          {/* CTA */}
-          <div class="mt-16 text-center">
-            <div class="bg-white rounded-3xl p-8 max-w-2xl mx-auto shadow-lg">
-              <h3 class="text-2xl font-bold text-gray-800 mb-4">理想のパーマスタイルを見つけよう</h3>
-              <p class="text-gray-600 mb-6">お客様の髪質やライフスタイルに合わせて、最適なパーマをご提案いたします。</p>
-              <a
-                href="/#contact"
-                class="inline-block bg-gradient-to-b from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-blue-800"
-              >
-                ご予約・ご相談はこちら
-              </a>
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <CTA />
     </Layout>,
     { title: 'パーマ | 美容室success' }
   )
