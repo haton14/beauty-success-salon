@@ -1,10 +1,10 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
-import { ServiceCard } from '../../components/common/ServiceCard'
+import { ServiceCard } from '../../components/pages/perm/ServiceCard'
 import { CheckListItem } from '../../components/common/CheckListItem'
 import { ServiceInfoBox } from '../../components/common/ServiceInfoBox'
 import { PriceRow } from '../../components/common/PriceRow'
-import { TipCard } from '../../components/common/TipCard'
+import { TipCard } from '../../components/pages/perm/TipCard'
 import { CTA } from '../../components/common/CTA'
 
 export default createRoute((c) => {

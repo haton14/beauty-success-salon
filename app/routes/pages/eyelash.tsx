@@ -1,7 +1,7 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
 import { CTA } from '../../components/common/CTA'
-import { FeatureCard } from '../../components/common/FeatureCard'
+import { FeatureCard } from '../../components/pages/eyelash/FeatureCard'
 import { StepItem } from '../../components/common/StepItem'
 import { GalleryCard } from '../../components/common/GalleryCard'
 import { CheckListItem } from '../../components/common/CheckListItem'

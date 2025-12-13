@@ -1,9 +1,9 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../components/common/Layout'
-import { SectionHeader } from '../components/common/SectionHeader'
-import { MenuCard } from '../components/common/MenuCard'
-import { PriceItem } from '../components/common/PriceItem'
-import { FAQItem } from '../components/common/FAQItem'
+import { SectionHeader } from '../components/pages/home/SectionHeader'
+import { MenuCard } from '../components/pages/home/MenuCard'
+import { PriceItem } from '../components/pages/home/PriceItem'
+import { FAQItem } from '../components/pages/home/FAQItem'
 import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 export default createRoute((c) => {
