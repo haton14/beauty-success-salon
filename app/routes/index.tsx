@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../components/common/Layout'
+import { SectionHeader } from '../components/common/SectionHeader'
 import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 export default createRoute((c) => {
@@ -39,10 +40,7 @@ export default createRoute((c) => {
       {/* コンセプト */}
       <section id="concept" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">私たちについて</h3>
-            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
-          </div>
+          <SectionHeader title="私たちについて" />
           <div class="max-w-3xl mx-auto text-center">
             <h4 class="text-2xl font-semibold text-gray-800 mb-6">夫婦で営んで28年</h4>
             <p class="text-gray-600 leading-relaxed mb-4">
@@ -64,10 +62,7 @@ export default createRoute((c) => {
       {/* メニュー */}
       <section id="menu" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">Menu & Price</h3>
-            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
-          </div>
+          <SectionHeader title="Menu & Price" />
 
           {/* メニューカテゴリ */}
           <div class="max-w-5xl mx-auto space-y-12">
@@ -331,11 +326,7 @@ export default createRoute((c) => {
       {/* FAQ */}
       <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">よくあるご質問</h3>
-            <p class="text-lg text-gray-600 mb-4">sins酸性ストレートについて</p>
-            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
-          </div>
+          <SectionHeader title="よくあるご質問" subtitle="sins酸性ストレートについて" />
           <div class="max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-2xl shadow-lg p-6">
               <div>
@@ -437,10 +428,7 @@ export default createRoute((c) => {
       {/* 営業時間・アクセス */}
       <section id="access" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">営業時間・アクセス</h3>
-            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
-          </div>
+          <SectionHeader title="営業時間・アクセス" />
 
           <div class="max-w-4xl mx-auto">
             <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
