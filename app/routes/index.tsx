@@ -1,6 +1,6 @@
 import { createRoute } from 'honox/factory'
-import { Layout } from '../components/Layout'
-import { HeroButtons } from '../components/HeroButtons'
+import { Layout } from '../components/common/Layout'
+import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 export default createRoute((c) => {
   return c.render(

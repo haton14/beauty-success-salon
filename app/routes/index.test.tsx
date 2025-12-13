@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { HeroButtons } from '../components/HeroButtons'
+import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 const render = (component: any): string => component.toString()
 

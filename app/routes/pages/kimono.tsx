@@ -1,6 +1,6 @@
 import { createRoute } from 'honox/factory'
-import { Layout } from '../../components/Layout'
-import { CTA } from '../../components/CTA'
+import { Layout } from '../../components/common/Layout'
+import { CTA } from '../../components/common/CTA'
 
 export default createRoute((c) => {
   return c.render(
