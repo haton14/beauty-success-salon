@@ -1,6 +1,7 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
 import { CTA } from '../../components/common/CTA'
+import { FeatureCard } from '../../components/common/FeatureCard'
 
 export default createRoute((c) => {
   return c.render(
@@ -23,36 +24,34 @@ export default createRoute((c) => {
             <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">まつ毛パーマの魅力</h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-              <div class="text-center">
-                <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FeatureCard
+                title="目力アップ"
+                description="自然なカールで目元がパッチリ。マスカラなしでも印象的な目元に。"
+                icon={
                   <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                   </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3">目力アップ</h3>
-                <p class="text-gray-600">自然なカールで目元がパッチリ。マスカラなしでも印象的な目元に。</p>
-              </div>
-
-              <div class="text-center">
-                <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                }
+              />
+              <FeatureCard
+                title="時短メイク"
+                description="朝のメイク時間を大幅短縮。ビューラー不要で忙しい朝も楽々。"
+                icon={
                   <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3">時短メイク</h3>
-                <p class="text-gray-600">朝のメイク時間を大幅短縮。ビューラー不要で忙しい朝も楽々。</p>
-              </div>
-
-              <div class="text-center">
-                <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                }
+              />
+              <FeatureCard
+                title="持続性"
+                description="約1〜2ヶ月持続。まつ毛に優しい薬剤で自然な仕上がりをキープ。"
+                icon={
                   <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3">持続性</h3>
-                <p class="text-gray-600">約1〜2ヶ月持続。まつ毛に優しい薬剤で自然な仕上がりをキープ。</p>
-              </div>
+                }
+              />
             </div>
           </div>
         </div>
