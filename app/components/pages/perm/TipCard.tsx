@@ -11,12 +11,12 @@ type Props = {
 export const TipCard: FC<Props> = ({
   title,
   items,
-  iconColor = 'text-primary-500',
-  titleColor = 'text-primary-900'
+  iconColor = 'text-blue-500',
+  titleColor = 'text-blue-900'
 }) => {
   return (
     <Card>
-      <h4 class={`text-heading-4 mb-3 ${titleColor}`}>{title}</h4>
+      <h4 class={`font-bold text-lg mb-3 ${titleColor}`}>{title}</h4>
       <ul class="space-y-2 text-gray-700">
         {items.map((item) => (
           <li class="flex items-start">

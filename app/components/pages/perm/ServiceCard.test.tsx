@@ -9,7 +9,7 @@ describe('サービスカード', () => {
       const html = render(ServiceCard({
         title: 'パーマ',
         subtitle: '理想のカールやウェーブを実現',
-        color: 'accent',
+        color: 'teal',
         children: '<div>内容</div>'
       }))
 
@@ -21,7 +21,7 @@ describe('サービスカード', () => {
       const html = render(ServiceCard({
         title: 'パーマ',
         subtitle: '理想のカールやウェーブを実現',
-        color: 'accent',
+        color: 'teal',
         children: '<div>内容</div>'
       }))
 
@@ -34,7 +34,7 @@ describe('サービスカード', () => {
       const html = render(ServiceCard({
         title: '酸性デジタルパーマ',
         subtitle: '髪に優しい',
-        color: 'highlight',
+        color: 'purple',
         recommended: true,
         children: '<div>内容</div>'
       }))
@@ -46,7 +46,7 @@ describe('サービスカード', () => {
       const html = render(ServiceCard({
         title: 'パーマ',
         subtitle: 'テスト',
-        color: 'accent',
+        color: 'teal',
         recommended: false,
         children: '<div>内容</div>'
       }))
@@ -56,40 +56,40 @@ describe('サービスカード', () => {
   })
 
   describe('テーマカラーをカスタマイズできる', () => {
-    it('accentカラーが適用される', () => {
+    it('tealカラーが適用される', () => {
       const html = render(ServiceCard({
         title: 'テスト',
         subtitle: 'サブ',
-        color: 'accent',
+        color: 'teal',
         children: '<div>内容</div>'
       }))
 
-      expect(html).toContain('from-accent-600')
-      expect(html).toContain('to-accent-700')
+      expect(html).toContain('from-teal-600')
+      expect(html).toContain('to-teal-700')
     })
 
-    it('highlightカラーが適用される', () => {
+    it('purpleカラーが適用される', () => {
       const html = render(ServiceCard({
         title: 'テスト',
         subtitle: 'サブ',
-        color: 'highlight',
+        color: 'purple',
         children: '<div>内容</div>'
       }))
 
-      expect(html).toContain('from-highlight-600')
-      expect(html).toContain('to-highlight-700')
+      expect(html).toContain('from-purple-600')
+      expect(html).toContain('to-purple-700')
     })
 
-    it('primaryカラーが適用される', () => {
+    it('blueカラーが適用される', () => {
       const html = render(ServiceCard({
         title: 'テスト',
         subtitle: 'サブ',
-        color: 'primary',
+        color: 'blue',
         children: '<div>内容</div>'
       }))
 
-      expect(html).toContain('from-primary-600')
-      expect(html).toContain('to-primary-700')
+      expect(html).toContain('from-blue-600')
+      expect(html).toContain('to-blue-700')
     })
   })
 
@@ -98,7 +98,7 @@ describe('サービスカード', () => {
       const html = render(ServiceCard({
         title: 'テスト',
         subtitle: 'サブ',
-        color: 'accent',
+        color: 'teal',
         children: '<div>内容</div>'
       }))
 

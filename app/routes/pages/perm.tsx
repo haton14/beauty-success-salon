@@ -23,10 +23,10 @@ export default createRoute((c) => {
           {/* メニューカード */}
           <div class="grid gap-8 max-w-6xl mx-auto">
             {/* パーマ */}
-            <ServiceCard title="パーマ" subtitle="理想のカールやウェーブを実現" color="accent">
+            <ServiceCard title="パーマ" subtitle="理想のカールやウェーブを実現" color="teal">
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 class="text-heading-4 mb-4 text-accent-900">こんな方におすすめ</h3>
+                  <h3 class="font-bold text-lg mb-4 text-teal-900">こんな方におすすめ</h3>
                   <ul class="space-y-2 text-gray-700 mb-6">
                     <CheckListItem>ボリュームが欲しい方</CheckListItem>
                     <CheckListItem>スタイリングを楽にしたい方</CheckListItem>
@@ -35,14 +35,14 @@ export default createRoute((c) => {
                   <ServiceInfoBox
                     duration="約2〜2.5時間"
                     retention="2〜3ヶ月"
-                    bgColor="bg-accent-50"
-                    textColor="text-accent-800"
+                    bgColor="bg-teal-50"
+                    textColor="text-teal-800"
                   />
                 </div>
                 <div>
-                  <h3 class="text-heading-4 mb-4 text-accent-900">料金</h3>
+                  <h3 class="font-bold text-lg mb-4 text-teal-900">料金</h3>
                   <div class="space-y-3 mb-6">
-                    <PriceRow label="パーマ" price="¥8,800〜" priceColor="text-accent-900" />
+                    <PriceRow label="パーマ" price="¥8,800〜" priceColor="text-teal-900" />
                   </div>
                   <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
                 </div>
@@ -50,10 +50,10 @@ export default createRoute((c) => {
             </ServiceCard>
 
             {/* 酸性デジタルパーマ */}
-            <ServiceCard title="酸性デジタルパーマ" subtitle="髪に優しく、弾力のあるカールを実現" color="highlight" recommended>
+            <ServiceCard title="酸性デジタルパーマ" subtitle="髪に優しく、弾力のあるカールを実現" color="purple" recommended>
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 class="text-heading-4 mb-4 text-highlight-900">こんな方におすすめ</h3>
+                  <h3 class="font-bold text-lg mb-4 text-purple-900">こんな方におすすめ</h3>
                   <ul class="space-y-2 text-gray-700 mb-6">
                     <CheckListItem>髪のダメージを最小限に抑えたい方</CheckListItem>
                     <CheckListItem>大きく弾力のあるカールが欲しい方</CheckListItem>
@@ -63,14 +63,14 @@ export default createRoute((c) => {
                   <ServiceInfoBox
                     duration="約3〜3.5時間"
                     retention="4〜6ヶ月"
-                    bgColor="bg-highlight-50"
-                    textColor="text-highlight-800"
+                    bgColor="bg-purple-50"
+                    textColor="text-purple-800"
                   />
                 </div>
                 <div>
-                  <h3 class="text-heading-4 mb-4 text-highlight-900">料金</h3>
+                  <h3 class="font-bold text-lg mb-4 text-purple-900">料金</h3>
                   <div class="space-y-3 mb-6">
-                    <PriceRow label="酸性デジタルパーマ" price="¥17,600" priceColor="text-highlight-900" />
+                    <PriceRow label="酸性デジタルパーマ" price="¥17,600" priceColor="text-purple-900" />
                   </div>
                   <p class="text-sm text-gray-500">※カット・シャンプー・ブロー込み</p>
                 </div>
@@ -78,10 +78,10 @@ export default createRoute((c) => {
             </ServiceCard>
 
             {/* エアーパーマ */}
-            <ServiceCard title="エアーパーマ" subtitle="ふんわり軽やかな質感のカール" color="primary">
+            <ServiceCard title="エアーパーマ" subtitle="ふんわり軽やかな質感のカール" color="blue">
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 class="text-heading-4 mb-4 text-primary-900">こんな方におすすめ</h3>
+                  <h3 class="font-bold text-lg mb-4 text-blue-900">こんな方におすすめ</h3>
                   <ul class="space-y-2 text-gray-700 mb-6">
                     <CheckListItem>ナチュラルで柔らかいカールが欲しい方</CheckListItem>
                     <CheckListItem>根元からふんわりボリュームが欲しい方</CheckListItem>
@@ -93,7 +93,7 @@ export default createRoute((c) => {
                   />
                 </div>
                 <div>
-                  <h3 class="text-heading-4 mb-4 text-primary-900">料金</h3>
+                  <h3 class="font-bold text-lg mb-4 text-blue-900">料金</h3>
                   <div class="space-y-3 mb-6">
                     <PriceRow label="エアーパーマ" price="¥13,200" />
                   </div>
@@ -104,8 +104,8 @@ export default createRoute((c) => {
           </div>
 
           {/* スタイリングアドバイス */}
-          <div class="mt-16 bg-gradient-to-r from-primary-50 to-highlight-50 rounded-3xl p-8 max-w-4xl mx-auto">
-            <h3 class="text-heading-3 text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
+          <div class="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <TipCard
                 title="自宅でのケア"
@@ -122,8 +122,8 @@ export default createRoute((c) => {
                   '指でくるくると巻きながら乾かす',
                   '仕上げにオイルで艶をプラス'
                 ]}
-                iconColor="text-highlight-500"
-                titleColor="text-highlight-900"
+                iconColor="text-purple-500"
+                titleColor="text-purple-900"
               />
             </div>
           </div>
