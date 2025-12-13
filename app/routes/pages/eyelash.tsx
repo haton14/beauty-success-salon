@@ -2,6 +2,7 @@ import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
 import { CTA } from '../../components/common/CTA'
 import { FeatureCard } from '../../components/common/FeatureCard'
+import { StepItem } from '../../components/common/StepItem'
 
 export default createRoute((c) => {
   return c.render(
@@ -107,45 +108,11 @@ export default createRoute((c) => {
             <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">施術の流れ</h2>
 
             <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
-                <div>
-                  <h3 class="text-lg font-bold mb-1">カウンセリング</h3>
-                  <p class="text-gray-700">理想のカールをお伺いし、まつ毛の状態を確認します。</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
-                <div>
-                  <h3 class="text-lg font-bold mb-1">クレンジング</h3>
-                  <p class="text-gray-700">まつ毛を清潔にし、パーマがかかりやすい状態に。</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
-                <div>
-                  <h3 class="text-lg font-bold mb-1">ロッド選び・巻き上げ</h3>
-                  <p class="text-gray-700">目の形に合わせてロッドを選び、丁寧に巻き上げます。</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
-                <div>
-                  <h3 class="text-lg font-bold mb-1">薬剤塗布</h3>
-                  <p class="text-gray-700">まつ毛に優しいパーマ液を塗布し、理想のカールを作ります。</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">5</div>
-                <div>
-                  <h3 class="text-lg font-bold mb-1">仕上げ</h3>
-                  <p class="text-gray-700">トリートメントで栄養を与え、美しい仕上がりに。</p>
-                </div>
-              </div>
+              <StepItem step={1} title="カウンセリング" description="理想のカールをお伺いし、まつ毛の状態を確認します。" />
+              <StepItem step={2} title="クレンジング" description="まつ毛を清潔にし、パーマがかかりやすい状態に。" />
+              <StepItem step={3} title="ロッド選び・巻き上げ" description="目の形に合わせてロッドを選び、丁寧に巻き上げます。" />
+              <StepItem step={4} title="薬剤塗布" description="まつ毛に優しいパーマ液を塗布し、理想のカールを作ります。" />
+              <StepItem step={5} title="仕上げ" description="トリートメントで栄養を与え、美しい仕上がりに。" />
             </div>
 
             <div class="mt-8 bg-pink-50 rounded-xl p-6">
