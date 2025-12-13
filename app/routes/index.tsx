@@ -3,6 +3,7 @@ import { Layout } from '../components/common/Layout'
 import { SectionHeader } from '../components/common/SectionHeader'
 import { MenuCard } from '../components/common/MenuCard'
 import { PriceItem } from '../components/common/PriceItem'
+import { FAQItem } from '../components/common/FAQItem'
 import { HeroButtons } from '../components/pages/home/HeroButtons'
 
 export default createRoute((c) => {
@@ -190,62 +191,22 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <SectionHeader title="よくあるご質問" subtitle="sins酸性ストレートについて" />
           <div class="max-w-4xl mx-auto space-y-6">
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-              <div>
-                <div class="flex items-start mb-3">
-                  <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">Q</div>
-                  <h4 class="font-bold text-lg flex-1">従来の縮毛矯正とは何が違うのですか？</h4>
-                </div>
-                <div class="flex items-start">
-                  <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">A</div>
-                  <p class="text-gray-700 flex-1">
-                    sins酸性ストレートは髪に優しい酸性薬剤を使用します。アルカリを使わないため、キューティクルを開かずに施術でき、髪へのダメージを最小限に抑えながら自然なストレートヘアを実現します。
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-              <div>
-                <div class="flex items-start mb-3">
-                  <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">Q</div>
-                  <h4 class="font-bold text-lg flex-1">どのくらいの頻度で施術が必要ですか？</h4>
-                </div>
-                <div class="flex items-start">
-                  <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">A</div>
-                  <p class="text-gray-700 flex-1">
-                    sins酸性ストレートは約4〜6ヶ月効果が持続します。個人差はありますが、通常は4〜6ヶ月に1回の施術で美しいストレートヘアを保つことができます。
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-              <div>
-                <div class="flex items-start mb-3">
-                  <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">Q</div>
-                  <h4 class="font-bold text-lg flex-1">カラーリングとの同時施術は可能ですか？</h4>
-                </div>
-                <div class="flex items-start">
-                  <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">A</div>
-                  <p class="text-gray-700 flex-1">
-                    はい、可能です。sins酸性ストレートは髪へのダメージが少ないため、カラーリングと同時施術でも髪への負担を最小限に抑えられます。詳しくはご相談ください。
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-              <div>
-                <div class="flex items-start mb-3">
-                  <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">Q</div>
-                  <h4 class="font-bold text-lg flex-1">痛んだ髪でも施術できますか？</h4>
-                </div>
-                <div class="flex items-start">
-                  <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">A</div>
-                  <p class="text-gray-700 flex-1">
-                    痛んだ髪にもおすすめです。sins酸性ストレートにはトリートメント効果があり、施術により髪質改善が期待できます。縮毛矯正で傷んだ髪にも艶を取り戻します。
-                  </p>
-                </div>
-              </div>
-            </div>
+            <FAQItem
+              question="従来の縮毛矯正とは何が違うのですか？"
+              answer="sins酸性ストレートは髪に優しい酸性薬剤を使用します。アルカリを使わないため、キューティクルを開かずに施術でき、髪へのダメージを最小限に抑えながら自然なストレートヘアを実現します。"
+            />
+            <FAQItem
+              question="どのくらいの頻度で施術が必要ですか？"
+              answer="sins酸性ストレートは約4〜6ヶ月効果が持続します。個人差はありますが、通常は4〜6ヶ月に1回の施術で美しいストレートヘアを保つことができます。"
+            />
+            <FAQItem
+              question="カラーリングとの同時施術は可能ですか？"
+              answer="はい、可能です。sins酸性ストレートは髪へのダメージが少ないため、カラーリングと同時施術でも髪への負担を最小限に抑えられます。詳しくはご相談ください。"
+            />
+            <FAQItem
+              question="痛んだ髪でも施術できますか？"
+              answer="痛んだ髪にもおすすめです。sins酸性ストレートにはトリートメント効果があり、施術により髪質改善が期待できます。縮毛矯正で傷んだ髪にも艶を取り戻します。"
+            />
           </div>
         </div>
       </section>
