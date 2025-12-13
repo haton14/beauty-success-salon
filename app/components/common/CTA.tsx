@@ -24,7 +24,7 @@ export const CTA: FC<Props> = ({
             0299-69-7700
           </a>
           <a
-            href="https://lin.ee/YOUR_LINE_ID"
+            href="https://lin.ee/uZbY0uQ"
             target="_blank"
             class="bg-gradient-to-b from-green-500 to-green-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-green-700"
           >
