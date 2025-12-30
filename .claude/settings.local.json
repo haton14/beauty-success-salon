@@ -29,7 +29,8 @@
       "WebFetch(domain:hono.dev)",
       "Bash(npm view:*)",
       "Bash(npm outdated:*)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(timeout 10 npm run dev)"
     ],
     "deny": [],
     "ask": []
