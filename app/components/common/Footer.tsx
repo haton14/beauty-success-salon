@@ -1,19 +1,17 @@
 import type { FC } from 'hono/jsx'
+import type { FooterProps } from '../../types'
+import { SHOP_INFO, COPYRIGHT_YEAR } from '../../constants'
 
-type Props = {
-  showFullInfo?: boolean
-}
-
-export const Footer: FC<Props> = ({ showFullInfo = false }) => {
+export const Footer: FC<FooterProps> = ({ showFullInfo = false }) => {
   return (
     <footer class="bg-gray-100 text-gray-700 py-12">
       <div class="container mx-auto px-4">
         <div class="text-center">
           {showFullInfo && (
             <>
-              <h2 class="text-2xl font-bold mb-4 text-gray-800">美容室success</h2>
-              <p class="text-gray-600 mb-1">〒314-0042 茨城県鹿嶋市小山1072-88</p>
-              <p class="text-gray-600 mb-8">TEL: 0299-69-7700</p>
+              <h2 class="text-2xl font-bold mb-4 text-gray-800">{SHOP_INFO.name}</h2>
+              <p class="text-gray-600 mb-1">{SHOP_INFO.postalCode} {SHOP_INFO.address}</p>
+              <p class="text-gray-600 mb-8">TEL: {SHOP_INFO.tel}</p>
 
               {/* SNSリンク */}
               <div class="mb-8">
@@ -43,12 +41,12 @@ export const Footer: FC<Props> = ({ showFullInfo = false }) => {
               </div>
 
               <div class="border-t border-gray-300 pt-6">
-                <p class="text-sm text-gray-500">Copyright &copy; 1098-2025 美容室success</p>
+                <p class="text-sm text-gray-500">Copyright &copy; {COPYRIGHT_YEAR} {SHOP_INFO.name}</p>
               </div>
             </>
           )}
           {!showFullInfo && (
-            <p class="text-sm text-gray-500">Copyright &copy; 1098-2025 美容室success</p>
+            <p class="text-sm text-gray-500">Copyright &copy; {COPYRIGHT_YEAR} {SHOP_INFO.name}</p>
           )}
         </div>
       </div>

@@ -1,23 +1,15 @@
 import type { FC } from 'hono/jsx'
+import type { HeaderProps } from '../../types'
+import { NAV_LINKS, SHOP_INFO } from '../../constants'
 
-type Props = {
-  currentPage?: string
-}
-
-export const Header: FC<Props> = ({ currentPage }) => {
-  const navLinks = [
-    { href: '/pages/perm', label: 'パーマ', key: 'perm' },
-    { href: '/pages/sins', label: 'sins酸性ストレート', key: 'sins' },
-    { href: '/pages/eyelash', label: 'まつ毛', key: 'eyelash' },
-    { href: '/pages/kimono', label: '着付け', key: 'kimono' },
-  ]
+export const Header: FC<HeaderProps> = ({ currentPage }) => {
 
   return (
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <nav class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center">
-            <a href="/" class="text-2xl font-bold text-blue-900">美容室success</a>
+            <a href="/" class="text-2xl font-bold text-blue-900">{SHOP_INFO.name}</a>
           </div>
           <div class="desktop-nav items-center space-x-3 xl:space-x-6" style="display: none;">
             {currentPage ? (
@@ -29,7 +21,7 @@ export const Header: FC<Props> = ({ currentPage }) => {
               </>
             )}
             <span class="text-gray-400 hidden lg:inline">|</span>
-            {navLinks.map(link => (
+            {NAV_LINKS.map(link => (
               <a
                 key={link.key}
                 href={link.href}
@@ -78,7 +70,7 @@ export const Header: FC<Props> = ({ currentPage }) => {
           </div>
           <div class="pb-2 border-b border-gray-200">
             <p class="text-xs text-gray-500 mb-2">サービス</p>
-            {navLinks.map(link => (
+            {NAV_LINKS.map(link => (
               <a
                 key={link.key}
                 href={link.href}
