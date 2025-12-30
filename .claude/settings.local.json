@@ -24,7 +24,12 @@
       "Bash(mv:*)",
       "mcp__chrome-devtools__press_key",
       "mcp__chrome-devtools__click",
-      "mcp__chrome-devtools__resize_page"
+      "mcp__chrome-devtools__resize_page",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:hono.dev)",
+      "Bash(npm view:*)",
+      "Bash(npm outdated:*)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [],
     "ask": []

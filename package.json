@@ -13,13 +13,13 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "hono": "^4.6.0",
-    "honox": "^0.1.32"
+    "hono": "^4.11.3",
+    "honox": "^0.1.52"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241127.0",
-    "@hono/vite-build": "^1.2.0",
-    "@hono/vite-dev-server": "^0.18.0",
+    "@hono/vite-build": "^1.8.0",
+    "@hono/vite-dev-server": "^0.24.0",
     "@tailwindcss/postcss": "^4.1.16",
     "@testing-library/dom": "^10.4.1",
     "@types/node": "^22.0.0",
