@@ -31,7 +31,8 @@
       "Bash(npm outdated:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(timeout 10 npm run dev)",
-      "mcp__chrome-devtools__select_page"
+      "mcp__chrome-devtools__select_page",
+      "Skill(honox-expert)"
     ],
     "deny": [],
     "ask": []
