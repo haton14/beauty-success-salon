@@ -30,7 +30,8 @@
       "Bash(npm view:*)",
       "Bash(npm outdated:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(timeout 10 npm run dev)"
+      "Bash(timeout 10 npm run dev)",
+      "mcp__chrome-devtools__select_page"
     ],
     "deny": [],
     "ask": []
