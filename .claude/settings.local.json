@@ -32,7 +32,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(timeout 10 npm run dev)",
       "mcp__chrome-devtools__select_page",
-      "Skill(honox-expert)"
+      "Skill(honox-expert)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
