@@ -16,8 +16,7 @@ export default defineConfig(({ mode }) => {
           }
         },
         emptyOutDir: false,
-        manifest: true,
-        manifestFileName: '.vite/client-manifest.json'
+        manifest: true
       }
     }
   }
