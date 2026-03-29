@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vite build --mode client",
-    "preview": "vite preview",
-    "deploy": "npm run build && wrangler deploy",
-    "deploy:preview": "npm run build && wrangler deploy --env preview",
+    "preview": "pnpm run build && wrangler dev dist/_worker.js --local",
+    "deploy": "pnpm run build && wrangler deploy",
+    "deploy:preview": "pnpm run build && wrangler deploy --env preview",
     "test": "vitest run",
     "test:watch": "vitest"
   },
