@@ -4,60 +4,125 @@ import { SectionHeader } from '../components/pages/home/SectionHeader'
 import { MenuCard } from '../components/pages/home/MenuCard'
 import { PriceItem } from '../components/pages/home/PriceItem'
 import { FAQItem } from '../components/pages/home/FAQItem'
-import { HeroButtons } from '../components/pages/home/HeroButtons'
 import { Button, PhoneButton } from '../components/common/Button'
+
+const yearsInOperation = new Date().getFullYear() - 1998 + 1
 
 export default createRoute((c) => {
   return c.render(
     <Layout showFullFooter>
 
-      {/* ヒーローセクション */}
-      <section class="relative min-h-screen flex items-center bg-gray-50">
-        <div class="container mx-auto px-4 py-20">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
-            {/* テキストエリア */}
-            <div class="text-center lg:text-left">
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                <span class="block text-2xl md:text-3xl text-gray-700 mb-2">髪のパサつきやクセを改善する</span>
-                <span class="block text-3xl md:text-4xl lg:text-5xl text-blue-900">sins 酸性ストレート</span>
-              </h2>
-              <p class="text-lg text-gray-700 mb-6">
-                縮毛矯正で傷んだ髪にも優しい施術
-              </p>
-              <HeroButtons />
-            </div>
+      {/* コンセプト */}
+      <section id="concept" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <SectionHeader title="Concept" />
+          <div class="max-w-3xl mx-auto text-center">
+            <p class="text-gray-600 leading-relaxed mb-8">
+              飾らない雰囲気で、長く通っていただける美容室を続けて{yearsInOperation}年目になりました。
+            </p>
+            <p class="text-gray-600 leading-relaxed">ダメージを極力出さずに</p>
+            <p class="text-gray-600 leading-relaxed">普段のお手入れを扱いやすく</p>
+            <p class="text-gray-600 leading-relaxed">美髪へと導く</p>
+            <p class="text-gray-600 leading-relaxed mt-4">最高の技術、知識を提供いたします。</p>
+          </div>
+        </div>
+      </section>
 
-            {/* 画像エリア */}
-            <div class="relative">
-              <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-square">
-                <img
-                  src="https://images.success-salon.haton14.com/top.avif"
-                  alt="美容室successの店内"
-                  class="w-full h-full object-cover"
-                />
-              </div>
+      {/* 外観・内観 */}
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-lg aspect-video">
+              <img
+                src="https://images.success-salon.haton14.com/exterior.avif"
+                alt="美容室successの外観"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-lg aspect-video">
+              <img
+                src="https://images.success-salon.haton14.com/interior.avif"
+                alt="美容室successの内観"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* コンセプト */}
-      <section id="concept" class="py-20 bg-white">
+      {/* 酸性ストレート紹介 */}
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <SectionHeader title="私たちについて" />
-          <div class="max-w-3xl mx-auto text-center">
-            <h4 class="text-2xl font-semibold text-gray-800 mb-6">夫婦で営んで28年</h4>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              髪を傷めない技術にこだわり、パサつく髪・癖毛・傷んだ髪など、あらゆる髪のお悩みに対応。
-              自宅でもお手入れしやすい施術を心がけています。
-            </p>
+          <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
             <p class="text-gray-600 leading-relaxed mb-8">
-              特に髪に優しい酸性ストレートや、リラックスできるヘッドスパもご好評いただいています。
+              茨城県で一番最初に導入。<br />
+              癖や広がりが伸びてきても気になりづらく、髪質に合わせたオーダーメイドのストレート。<br />
+              時間が経ってもきれいに素敵でいられる、再現性の高い技術にこだわっています。
             </p>
-            <div>
-              <Button href="/pages/staff">
-                スタッフ紹介を見る
-              </Button>
+            <Button href="#sins">
+              詳しく見る →
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* sins 酸性ストレート詳細 */}
+      <section id="sins" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
+            <p class="text-xl text-gray-600 mb-4">茨城県で一番最初に導入</p>
+            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
+          </div>
+
+          <div class="max-w-3xl mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-lg mb-8">
+              <img
+                src="https://images.success-salon.haton14.com/sins-before-after.avif"
+                alt="sins酸性ストレート before/after"
+                class="w-full object-cover"
+              />
+            </div>
+
+            <div class="text-center">
+              <p class="text-lg text-gray-700 mb-8">
+                縮毛矯正で傷んだ髪も修復し、自然で柔らかなストレートヘアに。<br />
+                繰り返し施術しても髪質が硬くならず、艶やかな仕上がりをキープします。
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4 mb-8">
+                <div class="bg-white rounded-xl p-4 shadow-lg">
+                  <h4 class="font-bold mb-2">こんな方に</h4>
+                  <p class="text-sm text-gray-600">縮毛矯正で傷んだ髪・自然な仕上がりを求める方</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 shadow-lg">
+                  <h4 class="font-bold mb-2">特徴</h4>
+                  <p class="text-sm text-gray-600">一人一人に合わせた調合・柔らかな仕上がり</p>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 mb-8 shadow-lg">
+                <p class="text-lg font-bold text-blue-900 mb-3">料金</p>
+                <div class="space-y-1 md:space-y-0">
+                  <p class="text-gray-700 md:hidden">ショート ¥19,800</p>
+                  <p class="text-gray-700 md:hidden">ミディアム ¥22,000</p>
+                  <p class="text-gray-700 md:hidden">ロング ¥24,200</p>
+                  <p class="text-gray-700 hidden md:block">
+                    ショート ¥19,800 / ミディアム ¥22,000 / ロング ¥24,200
+                  </p>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">※カット・シャンプー・ブロー込み</p>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                <Button href="/pages/sins" className="w-44">
+                  詳しく見る →
+                </Button>
+                <Button href="#contact" variant="secondary" className="w-44">
+                  ご予約はこちら
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -68,9 +133,7 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <SectionHeader title="Menu & Price" />
 
-          {/* メニューカテゴリ */}
           <div class="max-w-5xl mx-auto space-y-12">
-            {/* カット */}
             <MenuCard title="カット">
               <PriceItem name="カット" price="¥4,400" note="（シャンプー・ブロー込）" />
               <PriceItem name="幼児カット" price="¥2,500" />
@@ -78,13 +141,11 @@ export default createRoute((c) => {
               <PriceItem name="前髪カット" price="¥1,100" />
             </MenuCard>
 
-            {/* カラー */}
             <MenuCard title="カラー" note="※上記料金はシャンプー・ブロー込み">
               <PriceItem name="カラー＋カット" price="¥8,800〜" />
               <PriceItem name="カラーのみ" price="¥6,600〜" />
             </MenuCard>
 
-            {/* ストレート */}
             <MenuCard title="ストレート" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/sins" linkText="sins酸性ストレートを詳しく見る">
               <PriceItem name="sins 酸性ストレート（ショート）" price="¥19,800" />
               <PriceItem name="縮毛矯正" price="¥16,500〜" />
@@ -94,14 +155,12 @@ export default createRoute((c) => {
               <PriceItem name="ストレートパーマ" price="¥9,900〜" />
             </MenuCard>
 
-            {/* パーマ */}
             <MenuCard title="パーマ" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/perm" linkText="パーマを詳しく見る">
               <PriceItem name="パーマ" price="¥8,800〜" />
               <PriceItem name="エアーパーマ" price="¥13,200" />
               <PriceItem name="酸性デジタルパーマ" price="¥17,600" />
             </MenuCard>
 
-            {/* ヘッドスパ・トリートメント */}
             <MenuCard title="ヘッドスパ・トリートメント" note="※ドライヘッドスパは女性限定・完全個室">
               <PriceItem name="水のヘッドスパ (15分)" price="¥2,750〜" />
               <PriceItem name="トリートメント" price="¥1,320〜" />
@@ -110,7 +169,6 @@ export default createRoute((c) => {
               <PriceItem name="ドライヘッドスパ (60分)" price="¥6,000" />
             </MenuCard>
 
-            {/* ヘアセット・着付け */}
             <MenuCard title="ヘアセット・着付け">
               <PriceItem name="ヘアセット" price="¥4,400" />
               <PriceItem name="着付け（訪問着）" price="¥11,000" />
@@ -127,62 +185,10 @@ export default createRoute((c) => {
               </div>
             </MenuCard>
 
-            {/* その他メニュー */}
             <MenuCard title="その他メニュー" note="※学生は眉カット無料">
               <PriceItem name="まつ毛パーマ" price="¥2,200" />
               <PriceItem name="眉カット" price="¥550" />
             </MenuCard>
-          </div>
-        </div>
-      </section>
-
-      {/* sins 酸性ストレート */}
-      <section id="sins" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
-            <p class="text-xl text-gray-600 mb-4">茨城県で一番最初に導入</p>
-            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
-          </div>
-
-          <div class="max-w-3xl mx-auto text-center">
-            <p class="text-lg text-gray-700 mb-8">
-              縮毛矯正で傷んだ髪も修復し、自然で柔らかなストレートヘアに。<br />
-              繰り返し施術しても髪質が硬くならず、艶やかな仕上がりをキープします。
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-4 mb-8">
-              <div class="bg-white rounded-xl p-4 shadow-lg">
-                <h4 class="font-bold mb-2">こんな方に</h4>
-                <p class="text-sm text-gray-600">縮毛矯正で傷んだ髪・自然な仕上がりを求める方</p>
-              </div>
-              <div class="bg-white rounded-xl p-4 shadow-lg">
-                <h4 class="font-bold mb-2">特徴</h4>
-                <p class="text-sm text-gray-600">一人一人に合わせた調合・柔らかな仕上がり</p>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-xl p-6 mb-8 shadow-lg">
-              <p class="text-lg font-bold text-blue-900 mb-3">料金</p>
-              <div class="space-y-1 md:space-y-0">
-                <p class="text-gray-700 md:hidden">ショート ¥19,800</p>
-                <p class="text-gray-700 md:hidden">ミディアム ¥22,000</p>
-                <p class="text-gray-700 md:hidden">ロング ¥24,200</p>
-                <p class="text-gray-700 hidden md:block">
-                  ショート ¥19,800 / ミディアム ¥22,000 / ロング ¥24,200
-                </p>
-              </div>
-              <p class="text-sm text-gray-500 mt-2">※カット・シャンプー・ブロー込み</p>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-4 items-center justify-center">
-              <Button href="/pages/sins" className="w-44">
-                詳しく見る →
-              </Button>
-              <Button href="#contact" variant="secondary" className="w-44">
-                ご予約はこちら
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -222,7 +228,6 @@ export default createRoute((c) => {
 
           <div class="max-w-4xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8">
-              {/* 電話予約 */}
               <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
                 <h4 class="text-heading-3 font-semibold mb-4">電話予約</h4>
                 <PhoneButton href="tel:0299697700" className="text-2xl">
@@ -230,7 +235,6 @@ export default createRoute((c) => {
                 </PhoneButton>
               </div>
 
-              {/* LINE予約 */}
               <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
                 <h4 class="text-heading-3 font-semibold mb-4">LINE公式アカウント</h4>
                 <PhoneButton href="https://lin.ee/uZbY0uQ" variant="line" target="_blank" className="text-xl">
