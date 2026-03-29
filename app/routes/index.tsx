@@ -49,30 +49,17 @@ export default createRoute((c) => {
         </div>
       </section>
 
-      {/* 酸性ストレート紹介 */}
-      <section class="py-16 bg-white">
+      {/* sins 酸性ストレート */}
+      <section id="sins" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="max-w-2xl mx-auto text-center">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
-            <p class="text-gray-600 leading-relaxed mb-8">
+          <div class="text-center mb-8">
+            <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
+            <div class="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
+            <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
               茨城県で一番最初に導入。<br />
               癖や広がりが伸びてきても気になりづらく、髪質に合わせたオーダーメイドのストレート。<br />
               時間が経ってもきれいに素敵でいられる、再現性の高い技術にこだわっています。
             </p>
-            <Button href="#sins">
-              詳しく見る →
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* sins 酸性ストレート詳細 */}
-      <section id="sins" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
-            <p class="text-xl text-gray-600 mb-4">茨城県で一番最初に導入</p>
-            <div class="w-24 h-1 bg-blue-800 mx-auto"></div>
           </div>
 
           <div class="max-w-3xl mx-auto">
@@ -85,23 +72,18 @@ export default createRoute((c) => {
             </div>
 
             <div class="text-center">
-              <p class="text-lg text-gray-700 mb-8">
-                縮毛矯正で傷んだ髪も修復し、自然で柔らかなストレートヘアに。<br />
-                繰り返し施術しても髪質が硬くならず、艶やかな仕上がりをキープします。
-              </p>
-
               <div class="grid md:grid-cols-2 gap-4 mb-8">
-                <div class="bg-white rounded-xl p-4 shadow-lg">
+                <div class="bg-gray-50 rounded-xl p-4 shadow-lg">
                   <h4 class="font-bold mb-2">こんな方に</h4>
                   <p class="text-sm text-gray-600">縮毛矯正で傷んだ髪・自然な仕上がりを求める方</p>
                 </div>
-                <div class="bg-white rounded-xl p-4 shadow-lg">
+                <div class="bg-gray-50 rounded-xl p-4 shadow-lg">
                   <h4 class="font-bold mb-2">特徴</h4>
                   <p class="text-sm text-gray-600">一人一人に合わせた調合・柔らかな仕上がり</p>
                 </div>
               </div>
 
-              <div class="bg-white rounded-xl p-6 mb-8 shadow-lg">
+              <div class="bg-gray-50 rounded-xl p-6 mb-8 shadow-lg">
                 <p class="text-lg font-bold text-blue-900 mb-3">料金</p>
                 <div class="space-y-1 md:space-y-0">
                   <p class="text-gray-700 md:hidden">ショート ¥19,800</p>
