@@ -12,7 +12,7 @@ export default createRoute((c) => {
     <Layout showFullFooter>
 
       {/* コンセプト */}
-      <section id="concept" class="py-20 bg-white">
+      <section id="concept" class="py-12 bg-white">
         <div class="container mx-auto px-4">
           <SectionHeader title="Concept" />
           <div class="max-w-3xl mx-auto text-center">
@@ -28,7 +28,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 外観・内観 */}
-      <section class="py-16 bg-gray-50">
+      <section class="pb-10 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div class="rounded-2xl overflow-hidden shadow-lg aspect-video">
@@ -50,7 +50,7 @@ export default createRoute((c) => {
       </section>
 
       {/* sins 酸性ストレート */}
-      <section id="sins" class="py-16 bg-white">
+      <section id="sins" class="py-10 bg-white">
         <div class="container mx-auto px-4">
           <div class="text-center mb-8">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
@@ -110,7 +110,7 @@ export default createRoute((c) => {
       </section>
 
       {/* メニュー */}
-      <section id="menu" class="py-20 bg-gray-50">
+      <section id="menu" class="py-12 bg-gray-50">
         <div class="container mx-auto px-4">
           <SectionHeader title="Menu & Price" />
 
@@ -175,7 +175,7 @@ export default createRoute((c) => {
       </section>
 
       {/* FAQ */}
-      <section class="py-20 bg-gray-50">
+      <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-4">
           <SectionHeader title="よくあるご質問" subtitle="sins酸性ストレートについて" />
           <div class="max-w-4xl mx-auto space-y-6">
@@ -200,7 +200,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 予約セクション */}
-      <section id="contact" class="py-16 bg-gray-100">
+      <section id="contact" class="py-10 bg-gray-100">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
             <h3 class="text-3xl font-bold text-gray-800 mb-4">ご予約・お問い合わせ</h3>
@@ -228,7 +228,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 営業時間・アクセス */}
-      <section id="access" class="py-20 bg-white">
+      <section id="access" class="py-12 bg-white">
         <div class="container mx-auto px-4">
           <SectionHeader title="営業時間・アクセス" />
 
