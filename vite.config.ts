@@ -34,7 +34,17 @@ export default defineConfig(({ mode }) => {
             entryFileNames: 'static/client.js',
             chunkFileNames: 'static/assets/[name]-[hash].js',
             assetFileNames: 'static/assets/[name]-[hash].[ext]'
-          }
+          },
+          plugins: [
+            {
+              name: 'exclude-test-files',
+              load(id) {
+                if (/\.test\.[jt]sx?$/.test(id)) {
+                  return 'export default {}'
+                }
+              }
+            }
+          ]
         },
         // SSRビルドの出力を消さない
         emptyOutDir: false,

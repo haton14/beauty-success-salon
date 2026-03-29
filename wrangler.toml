@@ -10,4 +10,4 @@ binding = "ASSETS"
 not_found_handling = "none"
 
 [build]
-command = "npm run build"
+command = "pnpm run build"
