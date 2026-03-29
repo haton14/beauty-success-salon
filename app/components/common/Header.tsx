@@ -5,7 +5,7 @@ import { NAV_LINKS, SHOP_INFO } from '../../constants'
 export const Header: FC<HeaderProps> = ({ currentPage }) => {
 
   return (
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+    <header class="relative w-full bg-white z-50 shadow-sm">
       <nav class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center">
