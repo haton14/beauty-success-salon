@@ -6,9 +6,8 @@ import { PriceItem } from '../components/pages/home/PriceItem'
 import { FAQItem } from '../components/pages/home/FAQItem'
 import { Button, PhoneButton } from '../components/common/Button'
 
-const yearsInOperation = new Date().getFullYear() - 1998 + 1
-
 export default createRoute((c) => {
+  const yearsInOperation = new Date().getFullYear() - 1998 + 1
   return c.render(
     <Layout showFullFooter>
 
