@@ -33,7 +33,8 @@
       "Bash(timeout 10 npm run dev)",
       "mcp__chrome-devtools__select_page",
       "Skill(honox-expert)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(pnpm test:*)"
     ],
     "deny": [],
     "ask": []
