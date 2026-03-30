@@ -13,7 +13,13 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">sins 酸性ストレート</h1>
-            <p class="text-xl text-gray-700 mb-8">当店はsins酸性ストレートを提供しております</p>
+            <p class="text-gray-700 leading-relaxed">
+              当店の酸性ストレートは<br />
+              髪に優しい弱酸性の薬剤を使用し<br />
+              ダメージを極限まで抑えます。<br />
+              sins薬剤技術で髪質を内部から改善させ<br />
+              柔らかく自然な髪質へと導きます。
+            </p>
           </div>
         </div>
       </section>
@@ -22,24 +28,21 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">こんな方におすすめです</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">このようなお悩みの方へ</h2>
 
             <div class="bg-blue-50 rounded-xl p-8 mb-12">
               <ul class="space-y-4 text-lg">
-                <CheckListItem icon="◆" iconColor="text-blue-800">何度も縮毛矯正を施術して傷めた方</CheckListItem>
-                <CheckListItem icon="◆" iconColor="text-blue-800">針金のように真っ直ぐになりたくない方</CheckListItem>
-                <CheckListItem icon="◆" iconColor="text-blue-800">自然な仕上がりを求める方</CheckListItem>
-                <CheckListItem icon="◆" iconColor="text-blue-800">ハリがあり、艶々な髪質になりたい方</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">癖やダメージが気になる</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">パサつき、毛羽たち、枝毛等が気になる</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">ごわつき、広がりがある</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">朝、アイロンを入れても、癖が出て気になる</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">前髪だけ癖毛</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">ストレートをしたいけど傷まないか不安</CheckListItem>
+                <CheckListItem icon="♢" iconColor="text-blue-800">不自然な真っ直ぐになりたくない</CheckListItem>
               </ul>
             </div>
 
             <div class="text-gray-700 space-y-4 mb-8">
-              <p>
-                何をしてもパサついて艶がなくまとまりにくい髪や、
-                縮毛矯正で傷んだ髪も修復、
-                どんなくせ毛でもサラサラに、
-                仕上げます。
-              </p>
               <p class="text-sm text-red-600">
                 ※ブリーチ毛で極端に傷めた方は、お断りしております
               </p>
@@ -56,34 +59,37 @@ export default createRoute((c) => {
 
             <div class="space-y-8">
               <div class="bg-white rounded-xl p-6 shadow-md">
-                <h3 class="text-xl font-bold mb-4 text-blue-900">繰り返しても自然な仕上がり</h3>
-                <p class="text-gray-700">
-                  酸性ストレートを繰り返すことで、
-                  髪質が硬くなることをご心配される方も
-                  いらっしゃるかもしれませんが、<br /><br />
-                  当店のsins酸性ストレートでは、
-                  繰り返し施術なさっても、
-                  自然で柔らかな仕上げを保ちます。
+                <p class="text-gray-700 leading-relaxed">
+                  お客様一人ひとりの<br />
+                  髪質に合わせた薬剤、オーダーメイド技術で<br />
+                  艶髪に改善させていただきます。
                 </p>
               </div>
 
               <div class="bg-white rounded-xl p-6 shadow-md">
-                <h3 class="text-xl font-bold mb-4 text-blue-900">一人一人に合わせた施術</h3>
-                <p class="text-gray-700">
-                  また、一人一人に合わせて調合し、
-                  特別なワンランク上の薬剤で、
-                  施術いたしております。<br /><br />
-                  薬剤技術が数ヶ月毎に向上しているため、
-                  毎回最高の技術で、
-                  ご満足いただけるように行なっております。
+                <p class="text-gray-700 leading-relaxed">
+                  ミツバチの巣から摂取される<br />
+                  ミツロウを配合したsins薬剤は<br />
+                  更にキューティクルに艶を与えます。
                 </p>
               </div>
 
               <div class="bg-white rounded-xl p-6 shadow-md">
-                <h3 class="text-xl font-bold mb-4 text-blue-900">茨城県で最初の導入店</h3>
-                <p class="text-gray-700">
-                  当店ではsins酸性ストレートを茨城県で一番最初に導入しております。
-                  施術を多くのお客様にご提供した実績がありますので、安心してお任せください。
+                <p class="text-gray-700 leading-relaxed">
+                  酸性ストレートは難易度が高いため<br />
+                  知識、技術、経験が必要な施術です。<br />
+                  薬剤技術も、数ヶ月毎に向上してきているため<br />
+                  毎回、変化があり、最高の薬剤、技術で<br />
+                  ご満足頂けるように行なっております。
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-6 shadow-md">
+                <p class="text-gray-700 leading-relaxed">
+                  sins酸性ストレートを<br />
+                  茨城県で一番最初に導入。<br />
+                  多くのお客様にご提供した実績がありますので<br />
+                  安心してお任せくださいませ。
                 </p>
               </div>
             </div>
@@ -96,17 +102,29 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
             <div class="bg-yellow-50 rounded-xl p-8 border-2 border-yellow-200">
-              <h3 class="text-xl font-bold mb-4 text-yellow-900">ご予約前の注意事項</h3>
-              <p class="text-gray-700">
-                当店では、sins酸性ストレートを行う場合、
-                ヘアカラーを行なってから、
-                <span class="font-bold text-red-600">1ヶ月以上経過してから</span>の施術となります。
-              </p>
-              <p class="text-gray-700 mt-4">
-                一ヶ月以内ですと、
-                ヘアカラーの薬剤に含まれているアルカリが、
-                髪に残っているため最適な仕上がりにならない可能性があります。
-              </p>
+              <h3 class="text-xl font-bold mb-6 text-yellow-900">ご注意</h3>
+              <ul class="space-y-6">
+                <li>
+                  <p class="text-gray-700 leading-relaxed">
+                    <span class="font-bold">♢ ヘアカラーを行なってからは</span><br />
+                    <span class="font-bold text-red-600">1ヶ月以上経過してから</span>の施術となります。<br />
+                    1ヶ月以内ですと、ヘアカラーの薬剤に含まれているアルカリ材が髪に残っているため、アルカリストレートになるからです。<br />
+                    <span class="text-sm text-gray-500">（ヘナ、マニキュアは除く）</span>
+                  </p>
+                </li>
+                <li>
+                  <p class="text-gray-700 leading-relaxed">
+                    <span class="font-bold">♢ ブリーチ毛で極端に傷めた方は</span><br />
+                    お断りしております。
+                  </p>
+                </li>
+                <li>
+                  <p class="text-gray-700 leading-relaxed">
+                    <span class="font-bold">♢ 他店で、パーマ・ストレートを行った方は</span><br />
+                    3ヶ月経過してからの施術となります。
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -125,6 +143,10 @@ export default createRoute((c) => {
                 <PriceRow label="ロング" price="¥24,200" variant="border" />
               </div>
               <p class="text-sm text-gray-500 mt-6">※シャンプー・ブロー・カット込み</p>
+              <div class="mt-4 space-y-1">
+                <p class="text-sm text-red-600">※毛量が多い方、癖が強い方は、長さに問わず、プラス1,000円〜になります。</p>
+                <p class="text-sm text-red-600">※ロングの方もプラス1,000円〜になります。</p>
+              </div>
             </div>
           </div>
         </div>
