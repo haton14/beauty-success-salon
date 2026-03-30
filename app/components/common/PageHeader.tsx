@@ -14,7 +14,7 @@ export const PageHeader: FC<Props> = ({
   showUnderline = false
 }) => {
   return (
-    <section class={`pt-24 pb-16 bg-gradient-to-br ${bgGradient}`}>
+    <section class={`pt-24 pb-16 bg-linear-to-br ${bgGradient}`}>
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h1 class="text-4xl font-bold text-gray-800 mb-4">{title}</h1>

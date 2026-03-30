@@ -12,7 +12,7 @@ export default createRoute((c) => {
     <Layout currentPage="eyelash" showFullFooter>
 
       {/* メインビジュアル */}
-      <section class="pt-20 pb-12 bg-gradient-to-b from-pink-50 to-white">
+      <section class="pt-20 pb-12 bg-linear-to-b from-pink-50 to-white">
         <div class="container mx-auto px-4">
           <div class="text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">まつ毛パーマ</h1>

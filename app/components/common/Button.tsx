@@ -13,9 +13,9 @@ type Props = {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-gradient-to-b from-blue-600 to-blue-700 text-white border border-blue-800 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl',
+  primary: 'bg-linear-to-b from-blue-600 to-blue-700 text-white border border-blue-800 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl',
   secondary: 'bg-white text-blue-800 border-2 border-blue-800 hover:bg-blue-50 shadow-md hover:shadow-lg',
-  line: 'bg-gradient-to-b from-green-500 to-green-600 text-white border border-green-700 hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl',
+  line: 'bg-linear-to-b from-green-500 to-green-600 text-white border border-green-700 hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl',
 }
 
 const sizeStyles: Record<ButtonSize, string> = {

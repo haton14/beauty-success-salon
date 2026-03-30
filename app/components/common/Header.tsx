@@ -43,7 +43,7 @@ export const Header: FC<HeaderProps> = ({ currentPage }) => {
             </a>
             <a
               href={currentPage ? '/#contact' : '#contact'}
-              class="bg-gradient-to-b from-blue-600 to-blue-700 text-white px-3 lg:px-4 py-2 rounded-full font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 border border-blue-800 text-sm lg:text-base"
+              class="bg-linear-to-b from-blue-600 to-blue-700 text-white px-3 lg:px-4 py-2 rounded-full font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 border border-blue-800 text-sm lg:text-base"
             >
               ご予約
             </a>
@@ -90,7 +90,7 @@ export const Header: FC<HeaderProps> = ({ currentPage }) => {
           </div>
           <a
             href={currentPage ? '/#contact' : '#contact'}
-            class="block bg-gradient-to-b from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full font-bold text-center shadow-md border border-blue-800"
+            class="block bg-linear-to-b from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full font-bold text-center shadow-md border border-blue-800"
           >
             ご予約
           </a>

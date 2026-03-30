@@ -39,15 +39,15 @@
 |-----------|------|
 | `sins-top.avif` | メインビジュアルの施術例（1枚） |
 | `sins-short.avif` | ショートの施術例（1枚） |
-| `sins-medium-before-1.avif` | ミディアム before① |
-| `sins-medium-before-2.avif` | ミディアム before② |
-| `sins-medium-before-3.avif` | ミディアム before③ |
-| `sins-medium-after-1.avif` | ミディアム after① |
-| `sins-medium-after-2.avif` | ミディアム after② |
-| `sins-long-before-1.avif` | ロング before① |
-| `sins-long-before-2.avif` | ロング before② |
-| `sins-long-after-1.avif` | ロング after① |
-| `sins-long-after-2.avif` | ロング after② |
+| `sins-medium-1.avif` | ミディアム before/after① |
+| `sins-medium-2.avif` | ミディアム before/after② |
+| `sins-medium-3.avif` | ミディアム before/after③ |
+| `sins-medium-4.avif` | ミディアム before/after④ |
+| `sins-medium-5.avif` | ミディアム before/after⑤ |
+| `sins-long-1.avif` | ロング before/after① |
+| `sins-long-2.avif` | ロング before/after② |
+| `sins-long-3.avif` | ロング before/after③ |
+| `sins-long-4.avif` | ロング before/after④ |
 
 ---
 

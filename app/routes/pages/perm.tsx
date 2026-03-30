@@ -12,7 +12,7 @@ export default createRoute((c) => {
     <Layout currentPage="perm" showFullFooter>
 
       {/* メインコンテンツ */}
-      <section class="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+      <section class="pt-24 pb-16 bg-linear-to-br from-gray-50 to-white">
         <div class="container mx-auto px-4">
           <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">パーマ</h1>
@@ -104,7 +104,7 @@ export default createRoute((c) => {
           </div>
 
           {/* スタイリングアドバイス */}
-          <div class="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 max-w-4xl mx-auto">
+          <div class="mt-16 bg-linear-to-r from-blue-50 to-purple-50 rounded-3xl p-8 max-w-4xl mx-auto">
             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <TipCard

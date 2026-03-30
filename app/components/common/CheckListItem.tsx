@@ -1,7 +1,7 @@
 import type { FC } from 'hono/jsx'
 
 type Props = {
-  icon?: '✓' | '◆' | '•'
+  icon?: '✓' | '◆' | '•' | '♢'
   iconColor?: string
   children: string
 }

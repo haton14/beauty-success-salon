@@ -18,7 +18,7 @@ const colorMap = {
 export const ServiceCard: FC<Props> = ({ title, subtitle, color, recommended = false, children }) => {
   return (
     <Card variant="featured" padding="lg" className="p-0 overflow-hidden">
-      <div class={`bg-gradient-to-r ${colorMap[color]} p-6 text-white`}>
+      <div class={`bg-linear-to-r ${colorMap[color]} p-6 text-white`}>
         <h2 class="text-2xl font-bold flex items-center">
           {recommended && <span class="bg-white/20 rounded-lg px-3 py-1 mr-3">おすすめ</span>}
           {title}
