@@ -8,7 +8,7 @@ export type NavLink = {
 }
 
 // ページキー
-export type PageKey = 'perm' | 'sins' | 'eyelash' | 'kimono' | 'staff' | 'dry-head'
+export type PageKey = 'perm' | 'sins' | 'eyelash' | 'kimono' | 'staff' | 'head-spa'
 
 // 店舗情報
 export type ShopInfo = {

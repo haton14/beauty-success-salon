@@ -7,7 +7,7 @@ const BASE = 'https://images.success-salon.haton14.com'
 
 export default createRoute((c) => {
   return c.render(
-    <Layout currentPage="dry-head" showFullFooter>
+    <Layout currentPage="head-spa" showFullFooter>
 
       {/* メインビジュアル */}
       <section class="pt-12 pb-8 bg-linear-to-b from-emerald-50 to-white">

@@ -1,6 +1,6 @@
 # ドライヘッドスパページ実装方針
 
-`app/features/dry-head.feature` を満たすための実装方針。
+`app/features/head-spa.feature` を満たすための実装方針。
 
 ---
 
@@ -51,7 +51,8 @@
 
 ## ステータス
 
-- [ ] 画像素材のアップロード（13枚）
-- [ ] `app/routes/pages/dry-head.tsx` の作成
-- [ ] トップページにドライヘッドスパ詳細リンクを追加
-- [ ] テスト `app/routes/pages/dry-head.test.tsx` の作成
+- [x] 画像素材のアップロード
+- [x] `app/routes/pages/head-spa.tsx` の作成
+- [x] トップページにヘッドスパ詳細リンクを追加
+- [ ] 水のヘッドスパセクションの追加
+- [ ] テスト `app/routes/pages/head-spa.test.tsx` の作成
