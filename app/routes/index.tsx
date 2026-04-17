@@ -142,7 +142,7 @@ export default createRoute((c) => {
               <PriceItem name="酸性デジタルパーマ" price="¥17,600" />
             </MenuCard>
 
-            <MenuCard title="ヘッドスパ・トリートメント" note="※ドライヘッドスパは女性限定・完全個室">
+            <MenuCard title="ヘッドスパ・トリートメント" note="※ドライヘッドスパは女性限定・完全個室" linkHref="/pages/dry-head" linkText="ドライヘッドスパの詳細">
               <PriceItem name="水のヘッドスパ (15分)" price="¥2,750〜" />
               <PriceItem name="トリートメント" price="¥1,320〜" />
               <PriceItem name="ドライヘッドスパ (30分)" price="¥3,000" />
