@@ -34,7 +34,12 @@
       "mcp__chrome-devtools__select_page",
       "Skill(honox-expert)",
       "WebSearch",
-      "Bash(pnpm test:*)"
+      "Bash(pnpm test:*)",
+      "Bash(grep *)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(git restore *)",
+      "Bash(git commit *)",
+      "Bash(kill 4996 4891 4746)"
     ],
     "deny": [],
     "ask": []

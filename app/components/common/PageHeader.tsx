@@ -1,26 +1,28 @@
-import type { FC } from 'hono/jsx'
+import type { FC, Child } from 'hono/jsx'
 
 type Props = {
   title: string
   subtitle?: string
   bgGradient?: string
-  showUnderline?: boolean
+  children?: Child
 }
 
 export const PageHeader: FC<Props> = ({
   title,
   subtitle,
   bgGradient = 'from-gray-50 to-white',
-  showUnderline = false
+  children,
 }) => {
   return (
-    <section class={`pt-24 pb-16 bg-linear-to-br ${bgGradient}`}>
+    <section class={`pt-20 pb-12 bg-linear-to-b ${bgGradient}`}>
       <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h1 class="text-4xl font-bold text-gray-800 mb-4">{title}</h1>
-          {subtitle && <p class="text-lg text-gray-600">{subtitle}</p>}
-          {showUnderline && <div class="w-24 h-1 bg-blue-800 mx-auto mt-4"></div>}
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{title}</h1>
+          {subtitle && (
+            <p class="text-lg text-gray-700 leading-relaxed">{subtitle}</p>
+          )}
         </div>
+        {children && <div class="mt-8">{children}</div>}
       </div>
     </section>
   )

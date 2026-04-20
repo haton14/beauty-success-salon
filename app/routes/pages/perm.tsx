@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
+import { PageHeader } from '../../components/common/PageHeader'
 import { ServiceCard } from '../../components/pages/perm/ServiceCard'
 import { CheckListItem } from '../../components/common/CheckListItem'
 import { ServiceInfoBox } from '../../components/common/ServiceInfoBox'
@@ -11,16 +12,14 @@ export default createRoute((c) => {
   return c.render(
     <Layout currentPage="perm" showFullFooter>
 
-      {/* メインコンテンツ */}
-      <section class="pt-24 pb-16 bg-linear-to-br from-gray-50 to-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">パーマ</h1>
-            <p class="text-lg text-gray-600">理想のカールやウェーブを実現する多彩なパーマ</p>
-            <div class="w-24 h-1 bg-blue-800 mx-auto mt-4"></div>
-          </div>
+      <PageHeader
+        title="パーマ"
+        subtitle="理想のカールやウェーブを実現する多彩なパーマ"
+      />
 
-          {/* メニューカード */}
+      {/* メニューカード */}
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
           <div class="grid gap-8 max-w-6xl mx-auto">
             {/* パーマ */}
             <ServiceCard title="パーマ" subtitle="理想のカールやウェーブを実現" color="teal">
@@ -104,8 +103,8 @@ export default createRoute((c) => {
           </div>
 
           {/* スタイリングアドバイス */}
-          <div class="mt-16 bg-linear-to-r from-blue-50 to-purple-50 rounded-3xl p-8 max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
+          <div class="mt-16 bg-linear-to-r from-blue-50 to-purple-50 rounded-section p-8 max-w-4xl mx-auto">
+            <h3 class="text-heading-3 text-gray-800 mb-6 text-center">パーマを長持ちさせるコツ</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <TipCard
                 title="自宅でのケア"

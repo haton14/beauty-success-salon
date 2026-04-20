@@ -1,6 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../components/common/Layout'
-import { SectionHeader } from '../components/pages/home/SectionHeader'
+import { SectionHeader } from '../components/common/Heading'
 import { MenuCard } from '../components/pages/home/MenuCard'
 import { PriceItem } from '../components/pages/home/PriceItem'
 import { FAQItem } from '../components/pages/home/FAQItem'
@@ -12,7 +12,7 @@ export default createRoute((c) => {
     <Layout showFullFooter>
 
       {/* コンセプト */}
-      <section id="concept" class="py-12 bg-white">
+      <section id="concept" class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <SectionHeader title="Concept" />
           <div class="max-w-3xl mx-auto text-center">
@@ -28,7 +28,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 外観・内観 */}
-      <section class="pb-10 bg-gray-50">
+      <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div class="rounded-2xl overflow-hidden shadow-lg aspect-video">
@@ -50,17 +50,12 @@ export default createRoute((c) => {
       </section>
 
       {/* sins 酸性ストレート */}
-      <section id="sins" class="py-10 bg-white">
+      <section id="sins" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-8">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">sins 酸性ストレート</h3>
-            <div class="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
-            <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              茨城県で一番最初に導入。<br />
-              癖や広がりが伸びてきても気になりづらく、髪質に合わせたオーダーメイドのストレート。<br />
-              時間が経ってもきれいに素敵でいられる、再現性の高い技術にこだわっています。
-            </p>
-          </div>
+          <SectionHeader
+            title="sins 酸性ストレート"
+            subtitle="茨城県で一番最初に導入。髪質に合わせたオーダーメイドのストレートで、時間が経ってもきれいに素敵でいられる、再現性の高い技術にこだわっています。"
+          />
 
           <div class="max-w-3xl mx-auto">
             <div class="rounded-2xl overflow-hidden shadow-lg mb-8">
@@ -110,7 +105,7 @@ export default createRoute((c) => {
       </section>
 
       {/* メニュー */}
-      <section id="menu" class="py-12 bg-gray-50">
+      <section id="menu" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <SectionHeader title="Menu & Price" />
 
@@ -175,7 +170,7 @@ export default createRoute((c) => {
       </section>
 
       {/* FAQ */}
-      <section class="py-12 bg-gray-50">
+      <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <SectionHeader title="よくあるご質問" subtitle="sins酸性ストレートについて" />
           <div class="max-w-4xl mx-auto space-y-6">
@@ -200,12 +195,9 @@ export default createRoute((c) => {
       </section>
 
       {/* 予約セクション */}
-      <section id="contact" class="py-10 bg-gray-100">
+      <section id="contact" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800 mb-4">ご予約・お問い合わせ</h3>
-            <div class="w-24 h-1 bg-blue-800 mx-auto mb-8"></div>
-          </div>
+          <SectionHeader title="ご予約・お問い合わせ" />
 
           <div class="max-w-4xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8">
@@ -228,7 +220,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 営業時間・アクセス */}
-      <section id="access" class="py-12 bg-white">
+      <section id="access" class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <SectionHeader title="営業時間・アクセス" />
 

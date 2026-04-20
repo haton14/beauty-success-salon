@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
+import { PageHeader } from '../../components/common/PageHeader'
 import { CTA } from '../../components/common/CTA'
 import { FeatureCard } from '../../components/pages/eyelash/FeatureCard'
 import { StepItem } from '../../components/common/StepItem'
@@ -11,21 +12,17 @@ export default createRoute((c) => {
   return c.render(
     <Layout currentPage="eyelash" showFullFooter>
 
-      {/* メインビジュアル */}
-      <section class="pt-20 pb-12 bg-linear-to-b from-pink-50 to-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">まつ毛パーマ</h1>
-            <p class="text-xl text-gray-700 mb-8">自然で美しいカールをあなたに</p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="まつ毛パーマ"
+        subtitle="自然で美しいカールをあなたに"
+        bgGradient="from-pink-50 to-white"
+      />
 
       {/* 特徴 */}
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">まつ毛パーマの魅力</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">まつ毛パーマの魅力</h2>
 
             <div class="grid md:grid-cols-3 gap-8">
               <FeatureCard
@@ -65,7 +62,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">仕上がりイメージ</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">仕上がりイメージ</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
               <GalleryCard
@@ -97,7 +94,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">施術の流れ</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">施術の流れ</h2>
 
             <div class="space-y-6">
               <StepItem step={1} title="カウンセリング" description="理想のカールをお伺いし、まつ毛の状態を確認します。" />
@@ -118,7 +115,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">施術前後の注意点</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">施術前後の注意点</h2>
 
             <div class="bg-white rounded-2xl shadow-lg p-8">
               <h3 class="text-xl font-bold mb-4">施術前</h3>
@@ -143,7 +140,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-md mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">料金</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">料金</h2>
 
             <div class="bg-pink-50 rounded-2xl p-8 shadow-lg text-center">
               <p class="text-4xl font-bold text-blue-900 mb-4">¥2,200</p>

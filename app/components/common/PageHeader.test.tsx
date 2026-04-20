@@ -32,24 +32,22 @@ describe('ページヘッダー', () => {
     })
   })
 
-  describe('アンダーラインの表示を切り替えられる', () => {
-    it('アンダーラインを表示できる', () => {
+  describe('追加コンテンツを差し込める', () => {
+    it('children が指定されると本文として表示される', () => {
       const html = render(PageHeader({
-        title: 'パーマ',
-        showUnderline: true
+        title: 'sins 酸性ストレート',
+        children: '<img alt="施術例" />'
       }))
 
-      expect(html).toContain('w-24')
-      expect(html).toContain('h-1')
-      expect(html).toContain('bg-blue-800')
+      expect(html).toContain('施術例')
     })
 
-    it('指定がなければアンダーラインは表示されない', () => {
+    it('children がなければ本文ラッパーは表示されない', () => {
       const html = render(PageHeader({
         title: 'パーマ'
       }))
 
-      expect(html).not.toContain('w-24')
+      expect(html).not.toContain('mt-8')
     })
   })
 
@@ -83,12 +81,12 @@ describe('ページヘッダー', () => {
       expect(html).toContain('text-center')
     })
 
-    it('グラデーション背景が適用される', () => {
+    it('Tailwind v4 の linear グラデーション背景が適用される', () => {
       const html = render(PageHeader({
         title: 'パーマ'
       }))
 
-      expect(html).toContain('bg-gradient-to')
+      expect(html).toContain('bg-linear-to-b')
     })
 
     it('セクションとして表示される', () => {
@@ -97,6 +95,25 @@ describe('ページヘッダー', () => {
       }))
 
       expect(html).toContain('<section')
+    })
+
+    it('統一された上下余白が適用される', () => {
+      const html = render(PageHeader({
+        title: 'パーマ'
+      }))
+
+      expect(html).toContain('pt-20')
+      expect(html).toContain('pb-12')
+    })
+
+    it('タイトルが統一されたサイズと色で表示される', () => {
+      const html = render(PageHeader({
+        title: 'パーマ'
+      }))
+
+      expect(html).toContain('text-4xl')
+      expect(html).toContain('md:text-5xl')
+      expect(html).toContain('text-gray-800')
     })
   })
 })

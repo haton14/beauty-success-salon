@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
+import { PageHeader } from '../../components/common/PageHeader'
 import { CTA } from '../../components/common/CTA'
 import { CheckListItem } from '../../components/common/CheckListItem'
 import { GalleryCard } from '../../components/common/GalleryCard'
@@ -11,21 +12,17 @@ export default createRoute((c) => {
   return c.render(
     <Layout currentPage="kimono" showFullFooter>
 
-      {/* メインビジュアル */}
-      <section class="pt-20 pb-12 bg-linear-to-b from-purple-50 to-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">着付け・成人式</h1>
-            <p class="text-xl text-gray-700 mb-8">人生の特別な日を、最高の装いで</p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="着付け・成人式"
+        subtitle="人生の特別な日を、最高の装いで"
+        bgGradient="from-purple-50 to-white"
+      />
 
       {/* サービス内容 */}
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">着付けサービス</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">着付けサービス</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
               <div class="bg-purple-50 rounded-2xl p-8">
@@ -70,7 +67,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">スタイルギャラリー</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">スタイルギャラリー</h2>
 
             <div class="grid md:grid-cols-3 gap-6">
               <GalleryCard
@@ -118,7 +115,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">成人式当日の流れ</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">成人式当日の流れ</h2>
 
             <div class="space-y-8">
               <StepItem step={1} title="ご来店・お支度開始" description="早朝からの対応も可能です。お時間に余裕を持ってお越しください。" bgColor="bg-purple-600" />
@@ -139,7 +136,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">料金</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">料金</h2>
 
             <div class="space-y-6">
               <div class="bg-white rounded-2xl shadow-lg p-8">
@@ -175,7 +172,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">ご予約について</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">ご予約について</h2>
 
             <div class="bg-purple-50 rounded-2xl p-8">
               <h3 class="text-xl font-bold mb-4 text-purple-900">早めのご予約をおすすめします</h3>

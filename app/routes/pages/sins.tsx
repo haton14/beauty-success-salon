@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
+import { PageHeader } from '../../components/common/PageHeader'
 import { CTA } from '../../components/common/CTA'
 import { CheckListItem } from '../../components/common/CheckListItem'
 import { PriceRow } from '../../components/common/PriceRow'
@@ -10,34 +11,25 @@ export default createRoute((c) => {
   return c.render(
     <Layout currentPage="sins" showFullFooter>
 
-      {/* メインビジュアル */}
-      <section class="pt-12 pb-8 bg-linear-to-b from-blue-50 to-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">sins 酸性ストレート</h1>
-            <p class="text-gray-700 leading-relaxed">
-              当店の酸性ストレートは<br />
-              髪に優しい弱酸性の薬剤を使用し<br />
-              ダメージを極限まで抑えます。<br />
-              sins薬剤技術で髪質を内部から改善させ<br />
-              柔らかく自然な髪質へと導きます。
-            </p>
-          </div>
-          <div class="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src={`${BASE}/sins-top.avif`}
-              alt="sins酸性ストレート 施術例"
-              class="w-full object-cover"
-            />
-          </div>
+      <PageHeader
+        title="sins 酸性ストレート"
+        subtitle="当店の酸性ストレートは髪に優しい弱酸性の薬剤を使用しダメージを極限まで抑えます。sins薬剤技術で髪質を内部から改善させ柔らかく自然な髪質へと導きます。"
+        bgGradient="from-blue-50 to-white"
+      >
+        <div class="max-w-2xl mx-auto rounded-card overflow-hidden shadow-lg">
+          <img
+            src={`${BASE}/sins-top.avif`}
+            alt="sins酸性ストレート 施術例"
+            class="w-full object-cover"
+          />
         </div>
-      </section>
+      </PageHeader>
 
       {/* こんな方におすすめ */}
-      <section class="py-12 bg-white">
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">このようなお悩みの方へ</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">このようなお悩みの方へ</h2>
 
             <div class="bg-blue-50 rounded-xl p-8 mb-6">
               <ul class="space-y-4 text-lg">
@@ -59,10 +51,10 @@ export default createRoute((c) => {
       </section>
 
       {/* 当店の特徴 */}
-      <section class="py-12 bg-gray-50">
+      <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">当店のsins酸性ストレートの特徴</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">当店のsins酸性ストレートの特徴</h2>
 
             <div class="space-y-6">
               <div class="bg-white rounded-xl p-6 shadow-md">
@@ -105,7 +97,7 @@ export default createRoute((c) => {
       </section>
 
       {/* 注意事項 */}
-      <section class="py-12 bg-white">
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
             <div class="bg-yellow-50 rounded-xl p-8 border-2 border-yellow-200">
@@ -138,10 +130,10 @@ export default createRoute((c) => {
       </section>
 
       {/* ショートの施術例 */}
-      <section class="py-12 bg-gray-50">
+      <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">ショート</h2>
+            <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ショート</h2>
             <div class="rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={`${BASE}/sins-short.avif`}
@@ -154,10 +146,10 @@ export default createRoute((c) => {
       </section>
 
       {/* ミディアムの施術例 */}
-      <section class="py-12 bg-white">
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">ミディアム</h2>
+            <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ミディアム</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[1, 2, 3, 4, 5].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
@@ -174,10 +166,10 @@ export default createRoute((c) => {
       </section>
 
       {/* ロングの施術例 */}
-      <section class="py-12 bg-gray-50">
+      <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">ロング</h2>
+            <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ロング</h2>
             <div class="grid grid-cols-2 gap-4">
               {[1, 2, 3, 4].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
@@ -194,10 +186,10 @@ export default createRoute((c) => {
       </section>
 
       {/* 料金 */}
-      <section class="py-12 bg-white">
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">料金</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">料金</h2>
 
             <div class="bg-white rounded-2xl p-8 shadow-lg">
               <div class="space-y-4">

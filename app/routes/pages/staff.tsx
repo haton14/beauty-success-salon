@@ -1,20 +1,17 @@
 import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
+import { PageHeader } from '../../components/common/PageHeader'
 import { CTA } from '../../components/common/CTA'
 
 export default createRoute((c) => {
   return c.render(
     <Layout currentPage="staff" showFullFooter>
 
-      {/* メインビジュアル */}
-      <section class="pt-20 pb-12 bg-linear-to-b from-blue-50 to-white">
-        <div class="container mx-auto px-4">
-          <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">スタッフ紹介</h1>
-            <p class="text-xl text-gray-700 mb-8">28年の経験を持つ、信頼のスタッフです</p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="スタッフ紹介"
+        subtitle="28年の経験を持つ、信頼のスタッフです"
+        bgGradient="from-blue-50 to-white"
+      />
 
       {/* スタッフ紹介 */}
       <section class="py-16 bg-white">
@@ -32,7 +29,7 @@ export default createRoute((c) => {
                   </div>
                 </div>
                 <div>
-                  <h2 class="text-2xl font-bold text-gray-800 mb-4">オーナースタイリスト</h2>
+                  <h2 class="text-heading-3 text-gray-800 mb-4">オーナースタイリスト</h2>
                   <div class="space-y-4">
                     <div class="bg-blue-50 rounded-lg p-4">
                       <h3 class="font-bold text-blue-900 mb-2">得意な技術</h3>
@@ -68,7 +65,7 @@ export default createRoute((c) => {
                   </div>
                 </div>
                 <div class="order-1 md:order-2">
-                  <h2 class="text-2xl font-bold text-gray-800 mb-4">スタイリスト</h2>
+                  <h2 class="text-heading-3 text-gray-800 mb-4">スタイリスト</h2>
                   <div class="space-y-4">
                     <div class="bg-pink-50 rounded-lg p-4">
                       <h3 class="font-bold text-pink-900 mb-2">得意な技術</h3>
@@ -100,7 +97,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">私たちの想い</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8">私たちの想い</h2>
             <div class="bg-white rounded-2xl p-8 shadow-lg">
               <p class="text-gray-700 leading-relaxed mb-6">
                 夫婦で営んで28年。長年の経験と技術を活かし、
