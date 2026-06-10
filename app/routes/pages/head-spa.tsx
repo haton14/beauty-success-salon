@@ -32,7 +32,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <div class="grid grid-cols-2 gap-4 items-start">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {[1, 2].map((n) => (
                 <div key={n} class="rounded-2xl overflow-hidden shadow-lg">
                   <img
@@ -56,26 +56,6 @@ export default createRoute((c) => {
               alt="ドライヘッドスパ 施術個室"
               class="w-full object-cover"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* 感想写真 */}
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">お客様の声</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 items-start">
-              {[1, 2, 3].map((n) => (
-                <div key={n} class="rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={`${BASE}/dry-head-review-${n}.avif`}
-                    alt={`ドライヘッドスパ お客様の声${n}`}
-                    class="w-full"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -107,7 +87,7 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
             <h2 class="text-heading-2 text-gray-800 mb-8 text-center">ヘッドスパを施術する方へのプレゼント</h2>
-            <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {[1, 2].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
                   <img
@@ -129,8 +109,7 @@ export default createRoute((c) => {
                 全身の血流が良くなる他店にはないマッサージを、お試し下さいませ。
               </p>
               <p class="text-gray-700 leading-relaxed">
-                その他にも<br />
-                股関節の痛み、肩が上がらずブロック注射をしている方も、ご相談下さいませ。
+                ＊股関節、腰の不調、肩が上がらない等で、お困りの方もお試しくださいませ。
               </p>
             </div>
           </div>
@@ -142,11 +121,19 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <div key={n} class="rounded-xl overflow-hidden shadow-md">
+              {[
+                { file: 'body-mobility-1-agura-v2.avif', alt: 'あぐらがかけないほど硬かった股関節の可動域改善 ビフォーアフター' },
+                { file: 'body-mobility-2-zenkutsu.avif', alt: '前屈の可動域改善 ビフォーアフター' },
+                { file: 'body-mobility-3-sorigoshi-gray.avif', alt: '反り腰の改善 ビフォーアフター' },
+                { file: 'body-mobility-4-sorigoshi-brown.avif', alt: '反り腰の改善 ビフォーアフター' },
+                { file: 'body-mobility-5-hiza.avif', alt: '仰向けでの脚・膝の可動域改善 ビフォーアフター' },
+                { file: 'body-mobility-6-kakato.avif', alt: 'うつ伏せで踵がお尻に近づく可動域改善 ビフォーアフター' },
+                { file: 'body-mobility-7-straight-neck.avif', alt: 'ストレートネックの改善 ビフォーアフター' },
+              ].map((photo) => (
+                <div key={photo.file} class="rounded-xl overflow-hidden shadow-md">
                   <img
-                    src={`${BASE}/arm-mobility-${n}.avif`}
-                    alt={`可動域を広げる施術 例${n}`}
+                    src={`${BASE}/${photo.file}`}
+                    alt={photo.alt}
                     class="w-full"
                   />
                 </div>
@@ -163,10 +150,9 @@ export default createRoute((c) => {
             <div class="bg-yellow-50 rounded-xl p-8 border-2 border-yellow-200">
               <h3 class="text-xl font-bold mb-6 text-yellow-900">ご注意</h3>
               <p class="text-gray-700 leading-relaxed">
-                何かを治すものではありません。<br />
-                痛みのない優しい手技で、<br />
-                身体の奥深くの神経を整え、神経伝達異常を改善させて、<br />
-                本来のコンディションを引き出す、最先端の新しい手技です。
+                何かを治すものではなく<br />
+                神経伝達異常を改善させる手技です。<br />
+                個人差があります。
               </p>
             </div>
           </div>
@@ -196,6 +182,36 @@ export default createRoute((c) => {
         </div>
       </section>
 
+      {/* 水のヘッドスパ */}
+      <section class="py-16 bg-emerald-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto">
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">水のヘッドスパ</h2>
+            <div class="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg mb-8">
+              <img
+                src={`${BASE}/water-head-spa.avif`}
+                alt="水のヘッドスパ 施術風景"
+                class="w-full object-cover"
+              />
+            </div>
+            <div class="bg-white rounded-xl p-8 shadow-md mb-8">
+              <p class="text-gray-700 leading-relaxed">
+                水のヘッドスパは、特殊なお水を使用し、高めの温度で15分間のマッサージを行います。<br />
+                シャンプーでは落としきれない頭皮の汚れを取り除くことができます。<br />
+                施術終了後には、お客様自身でも汚れを確認することができます。<br />
+                また、頭皮の水分補給も同時に行いますので、髪も艶々サラサラになります。
+              </p>
+            </div>
+            <div class="bg-white rounded-xl p-8 shadow-md">
+              <div class="space-y-4">
+                <PriceRow label="水のヘッドスパ（15分）" price="¥2,750（税込）" variant="border" />
+              </div>
+              <p class="text-sm text-gray-500 mt-6">※ロング、毛量が多い方はプラス500円〜1000円になります。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 料金 */}
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -207,6 +223,26 @@ export default createRoute((c) => {
                 <PriceRow label="ドライヘッドスパ（60分）" price="¥6,000" variant="border" />
               </div>
               <p class="text-sm text-gray-500 mt-6">※女性限定・完全個室</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* お客様の声 */}
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">お客様の声</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+              {[1, 2, 3, 4].map((n) => (
+                <div key={n} class="rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={`${BASE}/head-spa-voice-${n}.avif`}
+                    alt={`ヘッドスパ お客様の声${n}`}
+                    class="w-full"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

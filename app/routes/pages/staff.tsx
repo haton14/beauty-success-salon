@@ -3,6 +3,8 @@ import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { CTA } from '../../components/common/CTA'
 
+const BASE = 'https://images.success-salon.haton14.com'
+
 export default createRoute((c) => {
   return c.render(
     <Layout currentPage="staff" showFullFooter>
@@ -20,13 +22,12 @@ export default createRoute((c) => {
             {/* オーナー */}
             <div class="mb-16">
               <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
-                  <div class="text-center">
-                    <svg class="w-32 h-32 mx-auto text-gray-400 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                    <p class="text-gray-500">オーナー</p>
-                  </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={`${BASE}/staff-1-male.avif`}
+                    alt="オーナースタイリスト(男性スタッフ)"
+                    class="w-full object-cover"
+                  />
                 </div>
                 <div>
                   <h2 class="text-heading-3 text-gray-800 mb-4">オーナースタイリスト</h2>
@@ -40,8 +41,8 @@ export default createRoute((c) => {
                       </ul>
                     </div>
                     <p class="text-gray-700 leading-relaxed">
-                      常に新しい技術を学び、施術には丁寧さを大切にしています。
-                      お客様に満足いただけるよう、一人ひとりに合わせた最適なスタイルをご提案いたします。
+                      普段のお手入れがしやすいように再現性のあるカットに仕上げます。
+                      すきバサミ(セニングシザー)を使わず、ハサミだけでの毛量調整が得意です。
                     </p>
                     <div class="bg-gray-50 rounded-lg p-4">
                       <p class="text-gray-600">
@@ -56,13 +57,12 @@ export default createRoute((c) => {
             {/* スタッフ */}
             <div>
               <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center order-2 md:order-1">
-                  <div class="text-center">
-                    <svg class="w-32 h-32 mx-auto text-gray-400 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                    <p class="text-gray-500">スタッフ</p>
-                  </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
+                  <img
+                    src={`${BASE}/staff-2-female.avif`}
+                    alt="スタイリスト(女性スタッフ)"
+                    class="w-full object-cover"
+                  />
                 </div>
                 <div class="order-1 md:order-2">
                   <h2 class="text-heading-3 text-gray-800 mb-4">スタイリスト</h2>
@@ -76,9 +76,7 @@ export default createRoute((c) => {
                       </ul>
                     </div>
                     <p class="text-gray-700 leading-relaxed">
-                      お客様の髪が、酸性ストレートで艶々サラサラになると嬉しいです。
-                      ヘッドスパでは、お客様に究極のリラックスタイムをご提供。
-                      「眠らせるのが得意」と好評をいただいています。
+                      オールハンドで、頭皮を柔らかくしたり、体の詰まりを取り除くのが得意です。
                     </p>
                     <div class="bg-gray-50 rounded-lg p-4">
                       <p class="text-gray-600">

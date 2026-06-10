@@ -37,7 +37,7 @@ describe('ヘッダーナビゲーション', () => {
     })
 
     it('ページ内セクションリンクは表示されない', () => {
-      const html = render(Header({ currentPage: 'perm' }))
+      const html = render(Header({ currentPage: 'head-spa' }))
 
       expect(html).not.toContain('href="#concept"')
       expect(html).not.toContain('href="#menu"')
@@ -54,14 +54,15 @@ describe('ヘッダーナビゲーション', () => {
     it('全サービスへのリンクが表示される', () => {
       const html = render(Header({}))
 
-      expect(html).toContain('href="/pages/perm"')
-      expect(html).toContain('パーマ')
+      expect(html).toContain('href="/pages/head-spa"')
+      expect(html).toContain('ドライヘッドスパ')
       expect(html).toContain('href="/pages/sins"')
-      expect(html).toContain('sins酸性ストレート')
+      expect(html).toContain('sins 酸性ストレート')
       expect(html).toContain('href="/pages/eyelash"')
-      expect(html).toContain('まつ毛')
+      expect(html).toContain('まつ毛パーマ')
       expect(html).toContain('href="/pages/kimono"')
-      expect(html).toContain('着付け')
+      expect(html).toContain('ヘアセット・着付け')
+      expect(html).not.toContain('href="/pages/perm"')
     })
 
     it('スタッフページへアクセスできる', () => {
@@ -79,13 +80,13 @@ describe('ヘッダーナビゲーション', () => {
       expect(html).toContain('text-blue-800 font-bold border-b-2 border-blue-800')
     })
 
-    it('permページでは該当リンクが強調される', () => {
-      const html = render(Header({ currentPage: 'perm' }))
+    it('head-spaページでは該当リンクが強調される', () => {
+      const html = render(Header({ currentPage: 'head-spa' }))
 
-      const permLinkMatch = html.match(/href="\/pages\/perm"[^>]*class="([^"]*)"/)
-      expect(permLinkMatch).toBeTruthy()
-      expect(permLinkMatch![1]).toContain('font-bold')
-      expect(permLinkMatch![1]).toContain('border-b-2')
+      const headSpaLinkMatch = html.match(/href="\/pages\/head-spa"[^>]*class="([^"]*)"/)
+      expect(headSpaLinkMatch).toBeTruthy()
+      expect(headSpaLinkMatch![1]).toContain('font-bold')
+      expect(headSpaLinkMatch![1]).toContain('border-b-2')
     })
 
     it('staffページでは該当リンクが強調される', () => {

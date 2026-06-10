@@ -2,16 +2,16 @@ import type { NavLink, ShopInfo, SocialLink, BusinessHour, FAQItemType } from '.
 
 // ナビゲーションリンク
 export const NAV_LINKS: NavLink[] = [
-  { href: '/pages/perm', label: 'パーマ', key: 'perm' },
-  { href: '/pages/sins', label: 'sins酸性ストレート', key: 'sins' },
-  { href: '/pages/eyelash', label: 'まつ毛', key: 'eyelash' },
-  { href: '/pages/kimono', label: '着付け', key: 'kimono' },
+  { href: '/pages/head-spa', label: 'ドライヘッドスパ', key: 'head-spa' },
+  { href: '/pages/sins', label: 'sins 酸性ストレート', key: 'sins' },
+  { href: '/pages/eyelash', label: 'まつ毛パーマ', key: 'eyelash' },
+  { href: '/pages/kimono', label: 'ヘアセット・着付け', key: 'kimono' },
 ]
 
 // 店舗情報
 export const SHOP_INFO: ShopInfo = {
   name: '美容室success',
-  postalCode: '〒314-0042',
+  postalCode: '〒311-2222',
   address: '茨城県鹿嶋市小山1072-88',
   tel: '0299-69-7700',
   telHref: 'tel:0299697700',
@@ -39,7 +39,7 @@ export const BUSINESS_HOURS: BusinessHour[] = [
   { label: '営業時間', time: '9:00 - 19:00' },
   { label: '受付(カット)', time: '9:00 - 18:00' },
   { label: '受付(カラー・パーマ)', time: '9:00 - 17:00' },
-  { label: '定休日', time: '火曜日' },
+  { label: '定休日', time: '火曜日・第一月曜日' },
 ]
 
 // アクセス情報

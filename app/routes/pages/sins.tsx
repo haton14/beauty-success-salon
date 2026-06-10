@@ -132,14 +132,23 @@ export default createRoute((c) => {
       {/* ショートの施術例 */}
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="max-w-2xl mx-auto">
+          <div class="max-w-4xl mx-auto">
             <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ショート</h2>
-            <div class="rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src={`${BASE}/sins-short.avif`}
-                alt="sins酸性ストレート ショート 施術例"
-                class="w-full object-cover"
-              />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <img
+                  src={`${BASE}/sins-short.avif`}
+                  alt="sins酸性ストレート ショート 施術例"
+                  class="w-full object-cover"
+                />
+              </div>
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <img
+                  src={`${BASE}/sins-short-before-after.avif`}
+                  alt="sins酸性ストレート ショート ビフォーアフター"
+                  class="w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -150,7 +159,7 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
             <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ミディアム</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[1, 2, 3, 4, 5].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
                   <img
@@ -170,7 +179,7 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
             <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ロング</h2>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[1, 2, 3, 4].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
                   <img
@@ -193,9 +202,9 @@ export default createRoute((c) => {
 
             <div class="bg-white rounded-2xl p-8 shadow-lg">
               <div class="space-y-4">
-                <PriceRow label="ショート" price="¥19,800" variant="border" />
-                <PriceRow label="ミディアム" price="¥22,000" variant="border" />
-                <PriceRow label="ロング" price="¥24,200" variant="border" />
+                <PriceRow label="ショート" price="¥19,800〜" variant="border" />
+                <PriceRow label="ミディアム" price="¥22,000〜" variant="border" />
+                <PriceRow label="ロング" price="¥24,200〜" variant="border" />
               </div>
               <p class="text-sm text-gray-500 mt-6">※シャンプー・ブロー・カット込み</p>
               <div class="mt-4 space-y-1">
@@ -208,7 +217,7 @@ export default createRoute((c) => {
       </section>
 
       {/* CTA */}
-      <CTA subtitle="※ご予約の際は「sins酸性ストレート希望」とお伝えください" />
+      <CTA />
     </Layout>,
     { title: 'sins酸性ストレート | 美容室success' }
   )

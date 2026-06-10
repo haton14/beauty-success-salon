@@ -23,6 +23,11 @@ export default createRoute((c) => {
             <p class="text-gray-600 leading-relaxed">普段のお手入れを扱いやすく</p>
             <p class="text-gray-600 leading-relaxed">美髪へと導く</p>
             <p class="text-gray-600 leading-relaxed mt-4">最高の技術、知識を提供いたします。</p>
+            <div class="mt-8">
+              <Button href="/pages/staff" variant="secondary">
+                スタッフ紹介を見る
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -69,8 +74,8 @@ export default createRoute((c) => {
             <div class="text-center">
               <div class="grid md:grid-cols-2 gap-4 mb-8">
                 <div class="bg-gray-50 rounded-xl p-4 shadow-lg">
-                  <h4 class="font-bold mb-2">こんな方に</h4>
-                  <p class="text-sm text-gray-600">縮毛矯正で傷んだ髪・自然な仕上がりを求める方</p>
+                  <h4 class="font-bold mb-2">このような方に</h4>
+                  <p class="text-sm text-gray-600">艶髪で、綺麗な髪質を求める方</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-4 shadow-lg">
                   <h4 class="font-bold mb-2">特徴</h4>
@@ -81,11 +86,11 @@ export default createRoute((c) => {
               <div class="bg-gray-50 rounded-xl p-6 mb-8 shadow-lg">
                 <p class="text-lg font-bold text-blue-900 mb-3">料金</p>
                 <div class="space-y-1 md:space-y-0">
-                  <p class="text-gray-700 md:hidden">ショート ¥19,800</p>
-                  <p class="text-gray-700 md:hidden">ミディアム ¥22,000</p>
-                  <p class="text-gray-700 md:hidden">ロング ¥24,200</p>
+                  <p class="text-gray-700 md:hidden">ショート ¥19,800〜</p>
+                  <p class="text-gray-700 md:hidden">ミディアム ¥22,000〜</p>
+                  <p class="text-gray-700 md:hidden">ロング ¥24,200〜</p>
                   <p class="text-gray-700 hidden md:block">
-                    ショート ¥19,800 / ミディアム ¥22,000 / ロング ¥24,200
+                    ショート ¥19,800〜 / ミディアム ¥22,000〜 / ロング ¥24,200〜
                   </p>
                 </div>
                 <p class="text-sm text-gray-500 mt-2">※カット・シャンプー・ブロー込み</p>
@@ -109,61 +114,69 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <SectionHeader title="Menu & Price" />
 
+          <div class="text-center -mt-8 mb-12 text-gray-600">
+            <p>価格は全て税込みです</p>
+            <p>お支払い方法は現金のみとなっております</p>
+          </div>
+
           <div class="max-w-5xl mx-auto space-y-12">
             <MenuCard title="カット">
               <PriceItem name="カット" price="¥4,400" note="（シャンプー・ブロー込）" />
               <PriceItem name="幼児カット" price="¥2,500" />
-              <PriceItem name="小中高校生" price="¥3,310" note="（シャンプー・ブロー込）" />
+              <PriceItem name="小中高校生" price="¥3,960" note="（シャンプー・ブロー込）" />
               <PriceItem name="前髪カット" price="¥1,100" />
+              <PriceItem name="眉カット" price="¥550" />
             </MenuCard>
 
             <MenuCard title="カラー" note="※上記料金はシャンプー・ブロー込み">
               <PriceItem name="カラー＋カット" price="¥8,800〜" />
-              <PriceItem name="カラーのみ" price="¥6,600〜" />
+              <PriceItem name="カラーのみ（全体）" price="¥6,600〜" />
+              <PriceItem name="マニキア＋カット" price="¥9,900〜" />
+              <PriceItem name="マニキアのみ" price="¥7,700" />
+              <PriceItem name="ヘナ＋カット" price="¥9,900〜" />
+              <PriceItem name="ヘナのみ" price="¥7,700〜" />
             </MenuCard>
 
             <MenuCard title="ストレート" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/sins" linkText="sins酸性ストレートを詳しく見る">
-              <PriceItem name="sins 酸性ストレート（ショート）" price="¥19,800" />
-              <PriceItem name="縮毛矯正" price="¥16,500〜" />
-              <PriceItem name="sins 酸性ストレート（ミディアム）" price="¥22,000" />
-              <PriceItem name="縮毛矯正(メンズ)" price="¥7,700〜" />
-              <PriceItem name="sins 酸性ストレート（ロング）" price="¥24,200" />
-              <PriceItem name="ストレートパーマ" price="¥9,900〜" />
+              <PriceItem name="sins 酸性ストレート（ショート）" price="¥19,800〜" />
+              <PriceItem name="sins 酸性ストレート（ミディアム）" price="¥22,000〜" />
+              <PriceItem name="sins 酸性ストレート（ロング）" price="¥24,200〜" />
             </MenuCard>
 
-            <MenuCard title="パーマ" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/perm" linkText="パーマを詳しく見る">
-              <PriceItem name="パーマ" price="¥8,800〜" />
-              <PriceItem name="エアーパーマ" price="¥13,200" />
+            <MenuCard title="パーマ" note="※上記料金はカット・シャンプー・ブロー込み">
+              <PriceItem name="パーマ" price="¥9,900〜" />
               <PriceItem name="酸性デジタルパーマ" price="¥17,600" />
+              <PriceItem name="エアパーマ" price="¥13,200" />
+              <PriceItem name="ツイストパーマ" price="¥11,000" />
+              <PriceItem name="スパイラルパーマ" price="¥11,000" />
+              <PriceItem name="ツイストスパイラルパーマ" price="¥11,000" />
             </MenuCard>
 
-            <MenuCard title="ヘッドスパ・トリートメント" note="※ドライヘッドスパは女性限定・完全個室" linkHref="/pages/head-spa" linkText="ヘッドスパを詳しく見る">
-              <PriceItem name="水のヘッドスパ (15分)" price="¥2,750〜" />
-              <PriceItem name="トリートメント" price="¥1,320〜" />
+            <MenuCard title="ヘッドスパ" note="※ドライヘッドスパは女性限定・完全個室" linkHref="/pages/head-spa" linkText="ヘッドスパを詳しく見る">
               <PriceItem name="ドライヘッドスパ (30分)" price="¥3,000" />
-              <PriceItem name="シャンプー" price="¥1,100" />
               <PriceItem name="ドライヘッドスパ (60分)" price="¥6,000" />
+              <PriceItem name="水のヘッドスパ (15分)" price="¥2,750〜" />
             </MenuCard>
 
-            <MenuCard title="ヘアセット・着付け">
+            <MenuCard title="ヘアセット・着付け" linkHref="/pages/kimono" linkText="ヘアセット・着付けを詳しく見る">
               <PriceItem name="ヘアセット" price="¥4,400" />
-              <PriceItem name="着付け（訪問着）" price="¥11,000" />
               <PriceItem name="メイク" price="¥2,200" />
-              <PriceItem name="着付け（振袖）" price="¥8,800" />
-              <PriceItem name="成人式(着付け・ヘアセット・メイク)" price="¥22,000" />
-              <div class="flex items-baseline gap-2 md:justify-between md:border-b md:border-gray-400 md:pb-2">
-                <span class="text-gray-700">夏の浴衣着付け</span>
-                <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-                <span class="text-blue-900 whitespace-nowrap">
-                  <span class="text-sm">ヘアセット(¥4,400)時</span>
-                  <span class="font-semibold"> 無料</span>
-                </span>
-              </div>
+              <PriceItem name="着付け（振袖）" price="¥11,000" />
+              <PriceItem name="着付け（留袖、訪問着、袴）" price="¥8,800" />
+              <PriceItem name="成人式(振袖着付け、ヘアアップ、メイク)" price="¥22,000" />
+              <PriceItem name="七五三着付け(ヘアセット、着付け、メイク)" price="¥12,100" />
             </MenuCard>
 
-            <MenuCard title="その他メニュー" note="※学生は眉カット無料">
+            <MenuCard title="まつ毛パーマ" linkHref="/pages/eyelash" linkText="まつ毛パーマを詳しく見る">
               <PriceItem name="まつ毛パーマ" price="¥2,200" />
-              <PriceItem name="眉カット" price="¥550" />
+              <div class="md:col-span-2">
+                <img
+                  src="https://images.success-salon.haton14.com/eyelash-main.avif"
+                  alt="まつ毛パーマの施術例"
+                  class="rounded-xl shadow-lg w-full max-w-md mx-auto"
+                  loading="lazy"
+                />
+              </div>
             </MenuCard>
           </div>
         </div>
@@ -244,14 +257,14 @@ export default createRoute((c) => {
                     </li>
                     <li class="flex justify-between">
                       <span>定休日</span>
-                      <span>火曜日</span>
+                      <span>火曜日・第一月曜日</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
                   <h4 class="text-xl font-semibold mb-4">住所</h4>
-                  <p class="text-gray-600 mb-2">〒314-0042</p>
+                  <p class="text-gray-600 mb-2">〒311-2222</p>
                   <p class="text-gray-600 mb-8">茨城県鹿嶋市小山1072-88</p>
 
                   <h4 class="text-xl font-semibold mb-4">アクセス</h4>

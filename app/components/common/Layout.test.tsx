@@ -36,6 +36,21 @@ describe('ページレイアウト', () => {
     })
   })
 
+  describe('訪問者がブラウザ操作に頼らずトップページへ戻れる', () => {
+    it('サービスページでは上下2箇所に「トップページに戻る」ボタンが表示される', () => {
+      const html = render(Layout({ children: '<main>sins page</main>', currentPage: 'sins' }))
+
+      const matches = html.match(/← トップページに戻る/g)
+      expect(matches).toHaveLength(2)
+    })
+
+    it('トップページでは「トップページに戻る」ボタンは表示されない', () => {
+      const html = render(Layout({ children: '<main>トップ</main>' }))
+
+      expect(html).not.toContain('トップページに戻る')
+    })
+  })
+
   describe('ページに応じてフッターの情報量を調整できる', () => {
     it('トップページでは店舗の詳細情報を表示できる', () => {
       const html = render(Layout({ children: '<main>content</main>', showFullFooter: true }))
@@ -48,14 +63,14 @@ describe('ページレイアウト', () => {
       const html = render(Layout({ children: '<main>content</main>', showFullFooter: false }))
 
       expect(html).toContain('Copyright')
-      expect(html).not.toContain('〒314-0042')
+      expect(html).not.toContain('〒311-2222')
     })
 
     it('指定がなければシンプルなフッターが表示される', () => {
       const html = render(Layout({ children: '<main>content</main>' }))
 
       expect(html).toContain('Copyright')
-      expect(html).not.toContain('〒314-0042')
+      expect(html).not.toContain('〒311-2222')
     })
   })
 })

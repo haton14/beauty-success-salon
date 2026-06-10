@@ -16,7 +16,7 @@ describe('フッター', () => {
       const html = render(Footer({ showFullInfo: false }))
 
       expect(html).not.toContain('茨城県鹿嶋市')
-      expect(html).not.toContain('〒314-0042')
+      expect(html).not.toContain('〒311-2222')
       expect(html).not.toContain('TEL:')
       expect(html).not.toContain('0299-69-7700')
     })
@@ -40,7 +40,7 @@ describe('フッター', () => {
     it('訪問者が店舗の場所を確認できる', () => {
       const html = render(Footer({ showFullInfo: true }))
 
-      expect(html).toContain('〒314-0042')
+      expect(html).toContain('〒311-2222')
       expect(html).toContain('茨城県鹿嶋市小山1072-88')
     })
 

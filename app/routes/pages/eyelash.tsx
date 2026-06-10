@@ -2,11 +2,8 @@ import { createRoute } from 'honox/factory'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { CTA } from '../../components/common/CTA'
-import { FeatureCard } from '../../components/pages/eyelash/FeatureCard'
-import { StepItem } from '../../components/common/StepItem'
-import { GalleryCard } from '../../components/common/GalleryCard'
-import { CheckListItem } from '../../components/common/CheckListItem'
-import { ServiceInfoBox } from '../../components/common/ServiceInfoBox'
+
+const BASE = 'https://images.success-salon.haton14.com'
 
 export default createRoute((c) => {
   return c.render(
@@ -14,138 +11,53 @@ export default createRoute((c) => {
 
       <PageHeader
         title="まつ毛パーマ"
-        subtitle="自然で美しいカールをあなたに"
         bgGradient="from-pink-50 to-white"
       />
 
-      {/* 特徴 */}
+      {/* メイン写真 */}
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">まつ毛パーマの魅力</h2>
-
-            <div class="grid md:grid-cols-3 gap-8">
-              <FeatureCard
-                title="目力アップ"
-                description="自然なカールで目元がパッチリ。マスカラなしでも印象的な目元に。"
-                icon={
-                  <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                  </svg>
-                }
-              />
-              <FeatureCard
-                title="時短メイク"
-                description="朝のメイク時間を大幅短縮。ビューラー不要で忙しい朝も楽々。"
-                icon={
-                  <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                }
-              />
-              <FeatureCard
-                title="持続性"
-                description="約1〜2ヶ月持続。まつ毛に優しい薬剤で自然な仕上がりをキープ。"
-                icon={
-                  <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                }
-              />
-            </div>
+          <div class="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src={`${BASE}/eyelash-main.avif`}
+              alt="まつ毛パーマ 施術例"
+              class="w-full object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* デザイン例 */}
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">仕上がりイメージ</h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-              <GalleryCard
-                title="ナチュラルカール"
-                description="自然な上向きカール。普段使いに最適で、すっぴんでも映える仕上がり。"
-                placeholder="ナチュラルカール"
-              />
-              <GalleryCard
-                title="しっかりカール"
-                description="根元からしっかり立ち上げるカール。華やかな印象で特別な日にも。"
-                placeholder="しっかりカール"
-              />
-              <GalleryCard
-                title="セクシーカール"
-                description="毛先を中心にカールをつけた大人っぽい仕上がり。"
-                placeholder="セクシーカール"
-              />
-              <GalleryCard
-                title="キュートカール"
-                description="丸みのある可愛らしいカール。若々しい印象に。"
-                placeholder="キュートカール"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 施術の流れ */}
-      <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-12 text-center">施術の流れ</h2>
-
-            <div class="space-y-6">
-              <StepItem step={1} title="カウンセリング" description="理想のカールをお伺いし、まつ毛の状態を確認します。" />
-              <StepItem step={2} title="クレンジング" description="まつ毛を清潔にし、パーマがかかりやすい状態に。" />
-              <StepItem step={3} title="ロッド選び・巻き上げ" description="目の形に合わせてロッドを選び、丁寧に巻き上げます。" />
-              <StepItem step={4} title="薬剤塗布" description="まつ毛に優しいパーマ液を塗布し、理想のカールを作ります。" />
-              <StepItem step={5} title="仕上げ" description="トリートメントで栄養を与え、美しい仕上がりに。" />
-            </div>
-
-            <div class="mt-8">
-              <ServiceInfoBox duration="約60〜90分" bgColor="bg-pink-50" textColor="text-pink-900" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 注意事項 */}
+      {/* 説明・料金 */}
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">施術前後の注意点</h2>
-
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h3 class="text-xl font-bold mb-4">施術前</h3>
-              <ul class="space-y-2 text-gray-700 mb-6">
-                <CheckListItem icon="•" iconColor="text-gray-700">マスカラは落としてご来店ください</CheckListItem>
-                <CheckListItem icon="•" iconColor="text-gray-700">まつ毛エクステは事前に外してください</CheckListItem>
-                <CheckListItem icon="•" iconColor="text-gray-700">コンタクトレンズは外していただく場合があります</CheckListItem>
-              </ul>
-
-              <h3 class="text-xl font-bold mb-4">施術後</h3>
-              <ul class="space-y-2 text-gray-700">
-                <CheckListItem icon="•" iconColor="text-gray-700">施術後24時間は水に濡らさないでください</CheckListItem>
-                <CheckListItem icon="•" iconColor="text-gray-700">目をこすらないよう注意してください</CheckListItem>
-                <CheckListItem icon="•" iconColor="text-gray-700">マスカラは翌日から使用可能です</CheckListItem>
-              </ul>
+            <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+              <p class="text-gray-700 leading-relaxed mb-8">
+                施術全体のお時間は1時間ほどです。<br />
+                お好みに応じて、ご対応いたしております。<br />
+                長持ちすると好評のまつ毛パーマをぜひお試しくださいませ。
+              </p>
+              <p class="text-4xl font-bold text-blue-900">¥2,200</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 料金 */}
+      {/* ビフォーアフター写真 */}
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <div class="max-w-md mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">料金</h2>
-
-            <div class="bg-pink-50 rounded-2xl p-8 shadow-lg text-center">
-              <p class="text-4xl font-bold text-blue-900 mb-4">¥2,200</p>
-              <p class="text-gray-600">カウンセリング込み</p>
-              <p class="text-sm text-gray-500 mt-4">※下まつ毛パーマも承っております（要相談）</p>
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">ビフォーアフター</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+              {[1, 2, 3, 4].map((n) => (
+                <div key={n} class="rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={`${BASE}/eyelash-${n}.avif`}
+                    alt={`まつ毛パーマ ビフォーアフター${n}`}
+                    class="w-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
