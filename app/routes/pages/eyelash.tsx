@@ -43,17 +43,17 @@ export default createRoute((c) => {
         </div>
       </section>
 
-      {/* ビフォーアフター写真 */}
+      {/* 施術例写真 */}
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">ビフォーアフター</h2>
+            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">施術例</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {[1, 2, 3, 4].map((n) => (
                 <div key={n} class="rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={`${BASE}/eyelash-${n}.avif`}
-                    alt={`まつ毛パーマ ビフォーアフター${n}`}
+                    alt={`まつ毛パーマ 施術例${n}`}
                     class="w-full object-cover"
                   />
                 </div>
