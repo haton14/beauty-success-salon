@@ -6,13 +6,18 @@ import { defineConfig } from 'vite'
 /**
  * HonoXのビルドは2段階で実行される（package.jsonのbuildスクリプト参照）
  *
- * 1. `vite build` - SSR/サーバービルド
+ * 1. `vite build --mode client` - クライアントビルド（先に実行）
+ *    - dist/static/* にブラウザ用JS/CSSを生成
+ *    - dist/.vite/manifest.json を生成
+ *    - mode === 'client' ブロックの設定を使用
+ *
+ * 2. `vite build` - SSR/サーバービルド（後に実行）
  *    - dist/_worker.js を生成（Cloudflare Workers用）
  *    - honox()プラグインの設定を使用
+ *    - 手順1のmanifest.jsonを読み、<Link>/<Script>のパスを解決して焼き込む
  *
- * 2. `vite build --mode client` - クライアントビルド
- *    - dist/static/* にブラウザ用JS/CSSを生成
- *    - mode === 'client' ブロックの設定を使用
+ * ★ビルド順序が重要: client → SSR の順でないと、SSRビルド時に
+ *   manifest.jsonが存在せず、<Link>/<Script>が空になりCSS/JSが読み込まれない。
  *
  * なぜ両方にclient inputが必要か:
  * - honox({ client: { input } }): 開発サーバーとSSRビルドが、
