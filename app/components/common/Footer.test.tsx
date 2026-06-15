@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { render } from '../../test-utils'
 import { Footer } from './Footer'
-
-const render = (component: any): string => component.toString()
 
 describe('フッター', () => {
   describe('サービスページで表示されるシンプルなフッター', () => {

@@ -1,4 +1,4 @@
-import type { NavLink, ShopInfo, SocialLink, BusinessHour, FAQItemType } from '../types'
+import type { BusinessHour, FAQItemType, NavLink, ShopInfo, SocialLink } from '../types'
 
 // ナビゲーションリンク
 export const NAV_LINKS: NavLink[] = [
@@ -45,15 +45,15 @@ export const BUSINESS_HOURS: BusinessHour[] = [
 // アクセス情報
 export const ACCESS_INFO = {
   parking: '駐車場あり',
-  stations: [
-    '最寄り駅：荒野台駅から車で約5分',
-    '鹿島神宮駅から車で約10分',
-  ],
+  stations: ['最寄り駅：荒野台駅から車で約5分', '鹿島神宮駅から車で約10分'],
 }
 
 // Google Maps埋め込みURL
 export const GOOGLE_MAPS_EMBED_URL =
   'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6454.854729781947!2d140.626995!3d36.009856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602254687abc2475%3A0xeca6e6bd9141c2e3!2z576O5a655a6kc3VjY2Vzcy_jg5jjg4Pjg4njgrnjg5E!5e0!3m2!1sja!2sjp!4v1679374360791!5m2!1sja!2sjp'
+
+// サイトURL（canonical / OGP / 構造化データ用）
+export const SITE_URL = 'https://success-salon.haton14.com'
 
 // 画像ベースURL
 export const IMAGE_BASE_URL = 'https://images.success-salon.haton14.com'
@@ -83,11 +83,14 @@ export const SINS_FAQ: FAQItemType[] = [
 ]
 
 // sins酸性ストレート料金
-export const SINS_PRICES = {
-  short: '¥19,800',
-  medium: '¥22,000',
-  long: '¥24,200',
-}
+export const SINS_PRICES = [
+  { label: 'ショート', price: '¥19,800〜' },
+  { label: 'ミディアム', price: '¥22,000〜' },
+  { label: 'ロング', price: '¥24,200〜' },
+] as const
+
+// 創業年
+export const FOUNDED_YEAR = 1998
 
 // Copyright
-export const COPYRIGHT_YEAR = '1098-2025'
+export const COPYRIGHT_YEAR = `${FOUNDED_YEAR}-${new Date().getFullYear()}`

@@ -4,6 +4,9 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
@@ -21,6 +24,6 @@
       "@/*": ["./app/*"]
     }
   },
-  "include": ["app/**/*.ts", "app/**/*.tsx", "vite.config.ts"],
+  "include": ["app/**/*.ts", "app/**/*.tsx", "vite.config.ts", "vitest.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

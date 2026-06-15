@@ -25,3 +25,11 @@ dist-ssr
 
 # workers
 .wrangler
+
+# 個人情報・素材ファイル（コミットしない）
+docs/*.MP4
+docs/*ライントーク*
+docs/美容室/
+
+# Claude Code 個人設定
+.claude/settings.local.json

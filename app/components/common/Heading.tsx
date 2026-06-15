@@ -1,4 +1,4 @@
-import type { FC, Child } from 'hono/jsx'
+import type { Child, FC } from 'hono/jsx'
 
 type HeadingLevel = 1 | 2 | 3 | 4
 
@@ -10,18 +10,13 @@ type Props = {
 }
 
 const levelStyles: Record<HeadingLevel, string> = {
-  1: 'text-heading-1 text-gray-800',  // 36px - ページタイトル
-  2: 'text-heading-2 text-gray-800',  // 30px - セクションタイトル
-  3: 'text-heading-3 text-gray-800',  // 24px - カードタイトル
-  4: 'text-heading-4 text-gray-800',  // 20px - サブセクション
+  1: 'text-heading-1 text-gray-800', // 36px - ページタイトル
+  2: 'text-heading-2 text-gray-800', // 30px - セクションタイトル
+  3: 'text-heading-3 text-gray-800', // 24px - カードタイトル
+  4: 'text-heading-4 text-gray-800', // 20px - サブセクション
 }
 
-export const Heading: FC<Props> = ({
-  level = 2,
-  children,
-  className = '',
-  centered = false,
-}) => {
+export const Heading: FC<Props> = ({ level = 2, children, className = '', centered = false }) => {
   const baseStyles = centered ? 'text-center' : ''
   const combinedClass = `${levelStyles[level]} ${baseStyles} ${className}`.trim()
 
@@ -44,14 +39,10 @@ type SectionHeaderProps = {
   className?: string
 }
 
-export const SectionHeader: FC<SectionHeaderProps> = ({
-  title,
-  subtitle,
-  className = '',
-}) => {
+export const SectionHeader: FC<SectionHeaderProps> = ({ title, subtitle, className = '' }) => {
   return (
     <div class={`text-center mb-16 ${className}`}>
-      <h3 class="text-heading-2 text-gray-800 mb-4">{title}</h3>
+      <h2 class="text-heading-2 text-gray-800 mb-4">{title}</h2>
       {subtitle && <p class="text-lg text-gray-600 mb-4">{subtitle}</p>}
       <div class="w-24 h-1 bg-primary-800 mx-auto"></div>
     </div>

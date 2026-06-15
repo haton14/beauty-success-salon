@@ -1,13 +1,22 @@
 name = "beauty-salon-success"
 main = "dist/_worker.js"
-compatibility_date = "2024-01-01"
+compatibility_date = "2026-06-01"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = true
+
+# ビルドは package.json の deploy script（pnpm run build && wrangler deploy）で行うため
+# [build] は定義しない（定義すると wrangler がもう一度フルビルドして二重になる）
 
 [assets]
 directory = "dist"
 binding = "ASSETS"
 not_found_handling = "none"
 
-[build]
-command = "pnpm run build"
+# プレビュー環境（pnpm deploy:preview で使用）
+[env.preview]
+name = "beauty-salon-success-preview"
+
+[env.preview.assets]
+directory = "dist"
+binding = "ASSETS"
+not_found_handling = "none"

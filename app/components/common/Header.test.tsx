@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { render } from '../../test-utils'
 import { Header } from './Header'
-
-const render = (component: any): string => component.toString()
 
 describe('ヘッダーナビゲーション', () => {
   describe('訪問者がトップページを閲覧している場合', () => {

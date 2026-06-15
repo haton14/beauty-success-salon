@@ -3,7 +3,8 @@ import { createApp } from 'honox/server'
 
 const app = createApp()
 
-app.notFound((c) => c.redirect('/', 301))
+// 存在しないURLはトップページへ誘導する（301だとブラウザに永続キャッシュされるため302）
+app.notFound((c) => c.redirect('/', 302))
 
 showRoutes(app)
 

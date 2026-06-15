@@ -1,188 +1,195 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+/** @jsxImportSource hono/jsx/dom */
+// @vitest-environment jsdom
+
+import { render } from 'hono/jsx/dom'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import MobileMenu from './MobileMenu'
 
 type IntersectionObserverCallback = (entries: IntersectionObserverEntry[]) => void
 
+let mockObserverCallback: IntersectionObserverCallback
+let observedElements: Element[] = []
+let unobservedElements: Element[] = []
+
+class MockIntersectionObserver {
+  constructor(callback: IntersectionObserverCallback) {
+    mockObserverCallback = callback
+  }
+  observe(element: Element) {
+    observedElements.push(element)
+  }
+  unobserve(element: Element) {
+    unobservedElements.push(element)
+  }
+  disconnect() {}
+}
+
+// MobileMenu islandを実際にマウントしてuseEffectを発火させる
+const mountMobileMenu = async () => {
+  const container = document.createElement('div')
+  document.body.appendChild(container)
+  render(<MobileMenu />, container)
+  // hono/jsx/dom は useEffect を requestAnimationFrame 経由で実行するため、その完了を待つ
+  await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)))
+}
+
+const setupHeaderDom = () => {
+  document.body.innerHTML = `
+    <header>
+      <button type="button" id="menuToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu"></button>
+      <div class="hidden" id="mobileMenu">
+        <a href="#concept">私たちについて</a>
+        <a href="#contact">ご予約</a>
+      </div>
+    </header>
+  `
+}
+
+beforeEach(() => {
+  document.body.innerHTML = ''
+  observedElements = []
+  unobservedElements = []
+  vi.stubGlobal('IntersectionObserver', MockIntersectionObserver)
+  vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({ matches: false }))
+})
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
+
+describe('モバイルメニューの開閉', () => {
+  it('ボタンをクリックするとメニューが開きaria-expandedが更新される', async () => {
+    setupHeaderDom()
+    await mountMobileMenu()
+
+    const menuToggle = document.getElementById('menuToggle')!
+    const mobileMenu = document.getElementById('mobileMenu')!
+
+    menuToggle.click()
+
+    expect(mobileMenu.classList.contains('hidden')).toBe(false)
+    expect(menuToggle.getAttribute('aria-expanded')).toBe('true')
+    expect(menuToggle.getAttribute('aria-label')).toBe('メニューを閉じる')
+  })
+
+  it('もう一度クリックするとメニューが閉じる', async () => {
+    setupHeaderDom()
+    await mountMobileMenu()
+
+    const menuToggle = document.getElementById('menuToggle')!
+    const mobileMenu = document.getElementById('mobileMenu')!
+
+    menuToggle.click()
+    menuToggle.click()
+
+    expect(mobileMenu.classList.contains('hidden')).toBe(true)
+    expect(menuToggle.getAttribute('aria-expanded')).toBe('false')
+    expect(menuToggle.getAttribute('aria-label')).toBe('メニューを開く')
+  })
+
+  it('メニュー内のページ内リンクをクリックするとメニューが閉じる', async () => {
+    setupHeaderDom()
+    await mountMobileMenu()
+
+    const menuToggle = document.getElementById('menuToggle')!
+    const mobileMenu = document.getElementById('mobileMenu')!
+
+    menuToggle.click()
+    expect(mobileMenu.classList.contains('hidden')).toBe(false)
+
+    mobileMenu.querySelector<HTMLAnchorElement>('a[href="#contact"]')!.click()
+
+    expect(mobileMenu.classList.contains('hidden')).toBe(true)
+    expect(menuToggle.getAttribute('aria-expanded')).toBe('false')
+  })
+})
+
+describe('スクロール時のヘッダーシャドウ', () => {
+  it('100pxを超えてスクロールするとshadow-mdが付く', async () => {
+    setupHeaderDom()
+    await mountMobileMenu()
+
+    const header = document.querySelector('header')!
+
+    Object.defineProperty(window, 'pageYOffset', { value: 150, configurable: true })
+    window.dispatchEvent(new Event('scroll'))
+    expect(header.classList.contains('shadow-md')).toBe(true)
+
+    Object.defineProperty(window, 'pageYOffset', { value: 0, configurable: true })
+    window.dispatchEvent(new Event('scroll'))
+    expect(header.classList.contains('shadow-md')).toBe(false)
+  })
+})
+
 describe('スクロール時のフェードインアニメーション', () => {
-  let mockObserverCallback: IntersectionObserverCallback
-  let observedElements: Element[] = []
-
-  beforeEach(() => {
-    document.body.innerHTML = ''
-    observedElements = []
-
-    class MockIntersectionObserver {
-      constructor(callback: IntersectionObserverCallback) {
-        mockObserverCallback = callback
-      }
-      observe(element: Element) {
-        observedElements.push(element)
-      }
-      unobserve() {}
-      disconnect() {}
-    }
-    vi.stubGlobal('IntersectionObserver', MockIntersectionObserver)
-  })
-
-  afterEach(() => {
-    vi.unstubAllGlobals()
-  })
-
-  const setupFadeInAnimation = () => {
-    const fadeInObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const target = entry.target as HTMLElement
-          target.style.opacity = '1'
-          target.style.transform = 'translateY(0)'
-        }
-      })
-    }, { root: null, rootMargin: '0px', threshold: 0.1 })
-
-    const sections = document.querySelectorAll('section')
-    sections.forEach((section) => {
-      section.style.opacity = '0.3'
-      section.style.transform = 'translateY(20px)'
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
-      fadeInObserver.observe(section)
-    })
-
-    return fadeInObserver
+  // jsdomではgetBoundingClientRectが常に0を返すため、ビューポート下のセクションを擬似的に作る
+  const createOffscreenSection = (id: string): HTMLElement => {
+    const section = document.createElement('section')
+    section.id = id
+    section.getBoundingClientRect = () => ({ top: 2000 }) as DOMRect
+    document.body.appendChild(section)
+    return section
   }
 
-  describe('ページ読み込み時にセクションが薄く表示される', () => {
-    it('全セクションがアニメーション対象として登録される', () => {
-      document.body.innerHTML = `
-        <section id="section1">Section 1</section>
-        <section id="section2">Section 2</section>
-        <section id="section3">Section 3</section>
-      `
+  it('ビューポートより下のセクションは薄く表示され監視対象になる', async () => {
+    setupHeaderDom()
+    const section = createOffscreenSection('section1')
 
-      setupFadeInAnimation()
+    await mountMobileMenu()
 
-      expect(observedElements).toHaveLength(3)
-    })
-
-    it('セクションは最初薄く表示される', () => {
-      document.body.innerHTML = `<section id="section1">Section 1</section>`
-
-      setupFadeInAnimation()
-
-      const section = document.getElementById('section1')
-      expect(section?.style.opacity).toBe('0.3')
-    })
-
-    it('セクションは最初少し下にずれて表示される', () => {
-      document.body.innerHTML = `<section id="section1">Section 1</section>`
-
-      setupFadeInAnimation()
-
-      const section = document.getElementById('section1')
-      expect(section?.style.transform).toBe('translateY(20px)')
-    })
+    expect(section.style.opacity).toBe('0.3')
+    expect(section.style.transform).toBe('translateY(20px)')
+    expect(observedElements).toContain(section)
   })
 
-  describe('スクロールしてセクションが画面に入ると滑らかに表示される', () => {
-    it('画面に入ったセクションがくっきり表示される', () => {
-      document.body.innerHTML = `<section id="section1">Section 1</section>`
+  it('表示済み（ビューポート内）のセクションは薄くならない', async () => {
+    setupHeaderDom()
+    const visibleSection = document.createElement('section')
+    visibleSection.id = 'visible'
+    document.body.appendChild(visibleSection)
 
-      setupFadeInAnimation()
-      const section = document.getElementById('section1')!
+    await mountMobileMenu()
 
-      mockObserverCallback([{
-        target: section,
-        isIntersecting: true,
-        intersectionRatio: 0.15,
-      } as unknown as IntersectionObserverEntry])
-
-      expect(section.style.opacity).toBe('1')
-    })
-
-    it('画面に入ったセクションが正しい位置に移動する', () => {
-      document.body.innerHTML = `<section id="section1">Section 1</section>`
-
-      setupFadeInAnimation()
-      const section = document.getElementById('section1')!
-
-      mockObserverCallback([{
-        target: section,
-        isIntersecting: true,
-        intersectionRatio: 0.15,
-      } as unknown as IntersectionObserverEntry])
-
-      expect(section.style.transform).toBe('translateY(0)')
-    })
-
-    it('画面外のセクションは薄いまま', () => {
-      document.body.innerHTML = `<section id="section1">Section 1</section>`
-
-      setupFadeInAnimation()
-      const section = document.getElementById('section1')!
-
-      mockObserverCallback([{
-        target: section,
-        isIntersecting: false,
-        intersectionRatio: 0,
-      } as unknown as IntersectionObserverEntry])
-
-      expect(section.style.opacity).toBe('0.3')
-    })
+    expect(visibleSection.style.opacity).toBe('')
+    expect(observedElements).not.toContain(visibleSection)
   })
 
-  describe('各セクションが順番にフェードインする', () => {
-    it('スクロールに応じて上から順に表示される', () => {
-      document.body.innerHTML = `
-        <section id="section1">Section 1</section>
-        <section id="section2">Section 2</section>
-        <section id="section3">Section 3</section>
-      `
+  it('画面に入ったセクションはくっきり表示され監視解除される', async () => {
+    setupHeaderDom()
+    const section = createOffscreenSection('section1')
 
-      setupFadeInAnimation()
-      const section1 = document.getElementById('section1')!
-      const section2 = document.getElementById('section2')!
-      const section3 = document.getElementById('section3')!
+    await mountMobileMenu()
 
-      mockObserverCallback([{
-        target: section1,
-        isIntersecting: true,
-        intersectionRatio: 0.15,
-      } as unknown as IntersectionObserverEntry])
+    mockObserverCallback([
+      { target: section, isIntersecting: true, intersectionRatio: 0.15 } as unknown as IntersectionObserverEntry,
+    ])
 
-      expect(section1.style.opacity).toBe('1')
-      expect(section2.style.opacity).toBe('0.3')
-      expect(section3.style.opacity).toBe('0.3')
+    expect(section.style.opacity).toBe('1')
+    expect(section.style.transform).toBe('translateY(0)')
+    expect(unobservedElements).toContain(section)
+  })
 
-      mockObserverCallback([{
-        target: section2,
-        isIntersecting: true,
-        intersectionRatio: 0.15,
-      } as unknown as IntersectionObserverEntry])
+  it('画面外のセクションは薄いまま', async () => {
+    setupHeaderDom()
+    const section = createOffscreenSection('section1')
 
-      expect(section1.style.opacity).toBe('1')
-      expect(section2.style.opacity).toBe('1')
-      expect(section3.style.opacity).toBe('0.3')
-    })
+    await mountMobileMenu()
 
-    it('一度表示されたセクションはスクロールバックしても表示されたまま', () => {
-      document.body.innerHTML = `<section id="section1">Section 1</section>`
+    mockObserverCallback([
+      { target: section, isIntersecting: false, intersectionRatio: 0 } as unknown as IntersectionObserverEntry,
+    ])
 
-      setupFadeInAnimation()
-      const section = document.getElementById('section1')!
+    expect(section.style.opacity).toBe('0.3')
+  })
 
-      mockObserverCallback([{
-        target: section,
-        isIntersecting: true,
-        intersectionRatio: 0.15,
-      } as unknown as IntersectionObserverEntry])
+  it('reduced-motion設定時はフェードインを行わない', async () => {
+    setupHeaderDom()
+    const section = createOffscreenSection('section1')
+    vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({ matches: true }))
 
-      expect(section.style.opacity).toBe('1')
+    await mountMobileMenu()
 
-      mockObserverCallback([{
-        target: section,
-        isIntersecting: false,
-        intersectionRatio: 0,
-      } as unknown as IntersectionObserverEntry])
-
-      expect(section.style.opacity).toBe('1')
-    })
+    expect(section.style.opacity).toBe('')
+    expect(observedElements).toHaveLength(0)
   })
 })

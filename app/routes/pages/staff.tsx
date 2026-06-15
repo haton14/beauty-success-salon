@@ -1,17 +1,17 @@
 import { createRoute } from 'honox/factory'
+import { CTA } from '../../components/common/CTA'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
-import { CTA } from '../../components/common/CTA'
-
-const BASE = 'https://images.success-salon.haton14.com'
+import { SalonImage } from '../../components/common/SalonImage'
+import { getYearsInBusiness } from '../../utils'
 
 export default createRoute((c) => {
+  const years = getYearsInBusiness()
   return c.render(
     <Layout currentPage="staff" showFullFooter>
-
       <PageHeader
         title="スタッフ紹介"
-        subtitle="28年の経験を持つ、信頼のスタッフです"
+        subtitle={`${years}年の経験を持つ、信頼のスタッフです`}
         bgGradient="from-blue-50 to-white"
       />
 
@@ -23,10 +23,12 @@ export default createRoute((c) => {
             <div class="mb-16">
               <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={`${BASE}/staff-1-male.avif`}
+                  <SalonImage
+                    file="staff-1-male.avif"
                     alt="オーナースタイリスト(男性スタッフ)"
-                    class="w-full object-cover"
+                    width={1144}
+                    height={1430}
+                    eager
                   />
                 </div>
                 <div>
@@ -46,7 +48,7 @@ export default createRoute((c) => {
                     </p>
                     <div class="bg-gray-50 rounded-lg p-4">
                       <p class="text-gray-600">
-                        <span class="font-semibold">経験年数：</span> 28年以上
+                        <span class="font-semibold">経験年数：</span> {years}年以上
                       </p>
                     </div>
                   </div>
@@ -58,11 +60,7 @@ export default createRoute((c) => {
             <div>
               <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
-                  <img
-                    src={`${BASE}/staff-2-female.avif`}
-                    alt="スタイリスト(女性スタッフ)"
-                    class="w-full object-cover"
-                  />
+                  <SalonImage file="staff-2-female.avif" alt="スタイリスト(女性スタッフ)" width={1144} height={1430} />
                 </div>
                 <div class="order-1 md:order-2">
                   <h2 class="text-heading-3 text-gray-800 mb-4">スタイリスト</h2>
@@ -98,16 +96,13 @@ export default createRoute((c) => {
             <h2 class="text-heading-2 text-gray-800 mb-8">私たちの想い</h2>
             <div class="bg-white rounded-2xl p-8 shadow-lg">
               <p class="text-gray-700 leading-relaxed mb-6">
-                夫婦で営んで28年。長年の経験と技術を活かし、
-                お客様一人ひとりに寄り添ったサービスを提供しています。
+                夫婦で営んで{years}年。長年の経験と技術を活かし、 お客様一人ひとりに寄り添ったサービスを提供しています。
               </p>
               <p class="text-gray-700 leading-relaxed mb-6">
                 髪のお悩みを解決し、自宅でもお手入れしやすいスタイルをご提案。
                 技術の向上はもちろん、お客様とのコミュニケーションを大切にしています。
               </p>
-              <p class="text-gray-700 leading-relaxed">
-                リラックスできる空間で、特別な時間をお過ごしください。
-              </p>
+              <p class="text-gray-700 leading-relaxed">リラックスできる空間で、特別な時間をお過ごしください。</p>
             </div>
           </div>
         </div>
@@ -116,6 +111,10 @@ export default createRoute((c) => {
       {/* CTA */}
       <CTA subtitle="スタッフ指名も承っております" />
     </Layout>,
-    { title: 'スタッフ紹介 | 美容室success' }
+    {
+      title: 'スタッフ紹介 | 美容室success',
+      description:
+        '夫婦で営む茨城県鹿嶋市の美容室successのスタッフ紹介。長年の経験と技術で、お客様一人ひとりに寄り添ったサービスを提供しています。',
+    }
   )
 })

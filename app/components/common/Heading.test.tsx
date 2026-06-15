@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { render } from '../../test-utils'
 import { Heading, SectionHeader } from './Heading'
-
-const render = (component: any): string => component.toString()
 
 describe('Heading', () => {
   it('renders h2 by default', () => {

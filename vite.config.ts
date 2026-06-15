@@ -1,6 +1,6 @@
-import honox from 'honox/vite'
 import build from '@hono/vite-build/cloudflare-workers'
 import devServer from '@hono/vite-dev-server'
+import honox from 'honox/vite'
 import { defineConfig } from 'vite'
 
 /**
@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
           output: {
             entryFileNames: 'static/client.js',
             chunkFileNames: 'static/assets/[name]-[hash].js',
-            assetFileNames: 'static/assets/[name]-[hash].[ext]'
+            assetFileNames: 'static/assets/[name]-[hash].[ext]',
           },
           plugins: [
             {
@@ -42,15 +42,15 @@ export default defineConfig(({ mode }) => {
                 if (/\.test\.[jt]sx?$/.test(id)) {
                   return 'export default {}'
                 }
-              }
-            }
-          ]
+              },
+            },
+          ],
         },
         // SSRビルドの出力を消さない
         emptyOutDir: false,
         // <Link>/<Script>がパスを解決するために必要
-        manifest: true
-      }
+        manifest: true,
+      },
     }
   }
 
@@ -61,19 +61,19 @@ export default defineConfig(({ mode }) => {
         client: {
           // HonoXに「これらのクライアント資産が存在する」ことを伝える
           // 開発時とSSRビルド時に<Link>/<Script>が正しいパスを生成するために必要
-          input: ['./app/client.ts', './app/style.css']
-        }
+          input: ['./app/client.ts', './app/style.css'],
+        },
       }),
       build({
         entry: 'app/server.ts',
-        output: '_worker.js'
+        output: '_worker.js',
       }),
       devServer({
-        entry: 'app/server.ts'
-      })
+        entry: 'app/server.ts',
+      }),
     ],
     css: {
-      postcss: './postcss.config.js'
-    }
+      postcss: './postcss.config.js',
+    },
   }
 })

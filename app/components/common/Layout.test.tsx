@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { render } from '../../test-utils'
 import { Layout } from './Layout'
-
-const render = (component: any): string => component.toString()
 
 describe('ページレイアウト', () => {
   describe('全ページ共通の構造を提供する', () => {

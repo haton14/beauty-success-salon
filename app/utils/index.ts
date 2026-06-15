@@ -1,4 +1,4 @@
-import { IMAGE_BASE_URL } from '../constants'
+import { FOUNDED_YEAR, IMAGE_BASE_URL } from '../constants'
 
 /**
  * 画像URLを生成する
@@ -10,28 +10,9 @@ export const getImageUrl = (filename: string): string => {
 }
 
 /**
- * 電話番号をtel:リンク用にフォーマットする
- * @param tel - 電話番号 (例: '0299-69-7700')
- * @returns tel:リンク用の電話番号 (例: 'tel:0299697700')
+ * 創業からの満年数を返す（例: 1998年創業で2026年なら28）
+ * 「◯年目」と表示する場合は +1 する
  */
-export const formatTelHref = (tel: string): string => {
-  return `tel:${tel.replace(/-/g, '')}`
-}
-
-/**
- * 価格を表示用にフォーマットする
- * @param price - 価格（数値）
- * @returns フォーマットされた価格文字列
- */
-export const formatPrice = (price: number): string => {
-  return `¥${price.toLocaleString()}`
-}
-
-/**
- * CSSクラスを結合する
- * @param classes - クラス名の配列（falsy値は無視される）
- * @returns 結合されたクラス文字列
- */
-export const cn = (...classes: (string | undefined | null | false)[]): string => {
-  return classes.filter(Boolean).join(' ')
+export const getYearsInBusiness = (): number => {
+  return new Date().getFullYear() - FOUNDED_YEAR
 }

@@ -6,11 +6,7 @@ type Props = {
   children: string
 }
 
-export const CheckListItem: FC<Props> = ({
-  icon = '✓',
-  iconColor = 'text-green-500',
-  children
-}) => {
+export const CheckListItem: FC<Props> = ({ icon = '✓', iconColor = 'text-green-500', children }) => {
   return (
     <li class="flex items-start">
       <span class={`${iconColor} mr-2`}>{icon}</span>

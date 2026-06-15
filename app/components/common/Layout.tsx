@@ -1,9 +1,9 @@
 import type { FC } from 'hono/jsx'
-import type { LayoutProps } from '../../types'
-import { Header } from './Header'
-import { Footer } from './Footer'
-import { Button } from './Button'
 import MobileMenu from '../../islands/MobileMenu'
+import type { LayoutProps } from '../../types'
+import { Button } from './Button'
+import { Footer } from './Footer'
+import { Header } from './Header'
 
 const BackToHome: FC<{ position: 'top' | 'bottom' }> = ({ position }) => (
   <div class={`container mx-auto px-4 text-left ${position === 'top' ? 'py-4' : 'pb-12'}`}>

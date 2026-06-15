@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { render } from '../../../test-utils'
 import { PriceItem } from './PriceItem'
-
-const render = (component: any): string => component.toString()
 
 describe('料金項目', () => {
   describe('訪問者がメニューと価格を確認できる', () => {
@@ -27,11 +26,13 @@ describe('料金項目', () => {
 
   describe('補足情報を追加できる', () => {
     it('補足説明が指定されると表示される', () => {
-      const html = render(PriceItem({
-        name: 'カット',
-        price: '¥4,400',
-        note: '（シャンプー・ブロー込）'
-      }))
+      const html = render(
+        PriceItem({
+          name: 'カット',
+          price: '¥4,400',
+          note: '（シャンプー・ブロー込）',
+        })
+      )
 
       expect(html).toContain('（シャンプー・ブロー込）')
       expect(html).toContain('text-xs')

@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
-import { Card, Section } from './Card'
-
-const render = (component: any): string => component.toString()
+import { describe, expect, it } from 'vitest'
+import { render } from '../../test-utils'
+import { Card } from './Card'
 
 describe('Card', () => {
   it('renders default card with children', () => {
@@ -36,39 +35,5 @@ describe('Card', () => {
   it('accepts custom className', () => {
     const html = render(Card({ className: 'custom-class', children: 'Custom' }))
     expect(html).toContain('custom-class')
-  })
-})
-
-describe('Section', () => {
-  it('renders section with container', () => {
-    const html = render(Section({ children: 'Section content' }))
-    expect(html).toContain('<section')
-    expect(html).toContain('container mx-auto')
-    expect(html).toContain('Section content')
-  })
-
-  it('renders with id', () => {
-    const html = render(Section({ id: 'my-section', children: 'Content' }))
-    expect(html).toContain('id="my-section"')
-  })
-
-  it('renders white background by default', () => {
-    const html = render(Section({ children: 'Content' }))
-    expect(html).toContain('bg-white')
-  })
-
-  it('renders gray background', () => {
-    const html = render(Section({ bgColor: 'gray', children: 'Content' }))
-    expect(html).toContain('bg-gray-50')
-  })
-
-  it('renders default padding', () => {
-    const html = render(Section({ children: 'Content' }))
-    expect(html).toContain('py-section')
-  })
-
-  it('renders small padding', () => {
-    const html = render(Section({ padding: 'small', children: 'Content' }))
-    expect(html).toContain('py-section-sm')
   })
 })

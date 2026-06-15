@@ -3,25 +3,32 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --mode client",
+    "build": "rm -rf dist && vite build && vite build --mode client",
     "preview": "pnpm run build && wrangler dev dist/_worker.js --local",
     "deploy": "pnpm run build && wrangler deploy",
     "deploy:preview": "pnpm run build && wrangler deploy --env preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
   },
   "dependencies": {
     "hono": "^4.12.25",
     "honox": "^0.1.56"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
     "@cloudflare/workers-types": "^4.20260610.1",
     "@hono/vite-build": "^1.11.1",
     "@hono/vite-dev-server": "^0.26.0",
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^22.19.20",
+    "@vitest/coverage-v8": "^4.1.8",
     "jsdom": "^29.1.1",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",

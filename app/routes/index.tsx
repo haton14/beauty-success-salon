@@ -1,15 +1,26 @@
 import { createRoute } from 'honox/factory'
-import { Layout } from '../components/common/Layout'
+import { Button, PhoneButton } from '../components/common/Button'
 import { SectionHeader } from '../components/common/Heading'
+import { Layout } from '../components/common/Layout'
+import { SalonImage } from '../components/common/SalonImage'
+import { FAQItem } from '../components/pages/home/FAQItem'
 import { MenuCard } from '../components/pages/home/MenuCard'
 import { PriceItem } from '../components/pages/home/PriceItem'
-import { FAQItem } from '../components/pages/home/FAQItem'
-import { Button, PhoneButton } from '../components/common/Button'
+import {
+  ACCESS_INFO,
+  BUSINESS_HOURS,
+  GOOGLE_MAPS_EMBED_URL,
+  LINE_URL,
+  SHOP_INFO,
+  SINS_FAQ,
+  SINS_PRICES,
+} from '../constants'
+import { getYearsInBusiness } from '../utils'
 
 export default createRoute((c) => {
-  const yearsInOperation = new Date().getFullYear() - 1998 + 1
   return c.render(
     <Layout showFullFooter>
+      <h1 class="sr-only">美容室success | 茨城県鹿嶋市の美容室</h1>
 
       {/* コンセプト */}
       <section id="concept" class="py-16 bg-white">
@@ -17,7 +28,7 @@ export default createRoute((c) => {
           <SectionHeader title="Concept" />
           <div class="max-w-3xl mx-auto text-center">
             <p class="text-gray-600 leading-relaxed mb-8">
-              飾らない雰囲気で、長く通っていただける美容室を続けて{yearsInOperation}年目になりました。
+              飾らない雰囲気で、長く通っていただける美容室を続けて{getYearsInBusiness() + 1}年目になりました。
             </p>
             <p class="text-gray-600 leading-relaxed">ダメージを極力出さずに</p>
             <p class="text-gray-600 leading-relaxed">普段のお手入れを扱いやすく</p>
@@ -37,17 +48,23 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div class="rounded-2xl overflow-hidden shadow-lg aspect-video">
-              <img
-                src="https://images.success-salon.haton14.com/exterior.avif"
+              <SalonImage
+                file="exterior.avif"
                 alt="美容室successの外観"
-                class="w-full h-full object-cover"
+                width={1282}
+                height={961}
+                eager
+                className="w-full h-full object-cover"
               />
             </div>
             <div class="rounded-2xl overflow-hidden shadow-lg aspect-video">
-              <img
-                src="https://images.success-salon.haton14.com/interior.avif"
+              <SalonImage
+                file="interior.avif"
                 alt="美容室successの内観"
-                class="w-full h-full object-cover"
+                width={1282}
+                height={961}
+                eager
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -64,21 +81,22 @@ export default createRoute((c) => {
 
           <div class="max-w-3xl mx-auto">
             <div class="rounded-2xl overflow-hidden shadow-lg mb-8">
-              <img
-                src="https://images.success-salon.haton14.com/sins-before-after.avif"
+              <SalonImage
+                file="sins-before-after.avif"
                 alt="sins酸性ストレート before/after"
-                class="w-full object-cover"
+                width={1280}
+                height={1280}
               />
             </div>
 
             <div class="text-center">
               <div class="grid md:grid-cols-2 gap-4 mb-8">
                 <div class="bg-gray-50 rounded-xl p-4 shadow-lg">
-                  <h4 class="font-bold mb-2">このような方に</h4>
+                  <h3 class="font-bold mb-2">このような方に</h3>
                   <p class="text-sm text-gray-600">艶髪で、綺麗な髪質を求める方</p>
                 </div>
                 <div class="bg-gray-50 rounded-xl p-4 shadow-lg">
-                  <h4 class="font-bold mb-2">特徴</h4>
+                  <h3 class="font-bold mb-2">特徴</h3>
                   <p class="text-sm text-gray-600">一人一人に合わせた調合・柔らかな仕上がり</p>
                 </div>
               </div>
@@ -86,11 +104,13 @@ export default createRoute((c) => {
               <div class="bg-gray-50 rounded-xl p-6 mb-8 shadow-lg">
                 <p class="text-lg font-bold text-blue-900 mb-3">料金</p>
                 <div class="space-y-1 md:space-y-0">
-                  <p class="text-gray-700 md:hidden">ショート ¥19,800〜</p>
-                  <p class="text-gray-700 md:hidden">ミディアム ¥22,000〜</p>
-                  <p class="text-gray-700 md:hidden">ロング ¥24,200〜</p>
+                  {SINS_PRICES.map((item) => (
+                    <p key={item.label} class="text-gray-700 md:hidden">
+                      {item.label} {item.price}
+                    </p>
+                  ))}
                   <p class="text-gray-700 hidden md:block">
-                    ショート ¥19,800〜 / ミディアム ¥22,000〜 / ロング ¥24,200〜
+                    {SINS_PRICES.map((item) => `${item.label} ${item.price}`).join(' / ')}
                   </p>
                 </div>
                 <p class="text-sm text-gray-500 mt-2">※カット・シャンプー・ブロー込み</p>
@@ -137,10 +157,15 @@ export default createRoute((c) => {
               <PriceItem name="ヘナのみ" price="¥7,700〜" />
             </MenuCard>
 
-            <MenuCard title="ストレート" note="※上記料金はカット・シャンプー・ブロー込み" linkHref="/pages/sins" linkText="sins酸性ストレートを詳しく見る">
-              <PriceItem name="sins 酸性ストレート（ショート）" price="¥19,800〜" />
-              <PriceItem name="sins 酸性ストレート（ミディアム）" price="¥22,000〜" />
-              <PriceItem name="sins 酸性ストレート（ロング）" price="¥24,200〜" />
+            <MenuCard
+              title="ストレート"
+              note="※上記料金はカット・シャンプー・ブロー込み"
+              linkHref="/pages/sins"
+              linkText="sins酸性ストレートを詳しく見る"
+            >
+              {SINS_PRICES.map((item) => (
+                <PriceItem key={item.label} name={`sins 酸性ストレート（${item.label}）`} price={item.price} />
+              ))}
             </MenuCard>
 
             <MenuCard title="パーマ" note="※上記料金はカット・シャンプー・ブロー込み">
@@ -152,7 +177,12 @@ export default createRoute((c) => {
               <PriceItem name="ツイストスパイラルパーマ" price="¥11,000" />
             </MenuCard>
 
-            <MenuCard title="ヘッドスパ" note="※ドライヘッドスパは女性限定・完全個室" linkHref="/pages/head-spa" linkText="ヘッドスパを詳しく見る">
+            <MenuCard
+              title="ヘッドスパ"
+              note="※ドライヘッドスパは女性限定・完全個室"
+              linkHref="/pages/head-spa"
+              linkText="ヘッドスパを詳しく見る"
+            >
               <PriceItem name="ドライヘッドスパ (30分)" price="¥3,000" />
               <PriceItem name="ドライヘッドスパ (60分)" price="¥6,000" />
               <PriceItem name="水のヘッドスパ (15分)" price="¥2,750〜" />
@@ -170,11 +200,12 @@ export default createRoute((c) => {
             <MenuCard title="まつ毛パーマ" linkHref="/pages/eyelash" linkText="まつ毛パーマを詳しく見る">
               <PriceItem name="まつ毛パーマ" price="¥2,200" />
               <div class="md:col-span-2">
-                <img
-                  src="https://images.success-salon.haton14.com/eyelash-main.avif"
+                <SalonImage
+                  file="eyelash-main.avif"
                   alt="まつ毛パーマの施術例"
-                  class="rounded-xl shadow-lg w-full max-w-md mx-auto"
-                  loading="lazy"
+                  width={1303}
+                  height={1256}
+                  className="rounded-xl shadow-lg w-full max-w-md mx-auto"
                 />
               </div>
             </MenuCard>
@@ -187,22 +218,9 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <SectionHeader title="よくあるご質問" subtitle="sins酸性ストレートについて" />
           <div class="max-w-4xl mx-auto space-y-6">
-            <FAQItem
-              question="従来の縮毛矯正とは何が違うのですか？"
-              answer="sins酸性ストレートは髪に優しい酸性薬剤を使用します。アルカリを使わないため、キューティクルを開かずに施術でき、髪へのダメージを最小限に抑えながら自然なストレートヘアを実現します。"
-            />
-            <FAQItem
-              question="どのくらいの頻度で施術が必要ですか？"
-              answer="sins酸性ストレートは約4〜6ヶ月効果が持続します。個人差はありますが、通常は4〜6ヶ月に1回の施術で美しいストレートヘアを保つことができます。"
-            />
-            <FAQItem
-              question="カラーリングとの同時施術は可能ですか？"
-              answer="はい、可能です。sins酸性ストレートは髪へのダメージが少ないため、カラーリングと同時施術でも髪への負担を最小限に抑えられます。詳しくはご相談ください。"
-            />
-            <FAQItem
-              question="痛んだ髪でも施術できますか？"
-              answer="痛んだ髪にもおすすめです。sins酸性ストレートにはトリートメント効果があり、施術により髪質改善が期待できます。縮毛矯正で傷んだ髪にも艶を取り戻します。"
-            />
+            {SINS_FAQ.map((faq) => (
+              <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
+            ))}
           </div>
         </div>
       </section>
@@ -215,15 +233,15 @@ export default createRoute((c) => {
           <div class="max-w-4xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <h4 class="text-heading-3 font-semibold mb-4">電話予約</h4>
-                <PhoneButton href="tel:0299697700" className="text-2xl">
-                  0299-69-7700
+                <h3 class="text-heading-3 font-semibold mb-4">電話予約</h3>
+                <PhoneButton href={SHOP_INFO.telHref} className="text-2xl">
+                  {SHOP_INFO.tel}
                 </PhoneButton>
               </div>
 
               <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <h4 class="text-heading-3 font-semibold mb-4">LINE公式アカウント</h4>
-                <PhoneButton href="https://lin.ee/uZbY0uQ" variant="line" target="_blank" className="text-xl">
+                <h3 class="text-heading-3 font-semibold mb-4">LINE公式アカウント</h3>
+                <PhoneButton href={LINE_URL} variant="line" target="_blank" className="text-xl">
                   LINEから予約する
                 </PhoneButton>
               </div>
@@ -241,42 +259,38 @@ export default createRoute((c) => {
             <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 class="text-xl font-semibold mb-4">営業時間</h4>
+                  <h3 class="text-xl font-semibold mb-4">営業時間</h3>
                   <ul class="space-y-2 text-gray-600 mb-8">
-                    <li class="flex justify-between">
-                      <span>営業時間</span>
-                      <span>9:00 - 19:00</span>
-                    </li>
-                    <li class="flex justify-between">
-                      <span>受付(カット)</span>
-                      <span>9:00 - 18:00</span>
-                    </li>
-                    <li class="flex justify-between">
-                      <span>受付(カラー・パーマ)</span>
-                      <span>9:00 - 17:00</span>
-                    </li>
-                    <li class="flex justify-between">
-                      <span>定休日</span>
-                      <span>火曜日・第一月曜日</span>
-                    </li>
+                    {BUSINESS_HOURS.map((hour) => (
+                      <li key={hour.label} class="flex justify-between">
+                        <span>{hour.label}</span>
+                        <span>{hour.time}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
                 <div>
-                  <h4 class="text-xl font-semibold mb-4">住所</h4>
-                  <p class="text-gray-600 mb-2">〒311-2222</p>
-                  <p class="text-gray-600 mb-8">茨城県鹿嶋市小山1072-88</p>
+                  <h3 class="text-xl font-semibold mb-4">住所</h3>
+                  <address class="not-italic">
+                    <p class="text-gray-600 mb-2">{SHOP_INFO.postalCode}</p>
+                    <p class="text-gray-600 mb-8">{SHOP_INFO.address}</p>
+                  </address>
 
-                  <h4 class="text-xl font-semibold mb-4">アクセス</h4>
-                  <p class="text-gray-600">駐車場あり</p>
-                  <p class="text-gray-600">最寄り駅：荒野台駅から車で約5分</p>
-                  <p class="text-gray-600">　　　　　鹿島神宮駅から車で約10分</p>
+                  <h3 class="text-xl font-semibold mb-4">アクセス</h3>
+                  <p class="text-gray-600">{ACCESS_INFO.parking}</p>
+                  <ul class="text-gray-600">
+                    {ACCESS_INFO.stations.map((station) => (
+                      <li key={station}>{station}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
               <div class="mt-8">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6454.854729781947!2d140.626995!3d36.009856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602254687abc2475%3A0xeca6e6bd9141c2e3!2z576O5a655a6kc3VjY2Vzcy_jg5jjg4Pjg4njgrnjg5E!5e0!3m2!1sja!2sjp!4v1679374360791!5m2!1sja!2sjp"
+                  src={GOOGLE_MAPS_EMBED_URL}
+                  title="美容室successの地図（Googleマップ）"
                   width="100%"
                   height="350"
                   style="border:0;"
@@ -284,14 +298,12 @@ export default createRoute((c) => {
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
                   class="rounded-xl shadow-lg"
-                >
-                </iframe>
+                ></iframe>
               </div>
             </div>
           </div>
         </div>
       </section>
-
     </Layout>,
     { title: '美容室success | 茨城県鹿嶋市の美容室' }
   )

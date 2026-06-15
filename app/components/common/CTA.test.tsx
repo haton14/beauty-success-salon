@@ -1,7 +1,6 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { render } from '../../test-utils'
 import { CTA } from './CTA'
-
-const render = (component: any): string => component.toString()
 
 describe('予約誘導セクション', () => {
   describe('訪問者が予約方法を確認できる', () => {

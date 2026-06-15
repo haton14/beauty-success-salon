@@ -7,16 +7,9 @@ type Props = {
   variant?: 'rounded' | 'border'
 }
 
-export const PriceRow: FC<Props> = ({
-  label,
-  price,
-  priceColor = 'text-blue-900',
-  variant = 'rounded'
-}) => {
+export const PriceRow: FC<Props> = ({ label, price, priceColor = 'text-blue-900', variant = 'rounded' }) => {
   const baseClass = 'flex justify-between items-center p-3'
-  const variantClass = variant === 'rounded'
-    ? 'bg-gray-50 rounded-lg'
-    : 'pb-3 border-b'
+  const variantClass = variant === 'rounded' ? 'bg-gray-50 rounded-lg' : 'pb-3 border-b'
 
   return (
     <div class={`${baseClass} ${variantClass}`}>
