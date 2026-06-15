@@ -19,8 +19,8 @@ pnpm test:coverage  # Run tests with coverage report
 pnpm typecheck      # TypeScript type check (tsc --noEmit)
 pnpm lint           # Biome lint + format check
 pnpm lint:fix       # Biome auto-fix
-pnpm deploy         # Build and deploy to Cloudflare Workers (production)
-pnpm deploy:preview # Deploy to preview environment
+pnpm run deploy     # Build and deploy to Cloudflare Workers (production)
+pnpm run deploy:preview # Deploy to preview environment
 ```
 
 CI (GitHub Actions, `.github/workflows/ci.yml`) runs lint → typecheck → test → build on every PR.
