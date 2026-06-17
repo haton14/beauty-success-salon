@@ -33,3 +33,6 @@ docs/美容室/
 
 # Claude Code 個人設定
 .claude/settings.local.json
+
+# スクリーンショット(会話に表示されないためここに保存して参照する)
+Screenshots/
