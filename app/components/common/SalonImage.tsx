@@ -8,6 +8,12 @@ type Props = {
   height: number
   /** ファーストビュー内の画像のみ true（遅延読み込みを無効化） */
   eager?: boolean
+  /**
+   * LCP候補の1枚のみ true（fetchPriority="high"）。
+   * 既定では eager に追従するが、ファーストビューに複数枚ある場合は
+   * 真のLCP以外を priority={false} にして優先度の競合を避ける。
+   */
+  priority?: boolean
   className?: string
 }
 
@@ -18,6 +24,7 @@ export const SalonImage: FC<Props> = ({
   width,
   height,
   eager = false,
+  priority = eager,
   className = 'w-full object-cover',
 }) => {
   return (
@@ -27,8 +34,8 @@ export const SalonImage: FC<Props> = ({
       width={width}
       height={height}
       loading={eager ? undefined : 'lazy'}
-      // ファーストビュー画像はLCP候補。優先取得でLCPを早める
-      fetchPriority={eager ? 'high' : undefined}
+      // LCP候補は優先取得でLCPを早める。複数highは競合するため1枚に絞る
+      fetchPriority={priority ? 'high' : undefined}
       decoding="async"
       class={className}
     />

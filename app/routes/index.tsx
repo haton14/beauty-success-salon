@@ -64,6 +64,7 @@ export default createRoute((c) => {
                 width={1282}
                 height={961}
                 eager
+                priority={false}
                 className="w-full h-full object-cover"
               />
             </div>

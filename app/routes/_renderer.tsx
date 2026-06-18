@@ -34,7 +34,7 @@ const JSON_LD = {
   sameAs: SOCIAL_LINKS.map((link) => link.url).concat(LINE_URL),
 }
 
-export default jsxRenderer(({ children, title, description }) => {
+export default jsxRenderer(({ children, title, description, noindex }) => {
   const c = useRequestContext()
   const pageTitle = title || DEFAULT_TITLE
   const pageDescription = description || DEFAULT_DESCRIPTION
@@ -47,7 +47,8 @@ export default jsxRenderer(({ children, title, description }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={canonicalUrl} />
+        {/* 404等はインデックス対象外。存在しないURLへのcanonicalも出さない */}
+        {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SHOP_INFO.name} />
         <meta property="og:locale" content="ja_JP" />
@@ -57,7 +58,11 @@ export default jsxRenderer(({ children, title, description }) => {
         <meta property="og:image" content={OGP_IMAGE_URL} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="preconnect" href={IMAGE_BASE_URL} crossorigin="" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+        {/* JSON.stringify は </script> をエスケープしないため < を明示的に無害化する */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, '\\u003c') }}
+        />
         <Link href="/app/style.css" rel="stylesheet" />
         <Script src="/app/client.ts" async />
       </head>

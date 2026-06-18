@@ -1,6 +1,7 @@
 name = "beauty-salon-success"
 main = "dist/_worker.js"
 compatibility_date = "2026-06-01"
+# honox の useRequestContext は AsyncLocalStorage(node:async_hooks) を使うため必須
 compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 
