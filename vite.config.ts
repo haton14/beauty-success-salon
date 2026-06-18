@@ -36,7 +36,9 @@ export default defineConfig(({ mode }) => {
           // ブラウザにロードされるエントリーポイント
           input: ['./app/client.ts', './app/style.css'],
           output: {
-            entryFileNames: 'static/client.js',
+            // 内容ハッシュを付与してキャッシュバスティングを効かせる。
+            // <Script>はmanifest経由でパス解決するため固定名にする必要はない。
+            entryFileNames: 'static/client-[hash].js',
             chunkFileNames: 'static/assets/[name]-[hash].js',
             assetFileNames: 'static/assets/[name]-[hash].[ext]',
           },

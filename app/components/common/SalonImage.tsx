@@ -27,6 +27,8 @@ export const SalonImage: FC<Props> = ({
       width={width}
       height={height}
       loading={eager ? undefined : 'lazy'}
+      // ファーストビュー画像はLCP候補。優先取得でLCPを早める
+      fetchPriority={eager ? 'high' : undefined}
       decoding="async"
       class={className}
     />
