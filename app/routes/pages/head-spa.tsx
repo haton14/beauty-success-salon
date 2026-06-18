@@ -281,7 +281,7 @@ export default createRoute((c) => {
       </section>
 
       {/* CTA */}
-      <CTA subtitle="※ご予約の際は「ドライヘッドスパ希望」とお伝えください" />
+      <CTA />
     </Layout>,
     {
       title: 'ドライヘッドスパ | 美容室success',

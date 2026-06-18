@@ -36,6 +36,5 @@ describe('ドライヘッドスパページ', () => {
 
     expect(html).toContain('href="tel:0299697700"')
     expect(html).toContain('https://lin.ee/uZbY0uQ')
-    expect(html).toContain('※ご予約の際は「ドライヘッドスパ希望」とお伝えください')
   })
 })

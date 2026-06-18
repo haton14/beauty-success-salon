@@ -112,7 +112,7 @@ export default createRoute((c) => {
       </section>
 
       {/* CTA */}
-      <CTA subtitle="まずはお気軽にご相談ください" bgColor="bg-purple-50" />
+      <CTA bgColor="bg-purple-50" />
     </Layout>,
     {
       title: 'ヘアセット・着付け | 美容室success',

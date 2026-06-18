@@ -32,18 +32,6 @@ describe('予約誘導セクション', () => {
 
       expect(html).toContain('まずはお気軽にご相談ください')
     })
-
-    it('補足説明を追加できる', () => {
-      const html = render(CTA({ subtitle: '※ご予約の際は「sins希望」とお伝えください' }))
-
-      expect(html).toContain('※ご予約の際は「sins希望」とお伝えください')
-    })
-
-    it('補足説明がなければ余計な要素は表示されない', () => {
-      const html = render(CTA({}))
-
-      expect(html).not.toContain('class="text-gray-700 mb-8"')
-    })
   })
 
   describe('デザインに応じて背景色を変更できる', () => {

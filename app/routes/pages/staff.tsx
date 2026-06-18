@@ -79,7 +79,7 @@ export default createRoute((c) => {
       </section>
 
       {/* CTA */}
-      <CTA subtitle="スタッフ指名も承っております" />
+      <CTA />
     </Layout>,
     {
       title: 'スタッフ紹介 | 美容室success',
