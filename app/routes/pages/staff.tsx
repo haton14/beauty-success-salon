@@ -42,10 +42,10 @@ export default createRoute((c) => {
             {/* スタッフ */}
             <div>
               <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="rounded-2xl overflow-hidden shadow-lg order-2 md:order-1">
+                <div class="rounded-2xl overflow-hidden shadow-lg">
                   <SalonImage file="staff-2-female.avif" alt="スタイリスト(女性スタッフ)" width={1144} height={1430} />
                 </div>
-                <div class="order-1 md:order-2">
+                <div>
                   <h2 class="text-heading-3 text-gray-800 mb-4">スタイリスト</h2>
                   <div class="bg-pink-50 rounded-lg p-4">
                     <p class="text-gray-700 leading-relaxed">
