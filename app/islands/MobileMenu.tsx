@@ -23,19 +23,6 @@ export default function MobileMenu() {
       })
     }
 
-    // スクロール時のヘッダーのシャドウ効果
-    const header = document.querySelector('header')
-    if (header) {
-      window.addEventListener(
-        'scroll',
-        () => {
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-          header.classList.toggle('shadow-md', scrollTop > 100)
-        },
-        { passive: true }
-      )
-    }
-
     // スクロール時のセクションフェードイン
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return

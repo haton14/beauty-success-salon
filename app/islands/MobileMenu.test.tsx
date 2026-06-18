@@ -104,23 +104,6 @@ describe('モバイルメニューの開閉', () => {
   })
 })
 
-describe('スクロール時のヘッダーシャドウ', () => {
-  it('100pxを超えてスクロールするとshadow-mdが付く', async () => {
-    setupHeaderDom()
-    await mountMobileMenu()
-
-    const header = document.querySelector('header')!
-
-    Object.defineProperty(window, 'pageYOffset', { value: 150, configurable: true })
-    window.dispatchEvent(new Event('scroll'))
-    expect(header.classList.contains('shadow-md')).toBe(true)
-
-    Object.defineProperty(window, 'pageYOffset', { value: 0, configurable: true })
-    window.dispatchEvent(new Event('scroll'))
-    expect(header.classList.contains('shadow-md')).toBe(false)
-  })
-})
-
 describe('スクロール時のフェードインアニメーション', () => {
   // jsdomではgetBoundingClientRectが常に0を返すため、ビューポート下のセクションを擬似的に作る
   const createOffscreenSection = (id: string): HTMLElement => {
