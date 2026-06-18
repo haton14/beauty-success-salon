@@ -12,13 +12,13 @@ export default createRoute((c) => {
       <PageHeader title="スタッフ紹介" bgGradient="from-blue-50 to-white" />
 
       {/* スタッフ紹介 */}
-      <section class="py-16 bg-white">
+      <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            {/* オーナー */}
-            <div class="mb-16">
-              <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="rounded-2xl overflow-hidden shadow-lg">
+          <div class="max-w-4xl mx-auto space-y-8">
+            {/* オーナー(写真・肩書き・説明を1枚のカードに) */}
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+              <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div class="rounded-xl overflow-hidden">
                   <SalonImage
                     file="staff-1-male.avif"
                     alt="オーナースタイリスト(男性スタッフ)"
@@ -39,10 +39,10 @@ export default createRoute((c) => {
               </div>
             </div>
 
-            {/* スタッフ */}
-            <div>
-              <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="rounded-2xl overflow-hidden shadow-lg">
+            {/* スタッフ(同上) */}
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+              <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div class="rounded-xl overflow-hidden">
                   <SalonImage file="staff-2-female.avif" alt="スタイリスト(女性スタッフ)" width={1144} height={1430} />
                 </div>
                 <div>
@@ -60,7 +60,7 @@ export default createRoute((c) => {
       </section>
 
       {/* メッセージ */}
-      <section class="py-16 bg-gray-50">
+      <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-heading-2 text-gray-800 mb-8">私たちの想い</h2>
