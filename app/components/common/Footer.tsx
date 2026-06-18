@@ -1,6 +1,7 @@
 import type { FC } from 'hono/jsx'
-import { COPYRIGHT_YEAR, SHOP_INFO, SOCIAL_LINKS } from '../../constants'
+import { SHOP_INFO, SOCIAL_LINKS } from '../../constants'
 import type { FooterProps, SocialLink } from '../../types'
+import { getCopyrightYears } from '../../utils'
 
 const iconPaths: Record<SocialLink['icon'], string> = {
   blog: 'M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z',
@@ -15,6 +16,8 @@ const iconStyles: Record<SocialLink['icon'], string> = {
 }
 
 export const Footer: FC<FooterProps> = ({ showFullInfo = false }) => {
+  // レンダリング時(リクエスト内)に評価する。モジュール最上位だと Workers で1970になる
+  const copyrightYears = getCopyrightYears()
   return (
     <footer class="bg-gray-100 text-gray-700 py-12">
       <div class="container mx-auto px-4">
@@ -52,14 +55,14 @@ export const Footer: FC<FooterProps> = ({ showFullInfo = false }) => {
 
               <div class="border-t border-gray-300 pt-6">
                 <p class="text-sm text-gray-500">
-                  Copyright &copy; {COPYRIGHT_YEAR} {SHOP_INFO.name}
+                  Copyright &copy; {copyrightYears} {SHOP_INFO.name}
                 </p>
               </div>
             </>
           )}
           {!showFullInfo && (
             <p class="text-sm text-gray-500">
-              Copyright &copy; {COPYRIGHT_YEAR} {SHOP_INFO.name}
+              Copyright &copy; {copyrightYears} {SHOP_INFO.name}
             </p>
           )}
         </div>

@@ -91,6 +91,3 @@ export const SINS_PRICES = [
 
 // 創業年
 export const FOUNDED_YEAR = 1998
-
-// Copyright
-export const COPYRIGHT_YEAR = `${FOUNDED_YEAR}-${new Date().getFullYear()}`
