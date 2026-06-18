@@ -10,17 +10,29 @@ describe('スタッフ紹介ページ', () => {
     expect(html).toContain('スタッフ紹介')
     expect(html).toContain('オーナースタイリスト')
     expect(html).toContain('スタイリスト')
-    expect(html).toContain('得意な技術')
     expect(html).toContain('私たちの想い')
   })
 
-  it('営業年数が動的に算出されて表示される', async () => {
+  it('スタッフの紹介文が表示される', async () => {
+    const html = await renderRoute(staffRoute)
+
+    expect(html).toContain('再現性のあるカットに仕上げます')
+    expect(html).toContain('オールハンドで、頭皮を柔らかくしたり')
+  })
+
+  it('「得意な技術」リストと経験年数表記は表示されない', async () => {
+    const html = await renderRoute(staffRoute)
+
+    expect(html).not.toContain('得意な技術')
+    expect(html).not.toContain('経験年数')
+    expect(html).not.toContain('年の経験を持つ')
+  })
+
+  it('メッセージの営業年数は動的に算出されて表示される', async () => {
     const html = await renderRoute(staffRoute)
     const years = getYearsInBusiness()
 
-    expect(html).toContain(`${years}年の経験を持つ`)
     expect(html).toContain(`夫婦で営んで${years}年`)
-    expect(html).toContain(`${years}年以上`)
   })
 
   it('スタッフの写真が表示される', async () => {

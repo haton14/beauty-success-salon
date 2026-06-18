@@ -9,11 +9,7 @@ export default createRoute((c) => {
   const years = getYearsInBusiness()
   return c.render(
     <Layout currentPage="staff" showFullFooter>
-      <PageHeader
-        title="スタッフ紹介"
-        subtitle={`${years}年の経験を持つ、信頼のスタッフです`}
-        bgGradient="from-blue-50 to-white"
-      />
+      <PageHeader title="スタッフ紹介" bgGradient="from-blue-50 to-white" />
 
       {/* スタッフ紹介 */}
       <section class="py-16 bg-white">
@@ -33,24 +29,11 @@ export default createRoute((c) => {
                 </div>
                 <div>
                   <h2 class="text-heading-3 text-gray-800 mb-4">オーナースタイリスト</h2>
-                  <div class="space-y-4">
-                    <div class="bg-blue-50 rounded-lg p-4">
-                      <h3 class="font-bold text-blue-900 mb-2">得意な技術</h3>
-                      <ul class="space-y-2 text-gray-700">
-                        <li>• 写真通りのカット・パーマの再現</li>
-                        <li>• お客様のイメージに合わせたスタイル提案</li>
-                        <li>• 髪質改善トリートメント</li>
-                      </ul>
-                    </div>
+                  <div class="bg-blue-50 rounded-lg p-4">
                     <p class="text-gray-700 leading-relaxed">
                       普段のお手入れがしやすいように再現性のあるカットに仕上げます。
                       すきバサミ(セニングシザー)を使わず、ハサミだけでの毛量調整が得意です。
                     </p>
-                    <div class="bg-gray-50 rounded-lg p-4">
-                      <p class="text-gray-600">
-                        <span class="font-semibold">経験年数：</span> {years}年以上
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -64,23 +47,10 @@ export default createRoute((c) => {
                 </div>
                 <div class="order-1 md:order-2">
                   <h2 class="text-heading-3 text-gray-800 mb-4">スタイリスト</h2>
-                  <div class="space-y-4">
-                    <div class="bg-pink-50 rounded-lg p-4">
-                      <h3 class="font-bold text-pink-900 mb-2">得意な技術</h3>
-                      <ul class="space-y-2 text-gray-700">
-                        <li>• sins酸性ストレート</li>
-                        <li>• リラックスヘッドスパ</li>
-                        <li>• まつ毛パーマ</li>
-                      </ul>
-                    </div>
+                  <div class="bg-pink-50 rounded-lg p-4">
                     <p class="text-gray-700 leading-relaxed">
                       オールハンドで、頭皮を柔らかくしたり、体の詰まりを取り除くのが得意です。
                     </p>
-                    <div class="bg-gray-50 rounded-lg p-4">
-                      <p class="text-gray-600">
-                        <span class="font-semibold">経験年数：</span> 豊富な施術経験
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>

@@ -149,10 +149,10 @@ export default createRoute((c) => {
             </MenuCard>
 
             <MenuCard title="カラー" note="※上記料金はシャンプー・ブロー込み">
-              <PriceItem name="カラー＋カット" price="¥8,800〜" />
-              <PriceItem name="カラーのみ（全体）" price="¥6,600〜" />
+              <PriceItem name="カラー＋カット" price="¥9,900〜" />
+              <PriceItem name="カラーのみ（全体）" price="¥7,700〜" />
               <PriceItem name="マニキア＋カット" price="¥9,900〜" />
-              <PriceItem name="マニキアのみ" price="¥7,700" />
+              <PriceItem name="マニキアのみ" price="¥7,700〜" />
               <PriceItem name="ヘナ＋カット" price="¥9,900〜" />
               <PriceItem name="ヘナのみ" price="¥7,700〜" />
             </MenuCard>

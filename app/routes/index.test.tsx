@@ -55,17 +55,17 @@ describe('トップページの Menu & Price', () => {
       const html = await renderHomePage()
 
       expect(html).toContain('カラー＋カット')
-      expect(html).toContain('¥8,800〜')
       expect(html).toContain('カラーのみ')
       expect(html).toContain('（全体）')
-      expect(html).toContain('¥6,600〜')
       expect(html).toContain('マニキア＋カット')
       expect(html).toContain('マニキアのみ')
-      expect(html).toContain('¥7,700')
       expect(html).toContain('ヘナ＋カット')
-      expect(html).toContain('¥9,900〜')
       expect(html).toContain('ヘナのみ')
+      // 値上げ後(母6/11 §8-2): カラー＋カット/カラーのみ/マニキアのみ
+      expect(html).toContain('¥9,900〜')
       expect(html).toContain('¥7,700〜')
+      expect(html).not.toContain('¥8,800〜')
+      expect(html).not.toContain('¥6,600〜')
     })
   })
 

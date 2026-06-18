@@ -42,7 +42,7 @@ export default createRoute((c) => {
           <div class="max-w-4xl mx-auto">
             <h2 class="text-heading-2 text-gray-800 mb-8 text-center">施術例</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-              {[1, 2, 3, 4].map((n) => (
+              {[1, 2, 3, 4, 5, 6].map((n) => (
                 <div key={n} class="rounded-2xl overflow-hidden shadow-lg">
                   <SalonImage file={`eyelash-${n}.avif`} alt={`まつ毛パーマ 施術例${n}`} width={1108} height={1477} />
                 </div>
