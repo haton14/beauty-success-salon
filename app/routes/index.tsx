@@ -294,11 +294,10 @@ export default createRoute((c) => {
                   title="美容室successの地図（Googleマップ）"
                   width="100%"
                   height="350"
-                  style="border:0;"
                   allowfullscreen
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
-                  class="rounded-xl shadow-lg"
+                  class="rounded-xl shadow-lg border-0"
                 ></iframe>
               </div>
             </div>
