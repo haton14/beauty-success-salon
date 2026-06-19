@@ -1,5 +1,6 @@
 import type { FC } from 'hono/jsx'
 import MobileMenu from '../../islands/MobileMenu'
+import NoticeBanner from '../../islands/NoticeBanner'
 import type { LayoutProps } from '../../types'
 import { Button } from './Button'
 import { Footer } from './Footer'
@@ -17,6 +18,7 @@ export const Layout: FC<LayoutProps> = ({ children, currentPage, showFullFooter 
   return (
     <>
       <MobileMenu />
+      <NoticeBanner />
       <Header currentPage={currentPage} />
       {currentPage && <BackToHome position="top" />}
       {children}

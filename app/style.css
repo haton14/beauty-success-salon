@@ -82,3 +82,25 @@
     scroll-behavior: smooth;
   }
 }
+
+/* --------------------------------------------------------------------------
+   お知らせバナーの出現演出
+   --------------------------------------------------------------------------
+   臨時休業などのお知らせ出現時に、上から一度だけ静かにスライドインする。
+   点滅などの繰り返しアニメーションは行わない（しつこくならないよう配慮）。
+   prefers-reduced-motion: reduce では無効。
+   -------------------------------------------------------------------------- */
+@keyframes notice-slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .notice-banner {
+    animation: notice-slide-in 0.35s ease-out;
+  }
+}

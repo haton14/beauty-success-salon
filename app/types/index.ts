@@ -54,6 +54,19 @@ export type FAQItemType = {
   answer: string
 }
 
+// お知らせ（臨時休業など）。startAt/endAt は +09:00 オフセット付きISO文字列、または空文字。
+export type Notice = {
+  message: string
+  startAt: string
+  endAt: string
+  enabled: boolean
+}
+
+// Cloudflare Workers のバインディング（wrangler.toml と対応）
+export type Bindings = {
+  NOTICE: KVNamespace
+}
+
 // コンポーネント共通Props
 export type LayoutProps = {
   children: Child

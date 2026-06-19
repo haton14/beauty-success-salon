@@ -34,6 +34,11 @@ export default createRoute(
   // あるため s-maxage は短め、ブラウザは都度再検証(max-age=0)、配信はSWRで途切れさせない。
   async (c, next) => {
     await next()
+    // 管理画面（Access保護）は公開エッジキャッシュに載せない。
+    if (c.req.path.startsWith('/admin')) {
+      c.res.headers.set('Cache-Control', 'no-store')
+      return
+    }
     if (c.res.headers.get('content-type')?.includes('text/html')) {
       c.res.headers.set('Cache-Control', 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400')
     }
