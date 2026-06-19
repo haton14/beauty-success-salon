@@ -18,23 +18,28 @@
     "lint:fix": "biome check --write ."
   },
   "dependencies": {
-    "hono": "^4.12.25",
+    "hono": "^4.12.26",
     "honox": "^0.1.56"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
-    "@cloudflare/workers-types": "^4.20260610.1",
+    "@biomejs/biome": "^2.5.0",
+    "@cloudflare/workers-types": "^4.20260619.1",
     "@hono/vite-build": "^1.11.1",
     "@hono/vite-dev-server": "^0.26.0",
-    "@tailwindcss/postcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.1",
     "@types/node": "^22.19.20",
-    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/coverage-v8": "^4.1.9",
     "jsdom": "^29.1.1",
     "postcss": "^8.5.15",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.16",
-    "vitest": "^4.1.8",
-    "wrangler": "^4.99.0"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.102.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "undici": "^7.28.0"
+    }
   }
 }
