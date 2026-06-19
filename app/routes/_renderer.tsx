@@ -49,6 +49,10 @@ export default jsxRenderer(({ children, title, description, noindex }) => {
         <meta name="google-site-verification" content="TtRbVO7jsn2DdRzSxQnM533kT8MvdO3uJPKjKwDo_EE" />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        {/* ファビコン: SVG対応ブラウザはSVG、非対応環境は.icoにフォールバック */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* 404等はインデックス対象外。存在しないURLへのcanonicalも出さない */}
         {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
         <meta property="og:type" content="website" />
