@@ -1,0 +1,30 @@
+name = "beauty-salon-success"
+main = "dist/_worker.js"
+compatibility_date = "2026-06-01"
+# honox の useRequestContext は AsyncLocalStorage(node:async_hooks) を使うため必須
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# 本番カスタムドメイン。Pages から移行済み(2026-06-19)。
+# new.success-salon.haton14.com は移行検証用に残置(安定後に削除予定)。
+routes = [
+  { pattern = "success-salon.haton14.com", custom_domain = true },
+  { pattern = "new.success-salon.haton14.com", custom_domain = true },
+]
+
+# ビルドは package.json の deploy script（pnpm run build && wrangler deploy）で行うため
+# [build] は定義しない（定義すると wrangler がもう一度フルビルドして二重になる）
+
+[assets]
+directory = "dist"
+binding = "ASSETS"
+not_found_handling = "none"
+
+# プレビュー環境（pnpm deploy:preview で使用）
+[env.preview]
+name = "beauty-salon-success-preview"
+
+[env.preview.assets]
+directory = "dist"
+binding = "ASSETS"
+not_found_handling = "none"
