@@ -6,10 +6,8 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 
 # 本番カスタムドメイン。Pages から移行済み(2026-06-19)。
-# new.success-salon.haton14.com は移行検証用に残置(安定後に削除予定)。
 routes = [
   { pattern = "success-salon.haton14.com", custom_domain = true },
-  { pattern = "new.success-salon.haton14.com", custom_domain = true },
 ]
 
 # ビルドは package.json の deploy script（pnpm run build && wrangler deploy）で行うため
