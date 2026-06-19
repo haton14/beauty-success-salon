@@ -3,12 +3,19 @@ main = "dist/_worker.js"
 compatibility_date = "2026-06-01"
 # honox の useRequestContext は AsyncLocalStorage(node:async_hooks) を使うため必須
 compatibility_flags = ["nodejs_compat"]
-workers_dev = true
+# 本番は workers.dev を無効化。Access で /admin を保護するのはカスタムドメインのみのため、
+# workers.dev 経由の素通り（Access バイパス）を塞ぐ。
+workers_dev = false
 
 # 本番カスタムドメイン。Pages から移行済み(2026-06-19)。
 routes = [
   { pattern = "success-salon.haton14.com", custom_domain = true },
 ]
+
+# お知らせ（臨時休業など）の保存先 KV。
+[[kv_namespaces]]
+binding = "NOTICE"
+id = "87b8ce65d1ec40dc8679d4a2a9b11509"
 
 # ビルドは package.json の deploy script（pnpm run build && wrangler deploy）で行うため
 # [build] は定義しない（定義すると wrangler がもう一度フルビルドして二重になる）
@@ -28,8 +35,19 @@ enabled = true
 # プレビュー環境（pnpm deploy:preview で使用）
 [env.preview]
 name = "beauty-salon-success-preview"
+# 本番の routes（カスタムドメイン）を継承しないよう明示的に空にする。
+# 継承するとプレビューのデプロイが本番ドメインを奪ってしまう。
+routes = []
+# プレビューはカスタムドメインを持たないため workers.dev で到達する。
+# 注意: プレビューの /admin は Access 未保護（検証用途）。本番のみが保護対象。
+workers_dev = true
 
 [env.preview.assets]
 directory = "dist"
 binding = "ASSETS"
 not_found_handling = "none"
+
+# プレビュー用 KV。
+[[env.preview.kv_namespaces]]
+binding = "NOTICE"
+id = "4f266f0c466142c0a439119a0ea30152"
