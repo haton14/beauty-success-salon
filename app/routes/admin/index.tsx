@@ -13,8 +13,18 @@ type AdminViewProps = {
 export const AdminView: FC<AdminViewProps> = ({ notice, saved, kvAvailable, userEmail }) => (
   <main class="min-h-screen bg-gray-50 py-10">
     <div class="container mx-auto px-4 max-w-2xl">
-      <div class="flex items-baseline justify-between mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">お知らせ管理</h1>
+      <div class="flex items-center justify-between mb-6 gap-4">
+        <div class="flex items-baseline gap-4">
+          <h1 class="text-2xl font-bold text-gray-800">お知らせ管理</h1>
+          <a
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-blue-700 hover:text-blue-900 underline whitespace-nowrap"
+          >
+            トップページを見る ↗
+          </a>
+        </div>
         {userEmail && <span class="text-sm text-gray-500">{userEmail}</span>}
       </div>
 

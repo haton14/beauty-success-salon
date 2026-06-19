@@ -14,6 +14,13 @@ describe('お知らせ管理画面', () => {
     expect(html).toContain('name="enabled"')
   })
 
+  it('トップページへのリンクがある', () => {
+    const html = render(AdminView({ notice: null, saved: false, kvAvailable: true, userEmail: null }))
+
+    expect(html).toContain('href="/"')
+    expect(html).toContain('トップページを見る')
+  })
+
   it('既存のお知らせが初期値として埋め込まれる', () => {
     const html = render(
       AdminView({
