@@ -6,7 +6,7 @@ import { Footer } from './Footer'
 import { Header } from './Header'
 
 const BackToHome: FC<{ position: 'top' | 'bottom' }> = ({ position }) => (
-  <div class={`container mx-auto px-4 text-left ${position === 'top' ? 'py-4' : 'pb-12'}`}>
+  <div class={`container mx-auto px-4 ${position === 'top' ? 'py-4 text-left' : 'py-12 text-center'}`}>
     <Button href="/" variant="secondary" size="lg">
       ← トップページに戻る
     </Button>
