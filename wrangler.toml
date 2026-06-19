@@ -18,6 +18,13 @@ directory = "dist"
 binding = "ASSETS"
 not_found_handling = "none"
 
+# Workers Logs / Workers Traces（オブザーバビリティ）を有効化
+[observability]
+enabled = true
+
+[observability.traces]
+enabled = true
+
 # プレビュー環境（pnpm deploy:preview で使用）
 [env.preview]
 name = "beauty-salon-success-preview"
