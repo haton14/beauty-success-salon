@@ -1,0 +1,7 @@
+# Cloudflare Workers 静的アセットのカスタムヘッダー
+# https://developers.cloudflare.com/workers/static-assets/headers/
+#
+# /static/ 配下は全て内容ハッシュ付きファイル名（client-[hash].js / *-[hash].css 等）。
+# 中身が変わればファイル名も変わるため、1年 immutable で安全にキャッシュできる。
+/static/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,14 @@
+# 旧Astroサイト(Cloudflare Pages)からのURL移行用 301リダイレクト。
+# 旧パスは新HonoXサイトに存在しないため、SEO評価と外部リンクを引き継ぐために恒久リダイレクトする。
+# 実在ルート(/pages/*)が優先マッチするため新ページには影響しない。未知パスは _404.tsx に任せる。
+
+# トップへ集約された旧ページ → 該当セクションのアンカーへ
+/concept    /#concept         301
+/price      /#menu            301
+/access     /#access          301
+/straight   /#sins            301
+
+# 個別ページが存続しているもの
+/head-spa   /pages/head-spa   301
+/eyelash    /pages/eyelash    301
+/dressing   /pages/kimono     301
