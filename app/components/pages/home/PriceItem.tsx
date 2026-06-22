@@ -24,7 +24,7 @@ export const PriceItem: FC<Props> = ({ name, price, note }) => {
       <div class="flex items-baseline gap-2 justify-between">
         <span class="text-gray-700">{main}</span>
         <span class="flex-1 border-b border-dotted border-gray-300 mx-2 md:hidden"></span>
-        <span class="font-semibold text-blue-900 whitespace-nowrap">{price}</span>
+        <span class="font-semibold text-brand-strong whitespace-nowrap">{price}</span>
       </div>
       {below && <p class="text-xs text-gray-500 mt-0.5">{below}</p>}
     </div>

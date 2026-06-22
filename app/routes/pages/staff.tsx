@@ -1,5 +1,7 @@
 import { createRoute } from 'honox/factory'
+import { Card } from '../../components/common/Card'
 import { CTA } from '../../components/common/CTA'
+import { Heading } from '../../components/common/Heading'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { SalonImage } from '../../components/common/SalonImage'
@@ -28,7 +30,9 @@ export default createRoute((c) => {
                   />
                 </div>
                 <div>
-                  <h2 class="text-heading-3 text-gray-800 mb-4">オーナースタイリスト</h2>
+                  <Heading level={3} className="mb-4">
+                    オーナースタイリスト
+                  </Heading>
                   <div class="bg-blue-50 rounded-lg p-4">
                     <p class="text-gray-700 leading-relaxed">
                       普段のお手入れがしやすいように再現性のあるカットに仕上げます。
@@ -46,7 +50,9 @@ export default createRoute((c) => {
                   <SalonImage file="staff-2-female.avif" alt="スタイリスト(女性スタッフ)" width={1144} height={1430} />
                 </div>
                 <div>
-                  <h2 class="text-heading-3 text-gray-800 mb-4">スタイリスト</h2>
+                  <Heading level={3} className="mb-4">
+                    スタイリスト
+                  </Heading>
                   <div class="bg-pink-50 rounded-lg p-4">
                     <p class="text-gray-700 leading-relaxed">
                       オールハンドで、頭皮を柔らかくしたり、体の詰まりを取り除くのが得意です。
@@ -63,8 +69,10 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-heading-2 text-gray-800 mb-8">私たちの想い</h2>
-            <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <Heading level={2} className="mb-8">
+              私たちの想い
+            </Heading>
+            <Card padding="lg">
               <p class="text-gray-700 leading-relaxed mb-6">
                 夫婦で営んで{years}年。長年の経験と技術を活かし、 お客様一人ひとりに寄り添ったサービスを提供しています。
               </p>
@@ -73,7 +81,7 @@ export default createRoute((c) => {
                 技術の向上はもちろん、お客様とのコミュニケーションを大切にしています。
               </p>
               <p class="text-gray-700 leading-relaxed">リラックスできる空間で、特別な時間をお過ごしください。</p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>

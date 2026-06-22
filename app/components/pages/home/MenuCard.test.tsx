@@ -25,7 +25,7 @@ describe('メニューカード', () => {
       )
 
       expect(html).toContain('text-heading-3')
-      expect(html).toContain('text-primary-900')
+      expect(html).toContain('text-brand-strong')
     })
   })
 

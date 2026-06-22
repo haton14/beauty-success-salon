@@ -48,7 +48,7 @@ describe('料金行', () => {
         })
       )
 
-      expect(html).toContain('text-blue-900')
+      expect(html).toContain('text-brand-strong')
     })
   })
 
