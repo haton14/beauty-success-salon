@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { CTA } from '../../components/common/CTA'
+import { Heading } from '../../components/common/Heading'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { PriceRow } from '../../components/common/PriceRow'
@@ -38,7 +39,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-6 text-center">◇成人式◇</h2>
+            <Heading level={2} centered className="mb-6">
+              ◇成人式◇
+            </Heading>
             <p class="text-center text-gray-700 text-lg mb-10">
               振袖着付け、ヘアアップ、メイク
               <br />
@@ -70,7 +73,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-6 text-center">◇訪問着 留袖◇</h2>
+            <Heading level={2} centered className="mb-6">
+              ◇訪問着 留袖◇
+            </Heading>
             <p class="text-center text-gray-700 text-lg mb-10">
               <span class="font-bold text-purple-900">8,800円</span>
             </p>
@@ -90,7 +95,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-6 text-center">◇七五三◇</h2>
+            <Heading level={2} centered className="mb-6">
+              ◇七五三◇
+            </Heading>
 
             <div class="max-w-2xl mx-auto bg-purple-50 rounded-2xl p-8 mb-10">
               <div class="space-y-3">

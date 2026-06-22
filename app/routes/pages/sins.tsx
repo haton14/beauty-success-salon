@@ -1,6 +1,8 @@
 import { createRoute } from 'honox/factory'
+import { Card } from '../../components/common/Card'
 import { CheckListItem } from '../../components/common/CheckListItem'
 import { CTA } from '../../components/common/CTA'
+import { Heading } from '../../components/common/Heading'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { PriceRow } from '../../components/common/PriceRow'
@@ -24,29 +26,31 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">このようなお悩みの方へ</h2>
+            <Heading level={2} centered className="mb-8">
+              このようなお悩みの方へ
+            </Heading>
 
             <div class="bg-blue-50 rounded-xl p-8 mb-6">
               <ul class="space-y-4 text-lg">
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   癖やダメージが気になる
                 </CheckListItem>
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   パサつき、毛羽たち、枝毛等が気になる
                 </CheckListItem>
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   ごわつき、広がりがある
                 </CheckListItem>
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   朝、アイロンを入れても、癖が出て気になる
                 </CheckListItem>
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   前髪だけ癖毛
                 </CheckListItem>
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   ストレートをしたいけど傷まないか不安
                 </CheckListItem>
-                <CheckListItem icon="♢" iconColor="text-blue-800">
+                <CheckListItem icon="♢" iconColor="text-brand">
                   不自然な真っ直ぐになりたくない
                 </CheckListItem>
               </ul>
@@ -61,7 +65,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">当店のsins酸性ストレートの特徴</h2>
+            <Heading level={2} centered className="mb-8">
+              当店のsins酸性ストレートの特徴
+            </Heading>
 
             <div class="space-y-6">
               <div class="bg-white rounded-xl p-6 shadow-md">
@@ -156,7 +162,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ショート</h2>
+            <Heading level={3} centered className="mb-6">
+              ショート
+            </Heading>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="rounded-xl overflow-hidden shadow-md">
                 <SalonImage
@@ -183,7 +191,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ミディアム</h2>
+            <Heading level={3} centered className="mb-6">
+              ミディアム
+            </Heading>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[1, 2, 3, 4, 5].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
@@ -204,7 +214,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-3 text-gray-800 mb-6 text-center">ロング</h2>
+            <Heading level={3} centered className="mb-6">
+              ロング
+            </Heading>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[1, 2, 3, 4].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
@@ -225,9 +237,11 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">料金</h2>
+            <Heading level={2} centered className="mb-8">
+              料金
+            </Heading>
 
-            <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <Card padding="lg">
               <div class="space-y-4">
                 {SINS_PRICES.map((item) => (
                   <PriceRow key={item.label} label={item.label} price={item.price} variant="border" />
@@ -240,7 +254,7 @@ export default createRoute((c) => {
                 </p>
                 <p class="text-sm text-red-600">※ロングの方もプラス1,000円〜になります。</p>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </section>

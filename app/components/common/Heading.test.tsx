@@ -44,7 +44,7 @@ describe('SectionHeader', () => {
     const html = render(SectionHeader({ title: 'Section Title' }))
     expect(html).toContain('Section Title')
     expect(html).toContain('text-heading-2')
-    expect(html).toContain('bg-primary-800')
+    expect(html).toContain('bg-brand')
     expect(html).toContain('text-center')
   })
 

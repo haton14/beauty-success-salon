@@ -14,8 +14,8 @@ describe('Button', () => {
     const secondary = render(Button({ href: '/test', variant: 'secondary', children: 'S' }))
     const line = render(Button({ href: '/test', variant: 'line', children: 'L' }))
 
-    expect(primary).toContain('from-blue-600')
-    expect(secondary).toContain('border-blue-800')
+    expect(primary).toContain('from-brand-from')
+    expect(secondary).toContain('border-brand')
     expect(line).toContain('from-green-500')
   })
 
