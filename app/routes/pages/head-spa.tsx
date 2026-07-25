@@ -1,5 +1,7 @@
 import { createRoute } from 'honox/factory'
+import { Card } from '../../components/common/Card'
 import { CTA } from '../../components/common/CTA'
+import { Heading } from '../../components/common/Heading'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { PriceRow } from '../../components/common/PriceRow'
@@ -107,7 +109,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-emerald-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">ヘッドスパを施術する方へのプレゼント</h2>
+            <Heading level={2} centered className="mb-8">
+              ヘッドスパを施術する方へのプレゼント
+            </Heading>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {[1, 2].map((n) => (
                 <div key={n} class="rounded-xl overflow-hidden shadow-md">
@@ -217,7 +221,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-emerald-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">水のヘッドスパ</h2>
+            <Heading level={2} centered className="mb-8">
+              水のヘッドスパ
+            </Heading>
             <div class="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg mb-8">
               <SalonImage file="water-head-spa.avif" alt="水のヘッドスパ 施術風景" width={1430} height={1144} />
             </div>
@@ -246,14 +252,16 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">料金</h2>
-            <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <Heading level={2} centered className="mb-8">
+              料金
+            </Heading>
+            <Card padding="lg">
               <div class="space-y-4">
                 <PriceRow label="ドライヘッドスパ（30分）" price="¥3,000" variant="border" />
                 <PriceRow label="ドライヘッドスパ（60分）" price="¥6,000" variant="border" />
               </div>
               <p class="text-sm text-gray-500 mt-6">※女性限定・完全個室</p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -262,7 +270,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">お客様の声</h2>
+            <Heading level={2} centered className="mb-8">
+              お客様の声
+            </Heading>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {[1, 2, 3, 4].map((n) => (
                 <div key={n} class="rounded-2xl overflow-hidden shadow-lg">

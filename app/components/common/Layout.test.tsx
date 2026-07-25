@@ -24,7 +24,7 @@ describe('ページレイアウト', () => {
     it('サービスページでは該当リンクが強調される', () => {
       const html = render(Layout({ children: '<main>sins page</main>', currentPage: 'sins' }))
 
-      expect(html).toContain('text-blue-800 font-bold border-b-2 border-blue-800')
+      expect(html).toContain('text-brand font-bold border-b-2 border-brand')
     })
 
     it('トップページではページ内ナビゲーションが表示される', () => {
