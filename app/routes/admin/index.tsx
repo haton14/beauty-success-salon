@@ -20,7 +20,7 @@ export const AdminView: FC<AdminViewProps> = ({ notice, saved, kvAvailable, user
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm text-blue-700 hover:text-blue-900 underline whitespace-nowrap"
+            class="text-sm text-blue-700 hover:text-brand-strong underline whitespace-nowrap"
           >
             トップページを見る ↗
           </a>
@@ -100,7 +100,7 @@ export const AdminView: FC<AdminViewProps> = ({ notice, saved, kvAvailable, user
 
         <button
           type="submit"
-          class="w-full rounded-lg bg-blue-800 text-white font-bold py-3 hover:bg-blue-900 transition-colors"
+          class="w-full rounded-lg bg-brand text-white font-bold py-3 hover:bg-brand-strong transition-colors"
         >
           保存する
         </button>

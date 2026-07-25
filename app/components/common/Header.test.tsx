@@ -76,7 +76,7 @@ describe('ヘッダーナビゲーション', () => {
     it('sinsページでは該当リンクが強調される', () => {
       const html = render(Header({ currentPage: 'sins' }))
 
-      expect(html).toContain('text-blue-800 font-bold border-b-2 border-blue-800')
+      expect(html).toContain('text-brand font-bold border-b-2 border-brand')
     })
 
     it('head-spaページでは該当リンクが強調される', () => {

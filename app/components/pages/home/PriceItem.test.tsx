@@ -20,7 +20,7 @@ describe('料金項目', () => {
       const html = render(PriceItem({ name: 'テスト', price: '¥1,000' }))
 
       expect(html).toContain('font-semibold')
-      expect(html).toContain('text-blue-900')
+      expect(html).toContain('text-brand-strong')
     })
   })
 

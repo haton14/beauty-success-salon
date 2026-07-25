@@ -44,7 +44,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({ title, subtitle, classNa
     <div class={`text-center mb-16 ${className}`}>
       <h2 class="text-heading-2 text-gray-800 mb-4">{title}</h2>
       {subtitle && <p class="text-lg text-gray-600 mb-4">{subtitle}</p>}
-      <div class="w-24 h-1 bg-primary-800 mx-auto"></div>
+      <div class="w-24 h-1 bg-brand mx-auto"></div>
     </div>
   )
 }

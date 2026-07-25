@@ -1,5 +1,7 @@
 import { createRoute } from 'honox/factory'
+import { Card } from '../../components/common/Card'
 import { CTA } from '../../components/common/CTA'
+import { Heading } from '../../components/common/Heading'
 import { Layout } from '../../components/common/Layout'
 import { PageHeader } from '../../components/common/PageHeader'
 import { SalonImage } from '../../components/common/SalonImage'
@@ -22,7 +24,7 @@ export default createRoute((c) => {
       <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
           <div class="max-w-3xl mx-auto">
-            <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+            <Card padding="lg" className="text-center">
               <p class="text-gray-700 leading-relaxed mb-8">
                 施術全体のお時間は1時間ほどです。
                 <br />
@@ -30,8 +32,8 @@ export default createRoute((c) => {
                 <br />
                 長持ちすると好評のまつ毛パーマをぜひお試しくださいませ。
               </p>
-              <p class="text-4xl font-bold text-blue-900">¥2,200</p>
-            </div>
+              <p class="text-4xl font-bold text-brand-strong">¥2,200</p>
+            </Card>
           </div>
         </div>
       </section>
@@ -40,7 +42,9 @@ export default createRoute((c) => {
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h2 class="text-heading-2 text-gray-800 mb-8 text-center">施術例</h2>
+            <Heading level={2} centered className="mb-8">
+              施術例
+            </Heading>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {[1, 2, 3, 4, 5, 6].map((n) => (
                 <div key={n} class="rounded-2xl overflow-hidden shadow-lg">

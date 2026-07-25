@@ -1,5 +1,6 @@
 import { createRoute } from 'honox/factory'
 import { Button, PhoneButton } from '../components/common/Button'
+import { Card } from '../components/common/Card'
 import { SectionHeader } from '../components/common/Heading'
 import { Layout } from '../components/common/Layout'
 import { SalonImage } from '../components/common/SalonImage'
@@ -103,7 +104,7 @@ export default createRoute((c) => {
               </div>
 
               <div class="bg-gray-50 rounded-xl p-6 mb-8 shadow-lg">
-                <p class="text-lg font-bold text-blue-900 mb-3">料金</p>
+                <p class="text-lg font-bold text-brand-strong mb-3">料金</p>
                 <div class="space-y-1 md:space-y-0">
                   {SINS_PRICES.map((item) => (
                     <p key={item.label} class="text-gray-700 md:hidden">
@@ -233,19 +234,19 @@ export default createRoute((c) => {
 
           <div class="max-w-4xl mx-auto">
             <div class="grid md:grid-cols-2 gap-8">
-              <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <Card padding="lg" className="text-center">
                 <h3 class="text-heading-3 font-semibold mb-4">電話予約</h3>
                 <PhoneButton href={SHOP_INFO.telHref} className="text-2xl">
                   {SHOP_INFO.tel}
                 </PhoneButton>
-              </div>
+              </Card>
 
-              <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <Card padding="lg" className="text-center">
                 <h3 class="text-heading-3 font-semibold mb-4">LINE公式アカウント</h3>
                 <PhoneButton href={LINE_URL} variant="line" target="_blank" className="text-xl">
                   LINEから予約する
                 </PhoneButton>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
