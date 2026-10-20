@@ -1,8 +1,7 @@
 name = "beauty-salon-success"
 main = "dist/_worker.js"
-compatibility_date = "2026-06-01"
-# honox の useRequestContext は AsyncLocalStorage(node:async_hooks) を使うため必須
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2026-10-20"
+# honox の useRequestContext が使う nodejs_compat は 2026-08-04 以降デフォルト有効のため指定不要
 # 本番は workers.dev を無効化。Access で /admin を保護するのはカスタムドメインのみのため、
 # workers.dev 経由の素通り（Access バイパス）を塞ぐ。
 workers_dev = false
