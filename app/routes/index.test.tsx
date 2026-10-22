@@ -165,7 +165,7 @@ describe('トップページの Menu & Price', () => {
       const html = await renderHomePage()
 
       expect(html).toContain('ヘアセット')
-      expect(html).toContain('¥4,400')
+      expect(html).toContain('¥5,500')
       expect(html).toContain('メイク')
       expect(html).toContain('¥2,200')
       expect(html).toContain('着付け')

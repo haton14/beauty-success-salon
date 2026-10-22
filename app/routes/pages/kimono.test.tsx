@@ -17,7 +17,6 @@ describe('ヘアセット・着付けページ', () => {
 
     expect(html).toContain('3点セット: 22,000円')
     expect(html).toContain('8,800円')
-    expect(html).toContain('¥4,400')
     expect(html).toContain('¥5,500')
     expect(html).toContain('¥2,200')
   })

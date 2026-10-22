@@ -101,7 +101,7 @@ export default createRoute((c) => {
 
             <div class="max-w-2xl mx-auto bg-purple-50 rounded-2xl p-8 mb-10">
               <div class="space-y-3">
-                <PriceRow label="ヘアセット" price="¥4,400" variant="border" />
+                <PriceRow label="ヘアセット" price="¥5,500" variant="border" />
                 <PriceRow label="着付け" price="¥5,500" variant="border" />
                 <PriceRow label="メイク" price="¥2,200" variant="border" />
               </div>

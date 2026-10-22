@@ -191,7 +191,7 @@ export default createRoute((c) => {
             </MenuCard>
 
             <MenuCard title="ヘアセット・着付け" linkHref="/pages/kimono" linkText="ヘアセット・着付けを詳しく見る">
-              <PriceItem name="ヘアセット" price="¥4,400" />
+              <PriceItem name="ヘアセット" price="¥5,500" />
               <PriceItem name="メイク" price="¥2,200" />
               <PriceItem name="着付け（振袖）" price="¥11,000" />
               <PriceItem name="着付け（留袖、訪問着、袴）" price="¥8,800" />
