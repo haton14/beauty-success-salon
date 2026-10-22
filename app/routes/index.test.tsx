@@ -178,7 +178,7 @@ describe('トップページの Menu & Price', () => {
       expect(html).toContain('¥22,000')
       expect(html).toContain('七五三着付け')
       expect(html).toContain('(ヘアセット、着付け、メイク)')
-      expect(html).toContain('¥12,100')
+      expect(html).toContain('¥13,200')
     })
 
     it('夏の浴衣着付けの行は表示されない', async () => {
