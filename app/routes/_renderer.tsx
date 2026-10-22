@@ -63,7 +63,7 @@ export default jsxRenderer(({ children, title, description, noindex }) => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={OGP_IMAGE_URL} />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preconnect" href={IMAGE_BASE_URL} crossorigin="" />
+        <link rel="preconnect" href={IMAGE_BASE_URL} />
         {/* JSON.stringify は </script> をエスケープしないため < を明示的に無害化する */}
         <script
           type="application/ld+json"
