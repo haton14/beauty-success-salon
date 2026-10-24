@@ -32,22 +32,6 @@ export type BusinessHour = {
   time: string
 }
 
-// メニュー料金
-export type PriceItemType = {
-  name: string
-  price: string
-  note?: string
-}
-
-// メニューカテゴリ
-export type MenuCategory = {
-  title: string
-  note?: string
-  linkHref?: string
-  linkText?: string
-  items: PriceItemType[]
-}
-
 // FAQ
 export type FAQItemType = {
   question: string
