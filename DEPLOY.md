@@ -38,6 +38,10 @@ npm run deploy
 npm run deploy:preview
 ```
 
+> セキュリティ対策として `wrangler.toml` の `[env.preview]` は `workers_dev = false` が既定です。
+> プレビューURLで確認したい場合のみ一時的に `workers_dev = true` に変更してデプロイし、
+> 確認後は必ず `false` に戻してください（workers.dev は Cloudflare Access の保護対象外のため）。
+
 ## デプロイ後の確認
 
 1. デプロイが成功すると、URLが表示されます

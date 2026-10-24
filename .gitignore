@@ -26,6 +26,10 @@ dist-ssr
 # workers
 .wrangler
 
+# 機密情報（Cloudflare/Wrangler のローカル変数・環境変数）
+.dev.vars*
+.env*
+
 # 個人情報・素材ファイル（コミットしない）
 docs/*.MP4
 docs/*ライントーク*

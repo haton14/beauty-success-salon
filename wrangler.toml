@@ -16,6 +16,15 @@ routes = [
 binding = "NOTICE"
 id = "87b8ce65d1ec40dc8679d4a2a9b11509"
 
+# /api/notice のレート制限（同一IP 60回/分）。Cloudflare のロケーション単位で近似適用。
+[[ratelimits]]
+name = "NOTICE_RATE_LIMITER"
+namespace_id = "9001"
+
+[ratelimits.simple]
+limit = 60
+period = 60
+
 # ビルドは package.json の deploy script（pnpm run build && wrangler deploy）で行うため
 # [build] は定義しない（定義すると wrangler がもう一度フルビルドして二重になる）
 
@@ -38,8 +47,9 @@ name = "beauty-salon-success-preview"
 # 継承するとプレビューのデプロイが本番ドメインを奪ってしまう。
 routes = []
 # プレビューはカスタムドメインを持たないため workers.dev で到達する。
-# 注意: プレビューの /admin は Access 未保護（検証用途）。本番のみが保護対象。
-workers_dev = true
+# セキュリティ上、workers.dev は Access 未保護で /admin が素通りするため既定は無効。
+# 検証で URL が必要なときだけ一時的に true にしてデプロイし、確認後すぐ false に戻すこと。
+workers_dev = false
 
 [env.preview.assets]
 directory = "dist"
@@ -50,3 +60,12 @@ not_found_handling = "none"
 [[env.preview.kv_namespaces]]
 binding = "NOTICE"
 id = "4f266f0c466142c0a439119a0ea30152"
+
+# プレビュー用レート制限（本番とはカウンターを分離）。
+[[env.preview.ratelimits]]
+name = "NOTICE_RATE_LIMITER"
+namespace_id = "9002"
+
+[env.preview.ratelimits.simple]
+limit = 60
+period = 60
