@@ -47,8 +47,9 @@ name = "beauty-salon-success-preview"
 # 継承するとプレビューのデプロイが本番ドメインを奪ってしまう。
 routes = []
 # プレビューはカスタムドメインを持たないため workers.dev で到達する。
-# 注意: プレビューの /admin は Access 未保護（検証用途）。本番のみが保護対象。
-workers_dev = true
+# セキュリティ上、workers.dev は Access 未保護で /admin が素通りするため既定は無効。
+# 検証で URL が必要なときだけ一時的に true にしてデプロイし、確認後すぐ false に戻すこと。
+workers_dev = false
 
 [env.preview.assets]
 directory = "dist"
