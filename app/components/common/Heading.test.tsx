@@ -54,6 +54,12 @@ describe('SectionHeader', () => {
     expect(html).toContain('text-lg')
   })
 
+  it('renders catchphrase when provided', () => {
+    const html = render(SectionHeader({ title: 'Title', catchphrase: 'Catch phrase' }))
+    expect(html).toContain('Catch phrase')
+    expect(html).toContain('font-bold')
+  })
+
   it('does not render subtitle when not provided', () => {
     const html = render(SectionHeader({ title: 'Title Only' }))
     expect(html).not.toContain('text-lg text-gray-600')

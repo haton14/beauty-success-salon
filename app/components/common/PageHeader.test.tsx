@@ -26,6 +26,17 @@ describe('ページヘッダー', () => {
       expect(html).toContain('理想のカールやウェーブを実現')
     })
 
+    it('タイトル補足が表示される', () => {
+      const html = render(
+        PageHeader({
+          title: 'sins 酸性ストレート',
+          titleNote: '（縮毛矯正）',
+        })
+      )
+
+      expect(html).toContain('（縮毛矯正）')
+    })
+
     it('サブタイトルが指定されなければ表示されない', () => {
       const html = render(
         PageHeader({

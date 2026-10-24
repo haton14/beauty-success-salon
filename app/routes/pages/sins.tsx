@@ -14,6 +14,7 @@ export default createRoute((c) => {
     <Layout currentPage="sins" showFullFooter>
       <PageHeader
         title="sins 酸性ストレート"
+        titleNote="（縮毛矯正）"
         subtitle="当店の酸性ストレートは髪に優しい弱酸性の薬剤を使用しダメージを極限まで抑えます。sins薬剤技術で髪質を内部から改善させ柔らかく自然な髪質へと導きます。"
         bgGradient="from-blue-50 to-white"
       >

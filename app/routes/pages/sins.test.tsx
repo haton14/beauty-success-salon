@@ -7,6 +7,7 @@ describe('sins酸性ストレートページ', () => {
     const html = await renderRoute(sinsRoute)
 
     expect(html).toContain('sins 酸性ストレート')
+    expect(html).toContain('（縮毛矯正）')
     expect(html).toContain('このようなお悩みの方へ')
     expect(html).toContain('当店のsins酸性ストレートの特徴')
     expect(html).toContain('茨城県で一番最初に導入')
