@@ -1,8 +1,42 @@
+import type { Context } from 'hono'
+import { RequestContext } from 'hono/jsx-renderer'
 import { describe, expect, it } from 'vitest'
 import { render } from '../../test-utils'
+import type { Notice } from '../../types'
 import { Layout } from './Layout'
 
 describe('ページレイアウト', () => {
+  describe('お知らせをSSRで表示する', () => {
+    const notice: Notice = { message: '本日は臨時休業します', startAt: '', endAt: '', enabled: true }
+
+    it('リクエストコンテキストのお知らせをバナーに表示する', () => {
+      const c = {
+        get: (key: string) => (key === 'activeNotice' ? notice : null),
+      } as unknown as Context
+
+      const html = render(
+        <RequestContext.Provider value={c}>
+          <Layout>{'<main>content</main>'}</Layout>
+        </RequestContext.Provider>
+      )
+
+      expect(html).toContain('本日は臨時休業します')
+      expect(html).toContain('role="alert"')
+    })
+
+    it('お知らせが無ければバナーを表示しない', () => {
+      const c = { get: () => null } as unknown as Context
+
+      const html = render(
+        <RequestContext.Provider value={c}>
+          <Layout>{'<main>content</main>'}</Layout>
+        </RequestContext.Provider>
+      )
+
+      expect(html).not.toContain('role="alert"')
+    })
+  })
+
   describe('全ページ共通の構造を提供する', () => {
     it('ヘッダーとフッターで囲まれた構造になる', () => {
       const html = render(Layout({ children: '<main>テスト</main>' }))

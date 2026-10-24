@@ -1,6 +1,8 @@
 import { secureHeaders } from 'hono/secure-headers'
 import { createRoute } from 'honox/factory'
 import { IMAGE_BASE_URL } from '../constants'
+import { getActiveNotice } from '../lib/notice'
+import type { Bindings } from '../types'
 
 // dev(Vite)はHMRでインライン<style>を注入するため style-src を緩める必要がある。
 // 本番ビルドではCSSは外部ファイル('self')のみ、インラインstyle属性も無いので unsafe-inline 不要。
@@ -9,6 +11,20 @@ const isDev = import.meta.env.DEV
 // secureHeaders はデフォルトで X-Content-Type-Options / X-Frame-Options 等を付与するが
 // CSP は付かないため明示的に設定する。
 export default createRoute(
+  // お知らせをSSRで描画するため、リクエストごとにKVから取得してContextへ載せる。
+  // 管理画面とAPIは対象外。KV障害時はお知らせ無しとしてサイト本体を表示する。
+  async (c, next) => {
+    if (c.req.method === 'GET' && !c.req.path.startsWith('/admin') && !c.req.path.startsWith('/api')) {
+      const kv = (c.env as Bindings | undefined)?.NOTICE
+      try {
+        c.set('activeNotice', await getActiveNotice(kv, new Date()))
+      } catch (error) {
+        console.error('failed to load notice', error)
+        c.set('activeNotice', null)
+      }
+    }
+    await next()
+  },
   secureHeaders({
     // no-referrer だと同一オリジンのフォームPOSTでも Origin: null になり、
     // /admin のCSRF検証（Origin照合）が誤って403にする。同一オリジンのみRefererを送る。
@@ -33,17 +49,17 @@ export default createRoute(
       formAction: ["'self'"],
     },
   }),
-  // HTML(SSR)はエッジでキャッシュしWorker実行とTTFBを削減する。年表記など軽い動的要素が
-  // あるため s-maxage は短め、ブラウザは都度再検証(max-age=0)、配信はSWRで途切れさせない。
+  // お知らせをSSRで埋め込むため、HTMLはブラウザに都度再検証させる。
+  // Workers Cacheは無効にしている（静的アセットを無料・無制限のまま維持するため）。
   async (c, next) => {
     await next()
-    // 管理画面（Access保護）は公開エッジキャッシュに載せない。
+    // 管理画面（Access保護）はキャッシュさせない。
     if (c.req.path.startsWith('/admin')) {
       c.res.headers.set('Cache-Control', 'no-store')
       return
     }
     if (c.res.headers.get('content-type')?.includes('text/html')) {
-      c.res.headers.set('Cache-Control', 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400')
+      c.res.headers.set('Cache-Control', 'no-cache')
     }
   }
 )
