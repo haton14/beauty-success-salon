@@ -35,14 +35,16 @@ export const Heading: FC<Props> = ({ level = 2, children, className = '', center
 // セクションヘッダー（タイトル + サブタイトル + 下線）
 type SectionHeaderProps = {
   title: string
+  catchphrase?: string
   subtitle?: string
   className?: string
 }
 
-export const SectionHeader: FC<SectionHeaderProps> = ({ title, subtitle, className = '' }) => {
+export const SectionHeader: FC<SectionHeaderProps> = ({ title, catchphrase, subtitle, className = '' }) => {
   return (
     <div class={`text-center mb-16 ${className}`}>
       <h2 class="text-heading-2 text-gray-800 mb-4">{title}</h2>
+      {catchphrase && <p class="text-xl md:text-2xl font-bold text-brand-strong mb-4">{catchphrase}</p>}
       {subtitle && <p class="text-lg text-gray-600 mb-4">{subtitle}</p>}
       <div class="w-24 h-1 bg-brand mx-auto"></div>
     </div>

@@ -78,6 +78,7 @@ export default createRoute((c) => {
         <div class="container mx-auto px-4">
           <SectionHeader
             title="sins 酸性ストレート"
+            catchphrase="従来の縮毛矯正よりワンランク上の縮毛矯正"
             subtitle="茨城県で一番最初に導入。髪質に合わせたオーダーメイドのストレートで、時間が経ってもきれいに素敵でいられる、再現性の高い技術にこだわっています。"
           />
 
