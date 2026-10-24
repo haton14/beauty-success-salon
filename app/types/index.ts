@@ -65,6 +65,7 @@ export type Notice = {
 // Cloudflare Workers のバインディング（wrangler.toml と対応）
 export type Bindings = {
   NOTICE: KVNamespace
+  NOTICE_RATE_LIMITER: RateLimit
 }
 
 // コンポーネント共通Props
