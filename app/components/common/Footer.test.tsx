@@ -40,7 +40,7 @@ describe('フッター', () => {
       const html = render(Footer({ showFullInfo: true }))
 
       expect(html).toContain('〒311-2222')
-      expect(html).toContain('茨城県鹿嶋市小山1072-88')
+      expect(html).toContain('茨城県鹿嶋市小山１０７２－８８')
     })
 
     it('訪問者が電話で問い合わせできる', () => {
