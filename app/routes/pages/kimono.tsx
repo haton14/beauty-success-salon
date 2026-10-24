@@ -43,7 +43,7 @@ export default createRoute((c) => {
               ◇成人式◇
             </Heading>
             <p class="text-center text-gray-700 text-lg mb-10">
-              振袖着付け、ヘアアップ、メイク
+              振袖着付け、ヘアセット、メイク
               <br />
               <span class="font-bold text-purple-900">3点セット: 22,000円</span>
             </p>
@@ -113,6 +113,26 @@ export default createRoute((c) => {
                   <SalonImage file={photo.file} alt={photo.alt} width={photo.width} height={photo.height} />
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 浴衣 */}
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <Heading level={2} centered className="mb-6">
+              ◇浴衣◇
+            </Heading>
+            <p class="text-center text-gray-700 text-lg mb-10">
+              着付け・ヘアセット
+              <br />
+              <span class="font-bold text-purple-900">7,700円</span>
+            </p>
+
+            <div class="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+              <SalonImage file="yukata-1.avif" alt="浴衣の着付けとヘアセットの後ろ姿" width={1108} height={1477} />
             </div>
           </div>
         </div>

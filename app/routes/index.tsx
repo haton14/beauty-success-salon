@@ -196,8 +196,9 @@ export default createRoute((c) => {
               <PriceItem name="メイク" price="¥2,200" />
               <PriceItem name="着付け（振袖）" price="¥11,000" />
               <PriceItem name="着付け（留袖、訪問着、袴）" price="¥8,800" />
-              <PriceItem name="成人式(振袖着付け、ヘアアップ、メイク)" price="¥22,000" />
+              <PriceItem name="成人式(振袖着付け、ヘアセット、メイク)" price="¥22,000" />
               <PriceItem name="七五三着付け(ヘアセット、着付け、メイク)" price="¥13,200" />
+              <PriceItem name="浴衣（着付け、ヘアセット）" price="¥7,700" />
             </MenuCard>
 
             <MenuCard title="まつ毛パーマ" linkHref="/pages/eyelash" linkText="まつ毛パーマを詳しく見る">

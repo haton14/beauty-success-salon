@@ -174,11 +174,14 @@ describe('トップページの Menu & Price', () => {
       expect(html).toContain('（留袖、訪問着、袴）')
       expect(html).toContain('¥8,800')
       expect(html).toContain('成人式')
-      expect(html).toContain('(振袖着付け、ヘアアップ、メイク)')
+      expect(html).toContain('(振袖着付け、ヘアセット、メイク)')
       expect(html).toContain('¥22,000')
       expect(html).toContain('七五三着付け')
       expect(html).toContain('(ヘアセット、着付け、メイク)')
       expect(html).toContain('¥13,200')
+      expect(html).toContain('浴衣')
+      expect(html).toContain('（着付け、ヘアセット）')
+      expect(html).toContain('¥7,700')
     })
 
     it('夏の浴衣着付けの行は表示されない', async () => {

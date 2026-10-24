@@ -10,6 +10,9 @@ describe('ヘアセット・着付けページ', () => {
     expect(html).toContain('◇成人式◇')
     expect(html).toContain('◇訪問着 留袖◇')
     expect(html).toContain('◇七五三◇')
+    expect(html).toContain('◇浴衣◇')
+    expect(html).toContain('着付け・ヘアセット')
+    expect(html).toContain('7,700円')
   })
 
   it('料金が表示される', async () => {
@@ -27,6 +30,7 @@ describe('ヘアセット・着付けページ', () => {
     expect(html).toContain('seijinshiki-main.avif')
     expect(html).toContain('houmongi-1.avif')
     expect(html).toContain('shichigosan-4-red-pair.avif')
+    expect(html).toContain('yukata-1.avif')
   })
 
   it('予約導線（電話・LINE）がある', async () => {
