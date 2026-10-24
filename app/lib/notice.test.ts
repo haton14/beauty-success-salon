@@ -1,8 +1,26 @@
 import { describe, expect, it } from 'vitest'
 import type { Notice } from '../types'
-import { getActiveNotice, isNoticeActive, toInputValue, toStoredIso } from './notice'
+import {
+  appendNoticeHistory,
+  getActiveNotice,
+  getNoticeHistory,
+  getStoredNotice,
+  isNoticeActive,
+  NOTICE_MESSAGE_MAX_LENGTH,
+  parseNoticeForm,
+  toInputValue,
+  toStoredIso,
+} from './notice'
 
 const base: Notice = { message: 'テスト', startAt: '', endAt: '', enabled: true }
+
+const makeForm = (values: Record<string, string>): FormData => {
+  const form = new FormData()
+  for (const [key, value] of Object.entries(values)) {
+    form.set(key, value)
+  }
+  return form
+}
 
 describe('toStoredIso', () => {
   it('datetime-local値にJSTオフセットと秒を付与する', () => {
@@ -82,5 +100,105 @@ describe('getActiveNotice', () => {
   it('期間外なら null を返す', async () => {
     const notice: Notice = { ...base, endAt: '2020-01-01T00:00:00+09:00' }
     expect(await getActiveNotice(makeKv(notice), new Date())).toBeNull()
+  })
+})
+
+describe('parseNoticeForm', () => {
+  it('正しい入力をお知らせに変換する', () => {
+    const result = parseNoticeForm(
+      makeForm({
+        message: '  臨時休業です  ',
+        startAt: '2026-06-19T13:00',
+        endAt: '2026-06-19T15:30',
+        enabled: 'on',
+      })
+    )
+
+    expect(result).toEqual({
+      ok: true,
+      notice: {
+        message: '臨時休業です',
+        startAt: '2026-06-19T13:00:00+09:00',
+        endAt: '2026-06-19T15:30:00+09:00',
+        enabled: true,
+      },
+    })
+  })
+
+  it('本文が空ならエラー', () => {
+    expect(parseNoticeForm(makeForm({ message: '   ' }))).toEqual({
+      ok: false,
+      error: '本文を入力してください。',
+    })
+  })
+
+  it('本文が上限を超えるとエラー', () => {
+    const result = parseNoticeForm(makeForm({ message: 'あ'.repeat(NOTICE_MESSAGE_MAX_LENGTH + 1) }))
+
+    expect(result.ok).toBe(false)
+  })
+
+  it('日時の形式が不正ならエラー', () => {
+    expect(parseNoticeForm(makeForm({ message: '休業', startAt: '2026/06/19 13:00' })).ok).toBe(false)
+  })
+
+  it('存在しない日時ならエラー', () => {
+    expect(parseNoticeForm(makeForm({ message: '休業', startAt: '2026-02-31T13:00' })).ok).toBe(false)
+  })
+
+  it('終了が開始より前ならエラー', () => {
+    expect(
+      parseNoticeForm(makeForm({ message: '休業', startAt: '2026-06-19T15:00', endAt: '2026-06-19T13:00' })).ok
+    ).toBe(false)
+  })
+})
+
+describe('getStoredNotice', () => {
+  it('型が不正な値は null を返す', async () => {
+    const kv = { get: async () => ({ message: 1 }) } as unknown as KVNamespace
+    expect(await getStoredNotice(kv)).toBeNull()
+  })
+})
+
+describe('変更履歴', () => {
+  const makeMemoryKv = () => {
+    const store = new Map<string, string>()
+    return {
+      kv: {
+        get: async (key: string) => {
+          const value = store.get(key)
+          return value ? JSON.parse(value) : null
+        },
+        put: async (key: string, value: string) => {
+          store.set(key, value)
+        },
+      } as unknown as KVNamespace,
+      store,
+    }
+  }
+
+  it('変更履歴を新しい順に記録する', async () => {
+    const { kv } = makeMemoryKv()
+    const first = new Date('2026-06-19T00:00:00Z')
+    const second = new Date('2026-06-19T01:00:00Z')
+
+    await appendNoticeHistory(kv, base, 'owner@example.com', first)
+    await appendNoticeHistory(kv, { ...base, message: '更新後' }, 'owner@example.com', second)
+
+    const history = await getNoticeHistory(kv)
+    expect(history).toHaveLength(2)
+    expect(history[0]).toEqual({
+      at: second.toISOString(),
+      email: 'owner@example.com',
+      notice: { ...base, message: '更新後' },
+    })
+    expect(history[1]?.at).toBe(first.toISOString())
+  })
+
+  it('不正な履歴要素は読み取り時に除外する', async () => {
+    const { kv, store } = makeMemoryKv()
+    store.set('history', JSON.stringify([{ at: 'x', email: null }, { ...base }]))
+
+    expect(await getNoticeHistory(kv)).toEqual([])
   })
 })

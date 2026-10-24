@@ -1,7 +1,7 @@
 import type { FC } from 'hono/jsx'
 import { createRoute } from 'honox/factory'
 import { isSameOrigin } from '../../lib/csrf'
-import { getStoredNotice, saveStoredNotice, toInputValue, toStoredIso } from '../../lib/notice'
+import { appendNoticeHistory, getStoredNotice, parseNoticeForm, saveStoredNotice, toInputValue } from '../../lib/notice'
 import type { Bindings, Notice } from '../../types'
 
 type AdminViewProps = {
@@ -135,12 +135,11 @@ export const POST = createRoute(async (c) => {
     return c.text('KV が接続されていません。wrangler dev かデプロイ環境で操作してください。', 503)
   }
   const form = await c.req.formData()
-  const notice: Notice = {
-    message: String(form.get('message') ?? '').trim(),
-    startAt: toStoredIso(String(form.get('startAt') ?? '')),
-    endAt: toStoredIso(String(form.get('endAt') ?? '')),
-    enabled: form.get('enabled') === 'on',
+  const parsed = parseNoticeForm(form)
+  if (!parsed.ok) {
+    return c.text(parsed.error, 400)
   }
-  await saveStoredNotice(kv, notice)
+  await saveStoredNotice(kv, parsed.notice)
+  await appendNoticeHistory(kv, parsed.notice, c.req.header('Cf-Access-Authenticated-User-Email') ?? null)
   return c.redirect('/admin?saved=1')
 })
