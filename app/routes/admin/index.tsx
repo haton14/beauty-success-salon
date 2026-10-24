@@ -1,5 +1,6 @@
 import type { FC } from 'hono/jsx'
 import { createRoute } from 'honox/factory'
+import { isSameOrigin } from '../../lib/csrf'
 import { getStoredNotice, saveStoredNotice, toInputValue, toStoredIso } from '../../lib/notice'
 import type { Bindings, Notice } from '../../types'
 
@@ -126,6 +127,9 @@ export default createRoute(async (c) => {
 
 // お知らせの保存。
 export const POST = createRoute(async (c) => {
+  if (!isSameOrigin(c)) {
+    return c.text('不正なリクエストです。', 403)
+  }
   const kv = (c.env as Bindings | undefined)?.NOTICE
   if (!kv) {
     return c.text('KV が接続されていません。wrangler dev かデプロイ環境で操作してください。', 503)
