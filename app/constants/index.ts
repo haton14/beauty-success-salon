@@ -12,7 +12,7 @@ export const NAV_LINKS: NavLink[] = [
 export const SHOP_INFO: ShopInfo = {
   name: '美容室success',
   postalCode: '〒311-2222',
-  address: '茨城県鹿嶋市小山1072-88',
+  address: '茨城県鹿嶋市小山１０７２－８８',
   tel: '0299-69-7700',
   telHref: 'tel:0299697700',
 }
