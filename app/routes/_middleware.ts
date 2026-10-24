@@ -10,6 +10,9 @@ const isDev = import.meta.env.DEV
 // CSP は付かないため明示的に設定する。
 export default createRoute(
   secureHeaders({
+    // no-referrer だと同一オリジンのフォームPOSTでも Origin: null になり、
+    // /admin のCSRF検証（Origin照合）が誤って403にする。同一オリジンのみRefererを送る。
+    referrerPolicy: 'same-origin',
     contentSecurityPolicy: {
       defaultSrc: ["'self'"],
       baseUri: ["'self'"],
