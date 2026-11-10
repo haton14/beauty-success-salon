@@ -21,7 +21,7 @@
     "lint:fix": "biome check --write ."
   },
   "dependencies": {
-    "hono": "^4.13.13",
+    "hono": "^4.13.17",
     "honox": "^0.1.62"
   },
   "devDependencies": {
